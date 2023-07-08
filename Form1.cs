@@ -48,7 +48,7 @@ namespace sisconGestão
             try //try e cacth para tratamento de erros de conexão com o banco de dados.
             {
                 //instancia-se a conexão como o banco de dados, escolhendo a tabela e as colunas e associando-as aos txt`s
-                conexao = new SqlConnection();
+                conexao = new SqlConnection("Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrated Security=True");
                 strSQL = "SELECT * FROM USUARIOS_SENHAS WHERE Usuario = @USUARIO AND Competencia = @COMPETENCIA AND Senha = @SENHA";
                 comando = new SqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@USUARIO", txtUsuario.Text);
