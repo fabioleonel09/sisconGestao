@@ -35,8 +35,8 @@
             System.Windows.Forms.Label desenvolvedorEvidenciaLabel;
             System.Windows.Forms.Label dataInclusaoLabel;
             System.Windows.Forms.Label arquivosLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvidencias));
             System.Windows.Forms.Label tipoDocumentoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvidencias));
             this.tlpEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbPesquisaEvidencia = new System.Windows.Forms.GroupBox();
             this.txtPesquisaEvidencia = new System.Windows.Forms.TextBox();
@@ -57,6 +57,7 @@
             this.eVIDENCIASBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tbEvidencias = new System.Windows.Forms.TabControl();
             this.tpCapaEvidencia = new System.Windows.Forms.TabPage();
+            this.tipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
             this.arquivosPictureBox = new System.Windows.Forms.PictureBox();
             this.evidenciasIdTextBox = new System.Windows.Forms.TextBox();
             this.nomeEvidenciaTextBox = new System.Windows.Forms.TextBox();
@@ -65,9 +66,6 @@
             this.dataInclusaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tpDetalhesEvidencia = new System.Windows.Forms.TabPage();
             this.eVIDENCIASDataGridView = new System.Windows.Forms.DataGridView();
-            this.eVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.EVIDENCIASTableAdapter();
-            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.tipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +73,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.eVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.EVIDENCIASTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.dtpPesquisaData = new System.Windows.Forms.DateTimePicker();
+            this.btnPesquisarEvidencias = new System.Windows.Forms.Button();
+            this.rbPesquisaData = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             evidenciasIdLabel = new System.Windows.Forms.Label();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             descricaoEvidenciaLabel = new System.Windows.Forms.Label();
@@ -98,56 +108,72 @@
             // evidenciasIdLabel
             // 
             evidenciasIdLabel.AutoSize = true;
-            evidenciasIdLabel.Location = new System.Drawing.Point(56, 46);
+            evidenciasIdLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            evidenciasIdLabel.Location = new System.Drawing.Point(6, 3);
             evidenciasIdLabel.Name = "evidenciasIdLabel";
-            evidenciasIdLabel.Size = new System.Drawing.Size(105, 18);
+            evidenciasIdLabel.Size = new System.Drawing.Size(136, 19);
             evidenciasIdLabel.TabIndex = 0;
-            evidenciasIdLabel.Text = "Evidencias Id:";
+            evidenciasIdLabel.Text = "Ident. Evidência:";
             // 
             // nomeEvidenciaLabel
             // 
             nomeEvidenciaLabel.AutoSize = true;
-            nomeEvidenciaLabel.Location = new System.Drawing.Point(56, 78);
+            nomeEvidenciaLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeEvidenciaLabel.Location = new System.Drawing.Point(153, 3);
             nomeEvidenciaLabel.Name = "nomeEvidenciaLabel";
-            nomeEvidenciaLabel.Size = new System.Drawing.Size(127, 18);
+            nomeEvidenciaLabel.Size = new System.Drawing.Size(139, 19);
             nomeEvidenciaLabel.TabIndex = 2;
-            nomeEvidenciaLabel.Text = "Nome Evidencia:";
+            nomeEvidenciaLabel.Text = "Nome Evidência:";
             // 
             // descricaoEvidenciaLabel
             // 
             descricaoEvidenciaLabel.AutoSize = true;
-            descricaoEvidenciaLabel.Location = new System.Drawing.Point(56, 110);
+            descricaoEvidenciaLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoEvidenciaLabel.Location = new System.Drawing.Point(6, 104);
             descricaoEvidenciaLabel.Name = "descricaoEvidenciaLabel";
-            descricaoEvidenciaLabel.Size = new System.Drawing.Size(157, 18);
+            descricaoEvidenciaLabel.Size = new System.Drawing.Size(171, 19);
             descricaoEvidenciaLabel.TabIndex = 4;
-            descricaoEvidenciaLabel.Text = "Descricao Evidencia:";
+            descricaoEvidenciaLabel.Text = "Descricao Evidência:";
             // 
             // desenvolvedorEvidenciaLabel
             // 
             desenvolvedorEvidenciaLabel.AutoSize = true;
-            desenvolvedorEvidenciaLabel.Location = new System.Drawing.Point(56, 142);
+            desenvolvedorEvidenciaLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            desenvolvedorEvidenciaLabel.Location = new System.Drawing.Point(7, 53);
             desenvolvedorEvidenciaLabel.Name = "desenvolvedorEvidenciaLabel";
-            desenvolvedorEvidenciaLabel.Size = new System.Drawing.Size(189, 18);
+            desenvolvedorEvidenciaLabel.Size = new System.Drawing.Size(210, 19);
             desenvolvedorEvidenciaLabel.TabIndex = 6;
-            desenvolvedorEvidenciaLabel.Text = "Desenvolvedor Evidencia:";
+            desenvolvedorEvidenciaLabel.Text = "Desenvolvedor Evidência:";
             // 
             // dataInclusaoLabel
             // 
             dataInclusaoLabel.AutoSize = true;
-            dataInclusaoLabel.Location = new System.Drawing.Point(56, 175);
+            dataInclusaoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataInclusaoLabel.Location = new System.Drawing.Point(531, 3);
             dataInclusaoLabel.Name = "dataInclusaoLabel";
-            dataInclusaoLabel.Size = new System.Drawing.Size(106, 18);
+            dataInclusaoLabel.Size = new System.Drawing.Size(119, 19);
             dataInclusaoLabel.TabIndex = 8;
             dataInclusaoLabel.Text = "Data Inclusao:";
             // 
             // arquivosLabel
             // 
             arquivosLabel.AutoSize = true;
+            arquivosLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             arquivosLabel.Location = new System.Drawing.Point(677, 3);
             arquivosLabel.Name = "arquivosLabel";
-            arquivosLabel.Size = new System.Drawing.Size(73, 18);
+            arquivosLabel.Size = new System.Drawing.Size(84, 19);
             arquivosLabel.TabIndex = 10;
             arquivosLabel.Text = "Arquivos:";
+            // 
+            // tipoDocumentoLabel
+            // 
+            tipoDocumentoLabel.AutoSize = true;
+            tipoDocumentoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoDocumentoLabel.Location = new System.Drawing.Point(387, 3);
+            tipoDocumentoLabel.Name = "tipoDocumentoLabel";
+            tipoDocumentoLabel.Size = new System.Drawing.Size(142, 19);
+            tipoDocumentoLabel.TabIndex = 12;
+            tipoDocumentoLabel.Text = "Tipo Documento:";
             // 
             // tlpEvidencias
             // 
@@ -169,6 +195,11 @@
             // 
             // gbPesquisaEvidencia
             // 
+            this.gbPesquisaEvidencia.Controls.Add(this.dtpPesquisaData);
+            this.gbPesquisaEvidencia.Controls.Add(this.btnPesquisarEvidencias);
+            this.gbPesquisaEvidencia.Controls.Add(this.rbPesquisaData);
+            this.gbPesquisaEvidencia.Controls.Add(this.rbPesquisaTipo);
+            this.gbPesquisaEvidencia.Controls.Add(this.rbPesquisaNome);
             this.gbPesquisaEvidencia.Controls.Add(this.txtPesquisaEvidencia);
             this.gbPesquisaEvidencia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbPesquisaEvidencia.Location = new System.Drawing.Point(4, 4);
@@ -180,9 +211,9 @@
             // 
             // txtPesquisaEvidencia
             // 
-            this.txtPesquisaEvidencia.Location = new System.Drawing.Point(230, 34);
+            this.txtPesquisaEvidencia.Location = new System.Drawing.Point(474, 37);
             this.txtPesquisaEvidencia.Name = "txtPesquisaEvidencia";
-            this.txtPesquisaEvidencia.Size = new System.Drawing.Size(390, 26);
+            this.txtPesquisaEvidencia.Size = new System.Drawing.Size(267, 26);
             this.txtPesquisaEvidencia.TabIndex = 0;
             // 
             // eVIDENCIASBindingNavigator
@@ -204,8 +235,13 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
+            this.eVIDENCIASBindingNavigatorSaveItem,
             this.bindingNavigatorDeleteItem,
-            this.eVIDENCIASBindingNavigatorSaveItem});
+            this.tsbEditar,
+            this.tsbBloquear,
+            this.toolStripSeparator1,
+            this.tsbEnviar,
+            this.tsbBaixar});
             this.eVIDENCIASBindingNavigator.Location = new System.Drawing.Point(1, 371);
             this.eVIDENCIASBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.eVIDENCIASBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -222,10 +258,12 @@
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // eVIDENCIASBindingSource
             // 
@@ -239,8 +277,9 @@
             // 
             // bindingNavigatorCountItem
             // 
+            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 90);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(49, 90);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -248,27 +287,31 @@
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
@@ -280,9 +323,9 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 26);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
@@ -295,18 +338,20 @@
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
@@ -318,8 +363,9 @@
             // 
             this.eVIDENCIASBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.eVIDENCIASBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("eVIDENCIASBindingNavigatorSaveItem.Image")));
+            this.eVIDENCIASBindingNavigatorSaveItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.eVIDENCIASBindingNavigatorSaveItem.Name = "eVIDENCIASBindingNavigatorSaveItem";
-            this.eVIDENCIASBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 90);
+            this.eVIDENCIASBindingNavigatorSaveItem.Size = new System.Drawing.Size(52, 90);
             this.eVIDENCIASBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.eVIDENCIASBindingNavigatorSaveItem.Click += new System.EventHandler(this.eVIDENCIASBindingNavigatorSaveItem_Click);
             // 
@@ -359,6 +405,25 @@
             this.tpCapaEvidencia.Text = "Capa Evidência";
             this.tpCapaEvidencia.UseVisualStyleBackColor = true;
             // 
+            // tipoDocumentoComboBox
+            // 
+            this.tipoDocumentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "TipoDocumento", true));
+            this.tipoDocumentoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoDocumentoComboBox.FormattingEnabled = true;
+            this.tipoDocumentoComboBox.Items.AddRange(new object[] {
+            "",
+            ".doc",
+            ".ppt",
+            ".xls",
+            ".pdf",
+            ".jpg",
+            ".png",
+            "Outro"});
+            this.tipoDocumentoComboBox.Location = new System.Drawing.Point(391, 24);
+            this.tipoDocumentoComboBox.Name = "tipoDocumentoComboBox";
+            this.tipoDocumentoComboBox.Size = new System.Drawing.Size(138, 26);
+            this.tipoDocumentoComboBox.TabIndex = 13;
+            // 
             // arquivosPictureBox
             // 
             this.arquivosPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -372,41 +437,45 @@
             // evidenciasIdTextBox
             // 
             this.evidenciasIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "EvidenciasId", true));
-            this.evidenciasIdTextBox.Location = new System.Drawing.Point(251, 43);
+            this.evidenciasIdTextBox.Location = new System.Drawing.Point(10, 24);
             this.evidenciasIdTextBox.Name = "evidenciasIdTextBox";
-            this.evidenciasIdTextBox.Size = new System.Drawing.Size(200, 26);
+            this.evidenciasIdTextBox.Size = new System.Drawing.Size(141, 26);
             this.evidenciasIdTextBox.TabIndex = 1;
             // 
             // nomeEvidenciaTextBox
             // 
             this.nomeEvidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "NomeEvidencia", true));
-            this.nomeEvidenciaTextBox.Location = new System.Drawing.Point(251, 75);
+            this.nomeEvidenciaTextBox.Location = new System.Drawing.Point(157, 24);
             this.nomeEvidenciaTextBox.Name = "nomeEvidenciaTextBox";
-            this.nomeEvidenciaTextBox.Size = new System.Drawing.Size(200, 26);
+            this.nomeEvidenciaTextBox.Size = new System.Drawing.Size(228, 26);
             this.nomeEvidenciaTextBox.TabIndex = 3;
             // 
             // descricaoEvidenciaTextBox
             // 
+            this.descricaoEvidenciaTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.descricaoEvidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "DescricaoEvidencia", true));
-            this.descricaoEvidenciaTextBox.Location = new System.Drawing.Point(251, 107);
+            this.descricaoEvidenciaTextBox.Location = new System.Drawing.Point(10, 126);
+            this.descricaoEvidenciaTextBox.Multiline = true;
             this.descricaoEvidenciaTextBox.Name = "descricaoEvidenciaTextBox";
-            this.descricaoEvidenciaTextBox.Size = new System.Drawing.Size(200, 26);
+            this.descricaoEvidenciaTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descricaoEvidenciaTextBox.Size = new System.Drawing.Size(664, 107);
             this.descricaoEvidenciaTextBox.TabIndex = 5;
             // 
             // desenvolvedorEvidenciaTextBox
             // 
             this.desenvolvedorEvidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "DesenvolvedorEvidencia", true));
-            this.desenvolvedorEvidenciaTextBox.Location = new System.Drawing.Point(251, 139);
+            this.desenvolvedorEvidenciaTextBox.Location = new System.Drawing.Point(10, 75);
             this.desenvolvedorEvidenciaTextBox.Name = "desenvolvedorEvidenciaTextBox";
-            this.desenvolvedorEvidenciaTextBox.Size = new System.Drawing.Size(200, 26);
+            this.desenvolvedorEvidenciaTextBox.Size = new System.Drawing.Size(664, 26);
             this.desenvolvedorEvidenciaTextBox.TabIndex = 7;
             // 
             // dataInclusaoDateTimePicker
             // 
             this.dataInclusaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.eVIDENCIASBindingSource, "DataInclusao", true));
-            this.dataInclusaoDateTimePicker.Location = new System.Drawing.Point(251, 171);
+            this.dataInclusaoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataInclusaoDateTimePicker.Location = new System.Drawing.Point(535, 24);
             this.dataInclusaoDateTimePicker.Name = "dataInclusaoDateTimePicker";
-            this.dataInclusaoDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.dataInclusaoDateTimePicker.Size = new System.Drawing.Size(139, 26);
             this.dataInclusaoDateTimePicker.TabIndex = 9;
             // 
             // tpDetalhesEvidencia
@@ -442,37 +511,6 @@
             this.eVIDENCIASDataGridView.ReadOnly = true;
             this.eVIDENCIASDataGridView.Size = new System.Drawing.Size(853, 233);
             this.eVIDENCIASDataGridView.TabIndex = 0;
-            // 
-            // eVIDENCIASTableAdapter
-            // 
-            this.eVIDENCIASTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
-            this.tableAdapterManager.EVIDENCIASTableAdapter = this.eVIDENCIASTableAdapter;
-            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
-            // 
-            // tipoDocumentoLabel
-            // 
-            tipoDocumentoLabel.AutoSize = true;
-            tipoDocumentoLabel.Location = new System.Drawing.Point(313, 14);
-            tipoDocumentoLabel.Name = "tipoDocumentoLabel";
-            tipoDocumentoLabel.Size = new System.Drawing.Size(126, 18);
-            tipoDocumentoLabel.TabIndex = 12;
-            tipoDocumentoLabel.Text = "Tipo Documento:";
-            // 
-            // tipoDocumentoComboBox
-            // 
-            this.tipoDocumentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eVIDENCIASBindingSource, "TipoDocumento", true));
-            this.tipoDocumentoComboBox.FormattingEnabled = true;
-            this.tipoDocumentoComboBox.Location = new System.Drawing.Point(445, 11);
-            this.tipoDocumentoComboBox.Name = "tipoDocumentoComboBox";
-            this.tipoDocumentoComboBox.Size = new System.Drawing.Size(121, 26);
-            this.tipoDocumentoComboBox.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -528,6 +566,126 @@
             this.dataGridViewImageColumn1.HeaderText = "Arquivos";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // eVIDENCIASTableAdapter
+            // 
+            this.eVIDENCIASTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
+            this.tableAdapterManager.EVIDENCIASTableAdapter = this.eVIDENCIASTableAdapter;
+            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
+            // 
+            // dtpPesquisaData
+            // 
+            this.dtpPesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPesquisaData.Location = new System.Drawing.Point(338, 37);
+            this.dtpPesquisaData.Name = "dtpPesquisaData";
+            this.dtpPesquisaData.Size = new System.Drawing.Size(130, 26);
+            this.dtpPesquisaData.TabIndex = 10;
+            // 
+            // btnPesquisarEvidencias
+            // 
+            this.btnPesquisarEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarEvidencias.Location = new System.Drawing.Point(747, 22);
+            this.btnPesquisarEvidencias.Name = "btnPesquisarEvidencias";
+            this.btnPesquisarEvidencias.Size = new System.Drawing.Size(114, 55);
+            this.btnPesquisarEvidencias.TabIndex = 9;
+            this.btnPesquisarEvidencias.Text = "Pesquisar";
+            this.btnPesquisarEvidencias.UseVisualStyleBackColor = true;
+            this.btnPesquisarEvidencias.Click += new System.EventHandler(this.btnPesquisarEvidencias_Click);
+            // 
+            // rbPesquisaData
+            // 
+            this.rbPesquisaData.AutoSize = true;
+            this.rbPesquisaData.Location = new System.Drawing.Point(230, 38);
+            this.rbPesquisaData.Name = "rbPesquisaData";
+            this.rbPesquisaData.Size = new System.Drawing.Size(84, 22);
+            this.rbPesquisaData.TabIndex = 8;
+            this.rbPesquisaData.TabStop = true;
+            this.rbPesquisaData.Text = "por data";
+            this.rbPesquisaData.UseVisualStyleBackColor = true;
+            this.rbPesquisaData.CheckedChanged += new System.EventHandler(this.rbPesquisaData_CheckedChanged);
+            // 
+            // rbPesquisaTipo
+            // 
+            this.rbPesquisaTipo.AutoSize = true;
+            this.rbPesquisaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaTipo.Location = new System.Drawing.Point(127, 38);
+            this.rbPesquisaTipo.Name = "rbPesquisaTipo";
+            this.rbPesquisaTipo.Size = new System.Drawing.Size(79, 22);
+            this.rbPesquisaTipo.TabIndex = 7;
+            this.rbPesquisaTipo.TabStop = true;
+            this.rbPesquisaTipo.Text = "por tipo";
+            this.rbPesquisaTipo.UseVisualStyleBackColor = true;
+            this.rbPesquisaTipo.CheckedChanged += new System.EventHandler(this.rbPesquisaTipo_CheckedChanged);
+            // 
+            // rbPesquisaNome
+            // 
+            this.rbPesquisaNome.AutoSize = true;
+            this.rbPesquisaNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaNome.Location = new System.Drawing.Point(6, 38);
+            this.rbPesquisaNome.Name = "rbPesquisaNome";
+            this.rbPesquisaNome.Size = new System.Drawing.Size(92, 22);
+            this.rbPesquisaNome.TabIndex = 6;
+            this.rbPesquisaNome.TabStop = true;
+            this.rbPesquisaNome.Text = "por nome";
+            this.rbPesquisaNome.UseVisualStyleBackColor = true;
+            this.rbPesquisaNome.CheckedChanged += new System.EventHandler(this.rbPesquisaNome_CheckedChanged);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            // 
+            // tsbBloquear
+            // 
+            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
+            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBloquear.Name = "tsbBloquear";
+            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
+            this.tsbBloquear.Text = "Bloquear";
+            this.tsbBloquear.Click += new System.EventHandler(this.tsbBloquear_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
+            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEnviar.Text = "Enviar";
+            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
+            // 
+            // tsbBaixar
+            // 
+            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
+            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaixar.Name = "tsbBaixar";
+            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
+            this.tsbBaixar.Text = "Baixar";
+            this.tsbBaixar.Click += new System.EventHandler(this.tsbBaixar_Click);
             // 
             // frmEvidencias
             // 
@@ -601,5 +759,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DateTimePicker dtpPesquisaData;
+        private System.Windows.Forms.Button btnPesquisarEvidencias;
+        private System.Windows.Forms.RadioButton rbPesquisaData;
+        private System.Windows.Forms.RadioButton rbPesquisaTipo;
+        private System.Windows.Forms.RadioButton rbPesquisaNome;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbBloquear;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsbEnviar;
+        private System.Windows.Forms.ToolStripButton tsbBaixar;
     }
 }

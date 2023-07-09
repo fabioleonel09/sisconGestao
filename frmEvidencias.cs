@@ -31,5 +31,55 @@ namespace sisconGestão
             this.eVIDENCIASTableAdapter.Fill(this.sISCONPROJECTSDataSet.EVIDENCIAS);
 
         }
+
+        private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbPesquisaTipo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbPesquisaData_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPesquisarEvidencias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbBloquear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbBaixar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
