@@ -62,16 +62,21 @@
             this.dataInclusaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tpDetalhes = new System.Windows.Forms.TabPage();
             this.dOCUMENTOS_GERAISDataGridView = new System.Windows.Forms.DataGridView();
-            this.gbPesquisaDocumento = new System.Windows.Forms.GroupBox();
-            this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
-            this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
-            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gbPesquisaDocumento = new System.Windows.Forms.GroupBox();
+            this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
+            this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             documentosGeraisIdLabel = new System.Windows.Forms.Label();
             nomeDocumentoLabel = new System.Windows.Forms.Label();
             descricaoDocumentoLabel = new System.Windows.Forms.Label();
@@ -94,54 +99,60 @@
             // documentosGeraisIdLabel
             // 
             documentosGeraisIdLabel.AutoSize = true;
-            documentosGeraisIdLabel.Location = new System.Drawing.Point(101, 67);
+            documentosGeraisIdLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            documentosGeraisIdLabel.Location = new System.Drawing.Point(6, 3);
             documentosGeraisIdLabel.Name = "documentosGeraisIdLabel";
-            documentosGeraisIdLabel.Size = new System.Drawing.Size(167, 18);
+            documentosGeraisIdLabel.Size = new System.Drawing.Size(158, 19);
             documentosGeraisIdLabel.TabIndex = 0;
-            documentosGeraisIdLabel.Text = "Documentos Gerais Id:";
+            documentosGeraisIdLabel.Text = "Ident. Docs. Gerais:";
             // 
             // nomeDocumentoLabel
             // 
             nomeDocumentoLabel.AutoSize = true;
-            nomeDocumentoLabel.Location = new System.Drawing.Point(101, 99);
+            nomeDocumentoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeDocumentoLabel.Location = new System.Drawing.Point(166, 3);
             nomeDocumentoLabel.Name = "nomeDocumentoLabel";
-            nomeDocumentoLabel.Size = new System.Drawing.Size(138, 18);
+            nomeDocumentoLabel.Size = new System.Drawing.Size(153, 19);
             nomeDocumentoLabel.TabIndex = 2;
             nomeDocumentoLabel.Text = "Nome Documento:";
             // 
             // descricaoDocumentoLabel
             // 
             descricaoDocumentoLabel.AutoSize = true;
-            descricaoDocumentoLabel.Location = new System.Drawing.Point(101, 131);
+            descricaoDocumentoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoDocumentoLabel.Location = new System.Drawing.Point(7, 53);
             descricaoDocumentoLabel.Name = "descricaoDocumentoLabel";
-            descricaoDocumentoLabel.Size = new System.Drawing.Size(168, 18);
+            descricaoDocumentoLabel.Size = new System.Drawing.Size(185, 19);
             descricaoDocumentoLabel.TabIndex = 4;
             descricaoDocumentoLabel.Text = "Descricao Documento:";
             // 
             // dataInclusaoLabel
             // 
             dataInclusaoLabel.AutoSize = true;
-            dataInclusaoLabel.Location = new System.Drawing.Point(101, 164);
+            dataInclusaoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataInclusaoLabel.Location = new System.Drawing.Point(520, 4);
             dataInclusaoLabel.Name = "dataInclusaoLabel";
-            dataInclusaoLabel.Size = new System.Drawing.Size(106, 18);
+            dataInclusaoLabel.Size = new System.Drawing.Size(119, 19);
             dataInclusaoLabel.TabIndex = 6;
             dataInclusaoLabel.Text = "Data Inclusao:";
             // 
             // arquivosLabel
             // 
             arquivosLabel.AutoSize = true;
+            arquivosLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             arquivosLabel.Location = new System.Drawing.Point(677, 3);
             arquivosLabel.Name = "arquivosLabel";
-            arquivosLabel.Size = new System.Drawing.Size(73, 18);
+            arquivosLabel.Size = new System.Drawing.Size(84, 19);
             arquivosLabel.TabIndex = 8;
             arquivosLabel.Text = "Arquivos:";
             // 
             // tipoDocumentoLabel
             // 
             tipoDocumentoLabel.AutoSize = true;
-            tipoDocumentoLabel.Location = new System.Drawing.Point(183, 211);
+            tipoDocumentoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoDocumentoLabel.Location = new System.Drawing.Point(372, 3);
             tipoDocumentoLabel.Name = "tipoDocumentoLabel";
-            tipoDocumentoLabel.Size = new System.Drawing.Size(126, 18);
+            tipoDocumentoLabel.Size = new System.Drawing.Size(142, 19);
             tipoDocumentoLabel.TabIndex = 10;
             tipoDocumentoLabel.Text = "Tipo Documento:";
             // 
@@ -182,8 +193,13 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
+            this.dOCUMENTOS_GERAISBindingNavigatorSaveItem,
             this.bindingNavigatorDeleteItem,
-            this.dOCUMENTOS_GERAISBindingNavigatorSaveItem});
+            this.tsbEditar,
+            this.tsbBloquear,
+            this.toolStripSeparator1,
+            this.tsbEnviar,
+            this.tsbBaixar});
             this.dOCUMENTOS_GERAISBindingNavigator.Location = new System.Drawing.Point(1, 371);
             this.dOCUMENTOS_GERAISBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.dOCUMENTOS_GERAISBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -200,9 +216,10 @@
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // dOCUMENTOS_GERAISBindingSource
@@ -217,8 +234,9 @@
             // 
             // bindingNavigatorCountItem
             // 
+            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 90);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 90);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -226,27 +244,30 @@
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
@@ -258,9 +279,9 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 26);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
@@ -273,18 +294,20 @@
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 90);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
@@ -296,8 +319,9 @@
             // 
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("dOCUMENTOS_GERAISBindingNavigatorSaveItem.Image")));
+            this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Name = "dOCUMENTOS_GERAISBindingNavigatorSaveItem";
-            this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 90);
+            this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Size = new System.Drawing.Size(52, 90);
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Click += new System.EventHandler(this.dOCUMENTOS_GERAISBindingNavigatorSaveItem_Click);
             // 
@@ -338,10 +362,20 @@
             // tipoDocumentoComboBox
             // 
             this.tipoDocumentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "TipoDocumento", true));
+            this.tipoDocumentoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoDocumentoComboBox.FormattingEnabled = true;
-            this.tipoDocumentoComboBox.Location = new System.Drawing.Point(315, 208);
+            this.tipoDocumentoComboBox.Items.AddRange(new object[] {
+            "",
+            ".doc",
+            ".ppt",
+            ".xls",
+            ".pdf",
+            ".jpg",
+            ".png",
+            "Outro"});
+            this.tipoDocumentoComboBox.Location = new System.Drawing.Point(376, 24);
             this.tipoDocumentoComboBox.Name = "tipoDocumentoComboBox";
-            this.tipoDocumentoComboBox.Size = new System.Drawing.Size(121, 26);
+            this.tipoDocumentoComboBox.Size = new System.Drawing.Size(138, 26);
             this.tipoDocumentoComboBox.TabIndex = 11;
             // 
             // arquivosPictureBox
@@ -357,15 +391,16 @@
             // documentosGeraisIdTextBox
             // 
             this.documentosGeraisIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "DocumentosGeraisId", true));
-            this.documentosGeraisIdTextBox.Location = new System.Drawing.Point(275, 64);
+            this.documentosGeraisIdTextBox.Enabled = false;
+            this.documentosGeraisIdTextBox.Location = new System.Drawing.Point(10, 24);
             this.documentosGeraisIdTextBox.Name = "documentosGeraisIdTextBox";
-            this.documentosGeraisIdTextBox.Size = new System.Drawing.Size(200, 26);
+            this.documentosGeraisIdTextBox.Size = new System.Drawing.Size(154, 26);
             this.documentosGeraisIdTextBox.TabIndex = 1;
             // 
             // nomeDocumentoTextBox
             // 
             this.nomeDocumentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "NomeDocumento", true));
-            this.nomeDocumentoTextBox.Location = new System.Drawing.Point(275, 96);
+            this.nomeDocumentoTextBox.Location = new System.Drawing.Point(170, 24);
             this.nomeDocumentoTextBox.Name = "nomeDocumentoTextBox";
             this.nomeDocumentoTextBox.Size = new System.Drawing.Size(200, 26);
             this.nomeDocumentoTextBox.TabIndex = 3;
@@ -373,17 +408,20 @@
             // descricaoDocumentoTextBox
             // 
             this.descricaoDocumentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "DescricaoDocumento", true));
-            this.descricaoDocumentoTextBox.Location = new System.Drawing.Point(275, 128);
+            this.descricaoDocumentoTextBox.Location = new System.Drawing.Point(10, 75);
+            this.descricaoDocumentoTextBox.Multiline = true;
             this.descricaoDocumentoTextBox.Name = "descricaoDocumentoTextBox";
-            this.descricaoDocumentoTextBox.Size = new System.Drawing.Size(200, 26);
+            this.descricaoDocumentoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descricaoDocumentoTextBox.Size = new System.Drawing.Size(664, 158);
             this.descricaoDocumentoTextBox.TabIndex = 5;
             // 
             // dataInclusaoDateTimePicker
             // 
             this.dataInclusaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dOCUMENTOS_GERAISBindingSource, "DataInclusao", true));
-            this.dataInclusaoDateTimePicker.Location = new System.Drawing.Point(275, 160);
+            this.dataInclusaoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataInclusaoDateTimePicker.Location = new System.Drawing.Point(520, 24);
             this.dataInclusaoDateTimePicker.Name = "dataInclusaoDateTimePicker";
-            this.dataInclusaoDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.dataInclusaoDateTimePicker.Size = new System.Drawing.Size(154, 26);
             this.dataInclusaoDateTimePicker.TabIndex = 7;
             // 
             // tpDetalhes
@@ -418,37 +456,6 @@
             this.dOCUMENTOS_GERAISDataGridView.ReadOnly = true;
             this.dOCUMENTOS_GERAISDataGridView.Size = new System.Drawing.Size(853, 233);
             this.dOCUMENTOS_GERAISDataGridView.TabIndex = 0;
-            // 
-            // gbPesquisaDocumento
-            // 
-            this.gbPesquisaDocumento.Controls.Add(this.txtPesquisaDocumento);
-            this.gbPesquisaDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbPesquisaDocumento.Location = new System.Drawing.Point(4, 4);
-            this.gbPesquisaDocumento.Name = "gbPesquisaDocumento";
-            this.gbPesquisaDocumento.Size = new System.Drawing.Size(867, 86);
-            this.gbPesquisaDocumento.TabIndex = 2;
-            this.gbPesquisaDocumento.TabStop = false;
-            this.gbPesquisaDocumento.Text = "Digite o nome para realizar a pesquisa";
-            // 
-            // txtPesquisaDocumento
-            // 
-            this.txtPesquisaDocumento.Location = new System.Drawing.Point(230, 34);
-            this.txtPesquisaDocumento.Name = "txtPesquisaDocumento";
-            this.txtPesquisaDocumento.Size = new System.Drawing.Size(390, 26);
-            this.txtPesquisaDocumento.TabIndex = 0;
-            // 
-            // dOCUMENTOS_GERAISTableAdapter
-            // 
-            this.dOCUMENTOS_GERAISTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = this.dOCUMENTOS_GERAISTableAdapter;
-            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
-            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -496,6 +503,82 @@
             this.dataGridViewImageColumn1.HeaderText = "Arquivos";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // gbPesquisaDocumento
+            // 
+            this.gbPesquisaDocumento.Controls.Add(this.txtPesquisaDocumento);
+            this.gbPesquisaDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbPesquisaDocumento.Location = new System.Drawing.Point(4, 4);
+            this.gbPesquisaDocumento.Name = "gbPesquisaDocumento";
+            this.gbPesquisaDocumento.Size = new System.Drawing.Size(867, 86);
+            this.gbPesquisaDocumento.TabIndex = 2;
+            this.gbPesquisaDocumento.TabStop = false;
+            this.gbPesquisaDocumento.Text = "Digite o nome para realizar a pesquisa";
+            // 
+            // txtPesquisaDocumento
+            // 
+            this.txtPesquisaDocumento.Location = new System.Drawing.Point(230, 34);
+            this.txtPesquisaDocumento.Name = "txtPesquisaDocumento";
+            this.txtPesquisaDocumento.Size = new System.Drawing.Size(390, 26);
+            this.txtPesquisaDocumento.TabIndex = 0;
+            // 
+            // dOCUMENTOS_GERAISTableAdapter
+            // 
+            this.dOCUMENTOS_GERAISTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = this.dOCUMENTOS_GERAISTableAdapter;
+            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
+            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEditar.Text = "Editar";
+            // 
+            // tsbBloquear
+            // 
+            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
+            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBloquear.Name = "tsbBloquear";
+            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
+            this.tsbBloquear.Text = "Bloquear";
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
+            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEnviar.Text = "Enviar";
+            // 
+            // tsbBaixar
+            // 
+            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
+            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaixar.Name = "tsbBaixar";
+            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
+            this.tsbBaixar.Text = "Baixar";
             // 
             // frmDocumentosGerais
             // 
@@ -567,5 +650,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbBloquear;
+        private System.Windows.Forms.ToolStripButton tsbEnviar;
+        private System.Windows.Forms.ToolStripButton tsbBaixar;
     }
 }
