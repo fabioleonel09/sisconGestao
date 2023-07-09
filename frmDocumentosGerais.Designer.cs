@@ -52,6 +52,11 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             this.tbDocumentosGerais = new System.Windows.Forms.TabControl();
             this.tpCapa = new System.Windows.Forms.TabPage();
             this.tipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
@@ -72,11 +77,6 @@
             this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
             this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
-            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             documentosGeraisIdLabel = new System.Windows.Forms.Label();
             nomeDocumentoLabel = new System.Windows.Forms.Label();
             descricaoDocumentoLabel = new System.Windows.Forms.Label();
@@ -325,6 +325,51 @@
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.dOCUMENTOS_GERAISBindingNavigatorSaveItem.Click += new System.EventHandler(this.dOCUMENTOS_GERAISBindingNavigatorSaveItem_Click);
             // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEditar.Text = "Editar";
+            // 
+            // tsbBloquear
+            // 
+            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
+            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBloquear.Name = "tsbBloquear";
+            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
+            this.tsbBloquear.Text = "Bloquear";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
+            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEnviar.Text = "Enviar";
+            // 
+            // tsbBaixar
+            // 
+            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
+            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaixar.Name = "tsbBaixar";
+            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
+            this.tsbBaixar.Text = "Baixar";
+            // 
             // tbDocumentosGerais
             // 
             this.tbDocumentosGerais.Controls.Add(this.tpCapa);
@@ -513,7 +558,7 @@
             this.gbPesquisaDocumento.Size = new System.Drawing.Size(867, 86);
             this.gbPesquisaDocumento.TabIndex = 2;
             this.gbPesquisaDocumento.TabStop = false;
-            this.gbPesquisaDocumento.Text = "Digite o nome para realizar a pesquisa";
+            this.gbPesquisaDocumento.Text = "Para realizar a pesquisa";
             // 
             // txtPesquisaDocumento
             // 
@@ -534,51 +579,6 @@
             this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
-            this.tsbEditar.Text = "Editar";
-            // 
-            // tsbBloquear
-            // 
-            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
-            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBloquear.Name = "tsbBloquear";
-            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
-            this.tsbBloquear.Text = "Bloquear";
-            // 
-            // tsbEnviar
-            // 
-            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
-            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEnviar.Name = "tsbEnviar";
-            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
-            this.tsbEnviar.Text = "Enviar";
-            // 
-            // tsbBaixar
-            // 
-            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
-            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaixar.Name = "tsbBaixar";
-            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
-            this.tsbBaixar.Text = "Baixar";
             // 
             // frmDocumentosGerais
             // 
