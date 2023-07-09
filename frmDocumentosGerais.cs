@@ -34,7 +34,11 @@ namespace sisconGestão
 
         private void btnPesquisarDocsGerais_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
+            if (rbPesquisaNome.Checked || rbPesquisaTipo.Checked || rbPesquisaData.Checked == false)
+            {
+                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
             {
                 MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -48,16 +52,10 @@ namespace sisconGestão
             }
             else if (rbPesquisaData.Checked == true)
             {
-                
+
             }
         }
-
-        private void HabilitaPesquisa()
-        {
-            //inicia a txt como habilitada
-            txtPesquisaDocumento.Enabled = true;
-        }
-
+ 
         private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
         {
             HabilitaPesquisa();
@@ -136,5 +134,12 @@ namespace sisconGestão
                 MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void HabilitaPesquisa()
+        {
+            //inicia a txt como habilitada
+            txtPesquisaDocumento.Enabled = true;
+        }
+
     }
 }
