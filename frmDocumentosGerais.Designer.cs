@@ -77,6 +77,11 @@
             this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
             this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaData = new System.Windows.Forms.RadioButton();
+            this.btnPesquisarDocsGerais = new System.Windows.Forms.Button();
+            this.dtpPesquisaData = new System.Windows.Forms.DateTimePicker();
             documentosGeraisIdLabel = new System.Windows.Forms.Label();
             nomeDocumentoLabel = new System.Windows.Forms.Label();
             descricaoDocumentoLabel = new System.Windows.Forms.Label();
@@ -221,6 +226,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // dOCUMENTOS_GERAISBindingSource
             // 
@@ -249,6 +255,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -334,6 +341,7 @@
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(52, 90);
             this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbBloquear
             // 
@@ -344,6 +352,7 @@
             this.tsbBloquear.Name = "tsbBloquear";
             this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
             this.tsbBloquear.Text = "Bloquear";
+            this.tsbBloquear.Click += new System.EventHandler(this.tsbBloquear_Click);
             // 
             // toolStripSeparator1
             // 
@@ -359,6 +368,7 @@
             this.tsbEnviar.Name = "tsbEnviar";
             this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
             this.tsbEnviar.Text = "Enviar";
+            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
             // 
             // tsbBaixar
             // 
@@ -369,6 +379,7 @@
             this.tsbBaixar.Name = "tsbBaixar";
             this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
             this.tsbBaixar.Text = "Baixar";
+            this.tsbBaixar.Click += new System.EventHandler(this.tsbBaixar_Click);
             // 
             // tbDocumentosGerais
             // 
@@ -551,6 +562,11 @@
             // 
             // gbPesquisaDocumento
             // 
+            this.gbPesquisaDocumento.Controls.Add(this.dtpPesquisaData);
+            this.gbPesquisaDocumento.Controls.Add(this.btnPesquisarDocsGerais);
+            this.gbPesquisaDocumento.Controls.Add(this.rbPesquisaData);
+            this.gbPesquisaDocumento.Controls.Add(this.rbPesquisaTipo);
+            this.gbPesquisaDocumento.Controls.Add(this.rbPesquisaNome);
             this.gbPesquisaDocumento.Controls.Add(this.txtPesquisaDocumento);
             this.gbPesquisaDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbPesquisaDocumento.Location = new System.Drawing.Point(4, 4);
@@ -562,9 +578,9 @@
             // 
             // txtPesquisaDocumento
             // 
-            this.txtPesquisaDocumento.Location = new System.Drawing.Point(230, 34);
+            this.txtPesquisaDocumento.Location = new System.Drawing.Point(474, 34);
             this.txtPesquisaDocumento.Name = "txtPesquisaDocumento";
-            this.txtPesquisaDocumento.Size = new System.Drawing.Size(390, 26);
+            this.txtPesquisaDocumento.Size = new System.Drawing.Size(267, 26);
             this.txtPesquisaDocumento.TabIndex = 0;
             // 
             // dOCUMENTOS_GERAISTableAdapter
@@ -579,6 +595,64 @@
             this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
+            // 
+            // rbPesquisaNome
+            // 
+            this.rbPesquisaNome.AutoSize = true;
+            this.rbPesquisaNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaNome.Location = new System.Drawing.Point(6, 35);
+            this.rbPesquisaNome.Name = "rbPesquisaNome";
+            this.rbPesquisaNome.Size = new System.Drawing.Size(92, 22);
+            this.rbPesquisaNome.TabIndex = 1;
+            this.rbPesquisaNome.TabStop = true;
+            this.rbPesquisaNome.Text = "por nome";
+            this.rbPesquisaNome.UseVisualStyleBackColor = true;
+            this.rbPesquisaNome.CheckedChanged += new System.EventHandler(this.rbPesquisaNome_CheckedChanged);
+            // 
+            // rbPesquisaTipo
+            // 
+            this.rbPesquisaTipo.AutoSize = true;
+            this.rbPesquisaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaTipo.Location = new System.Drawing.Point(127, 35);
+            this.rbPesquisaTipo.Name = "rbPesquisaTipo";
+            this.rbPesquisaTipo.Size = new System.Drawing.Size(79, 22);
+            this.rbPesquisaTipo.TabIndex = 2;
+            this.rbPesquisaTipo.TabStop = true;
+            this.rbPesquisaTipo.Text = "por tipo";
+            this.rbPesquisaTipo.UseVisualStyleBackColor = true;
+            this.rbPesquisaTipo.CheckedChanged += new System.EventHandler(this.rbPesquisaTipo_CheckedChanged);
+            // 
+            // rbPesquisaData
+            // 
+            this.rbPesquisaData.AutoSize = true;
+            this.rbPesquisaData.Location = new System.Drawing.Point(230, 35);
+            this.rbPesquisaData.Name = "rbPesquisaData";
+            this.rbPesquisaData.Size = new System.Drawing.Size(84, 22);
+            this.rbPesquisaData.TabIndex = 3;
+            this.rbPesquisaData.TabStop = true;
+            this.rbPesquisaData.Text = "por data";
+            this.rbPesquisaData.UseVisualStyleBackColor = true;
+            this.rbPesquisaData.CheckedChanged += new System.EventHandler(this.rbPesquisaData_CheckedChanged);
+            // 
+            // btnPesquisarDocsGerais
+            // 
+            this.btnPesquisarDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarDocsGerais.Location = new System.Drawing.Point(747, 19);
+            this.btnPesquisarDocsGerais.Name = "btnPesquisarDocsGerais";
+            this.btnPesquisarDocsGerais.Size = new System.Drawing.Size(114, 55);
+            this.btnPesquisarDocsGerais.TabIndex = 4;
+            this.btnPesquisarDocsGerais.Text = "Pesquisar";
+            this.btnPesquisarDocsGerais.UseVisualStyleBackColor = true;
+            this.btnPesquisarDocsGerais.Click += new System.EventHandler(this.btnPesquisarDocsGerais_Click);
+            // 
+            // dtpPesquisaData
+            // 
+            this.dtpPesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPesquisaData.Location = new System.Drawing.Point(338, 34);
+            this.dtpPesquisaData.Name = "dtpPesquisaData";
+            this.dtpPesquisaData.Size = new System.Drawing.Size(130, 26);
+            this.dtpPesquisaData.TabIndex = 5;
             // 
             // frmDocumentosGerais
             // 
@@ -655,5 +729,10 @@
         private System.Windows.Forms.ToolStripButton tsbBloquear;
         private System.Windows.Forms.ToolStripButton tsbEnviar;
         private System.Windows.Forms.ToolStripButton tsbBaixar;
+        private System.Windows.Forms.Button btnPesquisarDocsGerais;
+        private System.Windows.Forms.RadioButton rbPesquisaData;
+        private System.Windows.Forms.RadioButton rbPesquisaTipo;
+        private System.Windows.Forms.RadioButton rbPesquisaNome;
+        private System.Windows.Forms.DateTimePicker dtpPesquisaData;
     }
 }

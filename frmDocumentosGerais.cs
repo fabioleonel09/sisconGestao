@@ -15,21 +15,126 @@ namespace sisconGestão
         public frmDocumentosGerais()
         {
             InitializeComponent();
+
+            HabilitaPesquisa();
+
+            InabilitaComponetesTela();
         }
 
         private void dOCUMENTOS_GERAISBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.dOCUMENTOS_GERAISBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
-
-        }
+            SalvaAcao();
+        }      
 
         private void frmDocumentosGerais_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.DOCUMENTOS_GERAIS'. Você pode movê-la ou removê-la conforme necessário.
             this.dOCUMENTOS_GERAISTableAdapter.Fill(this.sISCONPROJECTSDataSet.DOCUMENTOS_GERAIS);
+        }
 
+        private void btnPesquisarDocsGerais_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
+            {
+                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (rbPesquisaNome.Checked == true)
+            {
+
+            }
+            else if (rbPesquisaTipo.Checked == true)
+            {
+
+            }
+            else if (rbPesquisaData.Checked == true)
+            {
+                
+            }
+        }
+
+        private void HabilitaPesquisa()
+        {
+            //inicia a txt como habilitada
+            txtPesquisaDocumento.Enabled = true;
+        }
+
+        private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaPesquisa();
+            txtPesquisaDocumento.Clear();
+        }
+
+        private void rbPesquisaTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaPesquisa();
+            txtPesquisaDocumento.Clear();
+        }
+
+        private void rbPesquisaData_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisaDocumento.Clear();
+            txtPesquisaDocumento.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            tbDocumentosGerais.Enabled = true;
+            tsbEnviar.Enabled = true;
+            tsbBaixar.Enabled = true;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcao();
+            InabilitaComponetesTela();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            tbDocumentosGerais.Enabled = true;
+            tsbEnviar.Enabled = true;
+            tsbBaixar.Enabled = true;
+        }
+
+        private void tsbBloquear_Click(object sender, EventArgs e)
+        {
+            SalvaAcao();
+            InabilitaComponetesTela();
+        }
+
+        private void tsbEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbBaixar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InabilitaComponetesTela()
+        {
+            tbDocumentosGerais.Enabled = false;
+            tsbEnviar.Enabled = false;
+            tsbBaixar.Enabled = false;
+        }
+
+        private void SalvaAcao()
+        {
+            try
+            {
+                this.Validate();
+                this.dOCUMENTOS_GERAISBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+                MessageBox.Show("Ação realizada com sucesso!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem informando que foi realizada a ação
+
+                InabilitaComponetesTela();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
