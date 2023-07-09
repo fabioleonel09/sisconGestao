@@ -39,6 +39,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvidencias));
             this.tlpEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbPesquisaEvidencia = new System.Windows.Forms.GroupBox();
+            this.dtpPesquisaData = new System.Windows.Forms.DateTimePicker();
+            this.btnPesquisarEvidencias = new System.Windows.Forms.Button();
+            this.rbPesquisaData = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
+            this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
             this.txtPesquisaEvidencia = new System.Windows.Forms.TextBox();
             this.eVIDENCIASBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -55,6 +60,11 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.eVIDENCIASBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             this.tbEvidencias = new System.Windows.Forms.TabControl();
             this.tpCapaEvidencia = new System.Windows.Forms.TabPage();
             this.tipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
@@ -75,16 +85,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.eVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.EVIDENCIASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.dtpPesquisaData = new System.Windows.Forms.DateTimePicker();
-            this.btnPesquisarEvidencias = new System.Windows.Forms.Button();
-            this.rbPesquisaData = new System.Windows.Forms.RadioButton();
-            this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
-            this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBloquear = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             evidenciasIdLabel = new System.Windows.Forms.Label();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             descricaoEvidenciaLabel = new System.Windows.Forms.Label();
@@ -207,7 +207,65 @@
             this.gbPesquisaEvidencia.Size = new System.Drawing.Size(867, 86);
             this.gbPesquisaEvidencia.TabIndex = 3;
             this.gbPesquisaEvidencia.TabStop = false;
-            this.gbPesquisaEvidencia.Text = "Digite o nome para realizar a pesquisa";
+            this.gbPesquisaEvidencia.Text = "Para realizar a pesquisa";
+            // 
+            // dtpPesquisaData
+            // 
+            this.dtpPesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPesquisaData.Location = new System.Drawing.Point(338, 37);
+            this.dtpPesquisaData.Name = "dtpPesquisaData";
+            this.dtpPesquisaData.Size = new System.Drawing.Size(130, 26);
+            this.dtpPesquisaData.TabIndex = 10;
+            // 
+            // btnPesquisarEvidencias
+            // 
+            this.btnPesquisarEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarEvidencias.Location = new System.Drawing.Point(747, 22);
+            this.btnPesquisarEvidencias.Name = "btnPesquisarEvidencias";
+            this.btnPesquisarEvidencias.Size = new System.Drawing.Size(114, 55);
+            this.btnPesquisarEvidencias.TabIndex = 9;
+            this.btnPesquisarEvidencias.Text = "Pesquisar";
+            this.btnPesquisarEvidencias.UseVisualStyleBackColor = true;
+            this.btnPesquisarEvidencias.Click += new System.EventHandler(this.btnPesquisarEvidencias_Click);
+            // 
+            // rbPesquisaData
+            // 
+            this.rbPesquisaData.AutoSize = true;
+            this.rbPesquisaData.Location = new System.Drawing.Point(230, 38);
+            this.rbPesquisaData.Name = "rbPesquisaData";
+            this.rbPesquisaData.Size = new System.Drawing.Size(84, 22);
+            this.rbPesquisaData.TabIndex = 8;
+            this.rbPesquisaData.TabStop = true;
+            this.rbPesquisaData.Text = "por data";
+            this.rbPesquisaData.UseVisualStyleBackColor = true;
+            this.rbPesquisaData.CheckedChanged += new System.EventHandler(this.rbPesquisaData_CheckedChanged);
+            // 
+            // rbPesquisaTipo
+            // 
+            this.rbPesquisaTipo.AutoSize = true;
+            this.rbPesquisaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaTipo.Location = new System.Drawing.Point(127, 38);
+            this.rbPesquisaTipo.Name = "rbPesquisaTipo";
+            this.rbPesquisaTipo.Size = new System.Drawing.Size(79, 22);
+            this.rbPesquisaTipo.TabIndex = 7;
+            this.rbPesquisaTipo.TabStop = true;
+            this.rbPesquisaTipo.Text = "por tipo";
+            this.rbPesquisaTipo.UseVisualStyleBackColor = true;
+            this.rbPesquisaTipo.CheckedChanged += new System.EventHandler(this.rbPesquisaTipo_CheckedChanged);
+            // 
+            // rbPesquisaNome
+            // 
+            this.rbPesquisaNome.AutoSize = true;
+            this.rbPesquisaNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbPesquisaNome.Location = new System.Drawing.Point(6, 38);
+            this.rbPesquisaNome.Name = "rbPesquisaNome";
+            this.rbPesquisaNome.Size = new System.Drawing.Size(92, 22);
+            this.rbPesquisaNome.TabIndex = 6;
+            this.rbPesquisaNome.TabStop = true;
+            this.rbPesquisaNome.Text = "por nome";
+            this.rbPesquisaNome.UseVisualStyleBackColor = true;
+            this.rbPesquisaNome.CheckedChanged += new System.EventHandler(this.rbPesquisaNome_CheckedChanged);
             // 
             // txtPesquisaEvidencia
             // 
@@ -368,6 +426,55 @@
             this.eVIDENCIASBindingNavigatorSaveItem.Size = new System.Drawing.Size(52, 90);
             this.eVIDENCIASBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.eVIDENCIASBindingNavigatorSaveItem.Click += new System.EventHandler(this.eVIDENCIASBindingNavigatorSaveItem_Click);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            // 
+            // tsbBloquear
+            // 
+            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
+            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBloquear.Name = "tsbBloquear";
+            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
+            this.tsbBloquear.Text = "Bloquear";
+            this.tsbBloquear.Click += new System.EventHandler(this.tsbBloquear_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
+            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
+            this.tsbEnviar.Text = "Enviar";
+            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
+            // 
+            // tsbBaixar
+            // 
+            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
+            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaixar.Name = "tsbBaixar";
+            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
+            this.tsbBaixar.Text = "Baixar";
+            this.tsbBaixar.Click += new System.EventHandler(this.tsbBaixar_Click);
             // 
             // tbEvidencias
             // 
@@ -579,113 +686,6 @@
             this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
-            // 
-            // dtpPesquisaData
-            // 
-            this.dtpPesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPesquisaData.Location = new System.Drawing.Point(338, 37);
-            this.dtpPesquisaData.Name = "dtpPesquisaData";
-            this.dtpPesquisaData.Size = new System.Drawing.Size(130, 26);
-            this.dtpPesquisaData.TabIndex = 10;
-            // 
-            // btnPesquisarEvidencias
-            // 
-            this.btnPesquisarEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarEvidencias.Location = new System.Drawing.Point(747, 22);
-            this.btnPesquisarEvidencias.Name = "btnPesquisarEvidencias";
-            this.btnPesquisarEvidencias.Size = new System.Drawing.Size(114, 55);
-            this.btnPesquisarEvidencias.TabIndex = 9;
-            this.btnPesquisarEvidencias.Text = "Pesquisar";
-            this.btnPesquisarEvidencias.UseVisualStyleBackColor = true;
-            this.btnPesquisarEvidencias.Click += new System.EventHandler(this.btnPesquisarEvidencias_Click);
-            // 
-            // rbPesquisaData
-            // 
-            this.rbPesquisaData.AutoSize = true;
-            this.rbPesquisaData.Location = new System.Drawing.Point(230, 38);
-            this.rbPesquisaData.Name = "rbPesquisaData";
-            this.rbPesquisaData.Size = new System.Drawing.Size(84, 22);
-            this.rbPesquisaData.TabIndex = 8;
-            this.rbPesquisaData.TabStop = true;
-            this.rbPesquisaData.Text = "por data";
-            this.rbPesquisaData.UseVisualStyleBackColor = true;
-            this.rbPesquisaData.CheckedChanged += new System.EventHandler(this.rbPesquisaData_CheckedChanged);
-            // 
-            // rbPesquisaTipo
-            // 
-            this.rbPesquisaTipo.AutoSize = true;
-            this.rbPesquisaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbPesquisaTipo.Location = new System.Drawing.Point(127, 38);
-            this.rbPesquisaTipo.Name = "rbPesquisaTipo";
-            this.rbPesquisaTipo.Size = new System.Drawing.Size(79, 22);
-            this.rbPesquisaTipo.TabIndex = 7;
-            this.rbPesquisaTipo.TabStop = true;
-            this.rbPesquisaTipo.Text = "por tipo";
-            this.rbPesquisaTipo.UseVisualStyleBackColor = true;
-            this.rbPesquisaTipo.CheckedChanged += new System.EventHandler(this.rbPesquisaTipo_CheckedChanged);
-            // 
-            // rbPesquisaNome
-            // 
-            this.rbPesquisaNome.AutoSize = true;
-            this.rbPesquisaNome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbPesquisaNome.Location = new System.Drawing.Point(6, 38);
-            this.rbPesquisaNome.Name = "rbPesquisaNome";
-            this.rbPesquisaNome.Size = new System.Drawing.Size(92, 22);
-            this.rbPesquisaNome.TabIndex = 6;
-            this.rbPesquisaNome.TabStop = true;
-            this.rbPesquisaNome.Text = "por nome";
-            this.rbPesquisaNome.UseVisualStyleBackColor = true;
-            this.rbPesquisaNome.CheckedChanged += new System.EventHandler(this.rbPesquisaNome_CheckedChanged);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(52, 90);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
-            // tsbBloquear
-            // 
-            this.tsbBloquear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbBloquear.Image = ((System.Drawing.Image)(resources.GetObject("tsbBloquear.Image")));
-            this.tsbBloquear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbBloquear.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBloquear.Name = "tsbBloquear";
-            this.tsbBloquear.Size = new System.Drawing.Size(52, 90);
-            this.tsbBloquear.Text = "Bloquear";
-            this.tsbBloquear.Click += new System.EventHandler(this.tsbBloquear_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 93);
-            // 
-            // tsbEnviar
-            // 
-            this.tsbEnviar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEnviar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEnviar.Image")));
-            this.tsbEnviar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEnviar.Name = "tsbEnviar";
-            this.tsbEnviar.Size = new System.Drawing.Size(52, 90);
-            this.tsbEnviar.Text = "Enviar";
-            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
-            // 
-            // tsbBaixar
-            // 
-            this.tsbBaixar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbBaixar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaixar.Image")));
-            this.tsbBaixar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbBaixar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaixar.Name = "tsbBaixar";
-            this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
-            this.tsbBaixar.Text = "Baixar";
-            this.tsbBaixar.Click += new System.EventHandler(this.tsbBaixar_Click);
             // 
             // frmEvidencias
             // 

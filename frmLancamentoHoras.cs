@@ -15,14 +15,17 @@ namespace sisconGestão
         public frmLancamentoHoras()
         {
             InitializeComponent();
-        }
 
+            InabilitaBotoesBarraFerramentas();
+
+            HabilitaPesquisa();
+
+            tbLancamentoHoras.Enabled = false;
+        }
+        
         private void lANCAMENTO_HORARIOSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.lANCAMENTO_HORARIOSBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
-
+            SalvaAcao();          
         }
 
         private void frmLancamentoHoras_Load(object sender, EventArgs e)
@@ -31,5 +34,101 @@ namespace sisconGestão
             this.lANCAMENTO_HORARIOSTableAdapter.Fill(this.sISCONPROJECTSDataSet.LANCAMENTO_HORARIOS);
 
         }
+
+        private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaPesquisa();
+            txtPesquisaHorarios.Clear();
+        }
+
+        private void rbPesquisaTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitaPesquisa();
+            txtPesquisaHorarios.Clear();
+        }
+
+        private void rbPesquisaData_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisaHorarios.Clear();
+            txtPesquisaHorarios.Enabled = false;
+        }
+
+        private void btnPesquisarLancamentos_Click(object sender, EventArgs e)
+        {
+            if (rbPesquisaNome.Checked || rbPesquisaTipo.Checked || rbPesquisaData.Checked == false)
+            {
+                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (string.IsNullOrEmpty(txtPesquisaHorarios.Text))
+            {
+                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (rbPesquisaNome.Checked == true)
+            {
+
+            }
+            else if (rbPesquisaTipo.Checked == true)
+            {
+
+            }
+            else if (rbPesquisaData.Checked == true)
+            {
+
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            tbLancamentoHoras.Enabled = true;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcao();
+            tbLancamentoHoras.Enabled = false;
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            tbLancamentoHoras.Enabled = true;
+        }
+
+        private void tsbBloquear_Click(object sender, EventArgs e)
+        {
+            SalvaAcao();
+            tbLancamentoHoras.Enabled = false;
+        }
+
+        private void InabilitaBotoesBarraFerramentas()
+        {
+            //deixa dos botões de enviar arquivo e baixar arquivo inabilitados na janela de lançamentos de horas
+            tsbEnviar.Enabled = false;
+            tsbBaixar.Enabled = false;
+        }
+
+        private void SalvaAcao()
+        {
+            try
+            {
+                this.Validate();
+                this.lANCAMENTO_HORARIOSBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+                MessageBox.Show("Ação realizada com sucesso!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem informando que foi realizada a ação
+
+                tbLancamentoHoras.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void HabilitaPesquisa()
+        {
+            //inicia a txt como habilitada
+            txtPesquisaHorarios.Enabled = true;
+        }
+
     }
 }

@@ -24,11 +24,9 @@ namespace sisconGestão
         {
             InitializeComponent();
 
-            gbCadastroUsuario.Visible = false; //inicia o gb do cadastro de usuários com visibilidade falsa
+            InabilitaBotoesBarraFerramentas();
 
-            //deixa dos botões de enviar arquivo e baixar arquivo inabilitados na janela de login
-            tsbEnviarArquivo.Enabled = false;
-            tsbBaixarArquivo.Enabled = false;
+            gbCadastroUsuario.Visible = false; //inicia o gb do cadastro de usuários com visibilidade falsa
 
             //deixa a grid de cadastro inabilitada
             uSUARIOS_SENHASDataGridView.Enabled = false;
@@ -182,6 +180,13 @@ namespace sisconGestão
             uSUARIOS_SENHASDataGridView.Enabled = false;
 
             txtSenhaAdm.Clear(); //limpa a txt da senha do adm
+        }
+
+        private void InabilitaBotoesBarraFerramentas()
+        {
+            //deixa dos botões de enviar arquivo e baixar arquivo inabilitados na janela de login
+            tsbEnviarArquivo.Enabled = false;
+            tsbBaixarArquivo.Enabled = false;
         }
     }
 }

@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:DOCUMENTOS_GERAIS" ZOrder="4" X="70" Y="70" Height="191" Width="279" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:EVIDENCIAS" ZOrder="3" X="419" Y="70" Height="210" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:LANCAMENTO_HORARIOS" ZOrder="2" X="705" Y="70" Height="210" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:LANCAMENTO_HORARIOS" ZOrder="2" X="705" Y="70" Height="229" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:USUARIOS_SENHAS" ZOrder="1" X="1074" Y="70" Height="153" Width="260" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors />

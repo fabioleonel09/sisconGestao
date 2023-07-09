@@ -1083,6 +1083,8 @@ namespace sisconGestão {
             
             private global::System.Data.DataColumn columnHorasLancamento;
             
+            private global::System.Data.DataColumn columnnomeDesenvolvedor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public LANCAMENTO_HORARIOSDataTable() {
@@ -1174,6 +1176,14 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nomeDesenvolvedorColumn {
+                get {
+                    return this.columnnomeDesenvolvedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1209,7 +1219,7 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LANCAMENTO_HORARIOSRow AddLANCAMENTO_HORARIOSRow(System.DateTime DataLancamento, string TipoLancamento, int NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, System.DateTime HorasLancamento) {
+            public LANCAMENTO_HORARIOSRow AddLANCAMENTO_HORARIOSRow(System.DateTime DataLancamento, string TipoLancamento, int NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, System.DateTime HorasLancamento, string nomeDesenvolvedor) {
                 LANCAMENTO_HORARIOSRow rowLANCAMENTO_HORARIOSRow = ((LANCAMENTO_HORARIOSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1218,7 +1228,8 @@ namespace sisconGestão {
                         NumeroEvidencia,
                         ClienteLancamento,
                         ObservacaoLancamento,
-                        HorasLancamento};
+                        HorasLancamento,
+                        nomeDesenvolvedor};
                 rowLANCAMENTO_HORARIOSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLANCAMENTO_HORARIOSRow);
                 return rowLANCAMENTO_HORARIOSRow;
@@ -1255,6 +1266,7 @@ namespace sisconGestão {
                 this.columnClienteLancamento = base.Columns["ClienteLancamento"];
                 this.columnObservacaoLancamento = base.Columns["ObservacaoLancamento"];
                 this.columnHorasLancamento = base.Columns["HorasLancamento"];
+                this.columnnomeDesenvolvedor = base.Columns["nomeDesenvolvedor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1274,6 +1286,8 @@ namespace sisconGestão {
                 base.Columns.Add(this.columnObservacaoLancamento);
                 this.columnHorasLancamento = new global::System.Data.DataColumn("HorasLancamento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHorasLancamento);
+                this.columnnomeDesenvolvedor = new global::System.Data.DataColumn("nomeDesenvolvedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnomeDesenvolvedor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnLancamentoHorarioId}, true));
                 this.columnLancamentoHorarioId.AutoIncrement = true;
@@ -1285,6 +1299,7 @@ namespace sisconGestão {
                 this.columnTipoLancamento.MaxLength = 100;
                 this.columnClienteLancamento.MaxLength = 100;
                 this.columnObservacaoLancamento.MaxLength = 200;
+                this.columnnomeDesenvolvedor.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2202,6 +2217,22 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nomeDesenvolvedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableLANCAMENTO_HORARIOS.nomeDesenvolvedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'nomeDesenvolvedor\' na tabela \'LANCAMENTO_HORARIOS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLANCAMENTO_HORARIOS.nomeDesenvolvedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDataLancamentoNull() {
                 return this.IsNull(this.tableLANCAMENTO_HORARIOS.DataLancamentoColumn);
             }
@@ -2270,6 +2301,18 @@ namespace sisconGestão {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetHorasLancamentoNull() {
                 this[this.tableLANCAMENTO_HORARIOS.HorasLancamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnomeDesenvolvedorNull() {
+                return this.IsNull(this.tableLANCAMENTO_HORARIOS.nomeDesenvolvedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnomeDesenvolvedorNull() {
+                this[this.tableLANCAMENTO_HORARIOS.nomeDesenvolvedorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3572,10 +3615,11 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
             tableMapping.ColumnMappings.Add("ClienteLancamento", "ClienteLancamento");
             tableMapping.ColumnMappings.Add("ObservacaoLancamento", "ObservacaoLancamento");
             tableMapping.ColumnMappings.Add("HorasLancamento", "HorasLancamento");
+            tableMapping.ColumnMappings.Add("nomeDesenvolvedor", "nomeDesenvolvedor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[LANCAMENTO_HORARIOS] WHERE (([LancamentoHorarioId] = @Original_LancamentoHorarioId) AND ((@IsNull_DataLancamento = 1 AND [DataLancamento] IS NULL) OR ([DataLancamento] = @Original_DataLancamento)) AND ((@IsNull_TipoLancamento = 1 AND [TipoLancamento] IS NULL) OR ([TipoLancamento] = @Original_TipoLancamento)) AND ((@IsNull_NumeroEvidencia = 1 AND [NumeroEvidencia] IS NULL) OR ([NumeroEvidencia] = @Original_NumeroEvidencia)) AND ((@IsNull_ClienteLancamento = 1 AND [ClienteLancamento] IS NULL) OR ([ClienteLancamento] = @Original_ClienteLancamento)) AND ((@IsNull_ObservacaoLancamento = 1 AND [ObservacaoLancamento] IS NULL) OR ([ObservacaoLancamento] = @Original_ObservacaoLancamento)) AND ((@IsNull_HorasLancamento = 1 AND [HorasLancamento] IS NULL) OR ([HorasLancamento] = @Original_HorasLancamento)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [LANCAMENTO_HORARIOS] WHERE (([LancamentoHorarioId] = @Original_LancamentoHorarioId) AND ((@IsNull_DataLancamento = 1 AND [DataLancamento] IS NULL) OR ([DataLancamento] = @Original_DataLancamento)) AND ((@IsNull_TipoLancamento = 1 AND [TipoLancamento] IS NULL) OR ([TipoLancamento] = @Original_TipoLancamento)) AND ((@IsNull_NumeroEvidencia = 1 AND [NumeroEvidencia] IS NULL) OR ([NumeroEvidencia] = @Original_NumeroEvidencia)) AND ((@IsNull_ClienteLancamento = 1 AND [ClienteLancamento] IS NULL) OR ([ClienteLancamento] = @Original_ClienteLancamento)) AND ((@IsNull_ObservacaoLancamento = 1 AND [ObservacaoLancamento] IS NULL) OR ([ObservacaoLancamento] = @Original_ObservacaoLancamento)) AND ((@IsNull_HorasLancamento = 1 AND [HorasLancamento] IS NULL) OR ([HorasLancamento] = @Original_HorasLancamento)) AND ((@IsNull_nomeDesenvolvedor = 1 AND [nomeDesenvolvedor] IS NULL) OR ([nomeDesenvolvedor] = @Original_nomeDesenvolvedor)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LancamentoHorarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LancamentoHorarioId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataLancamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataLancamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3590,10 +3634,12 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ObservacaoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ObservacaoLancamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HorasLancamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HorasLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nomeDesenvolvedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nomeDesenvolvedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[LANCAMENTO_HORARIOS] ([DataLancamento], [TipoLancamento], [NumeroEvidencia], [ClienteLancamento], [ObservacaoLancamento], [HorasLancamento]) VALUES (@DataLancamento, @TipoLancamento, @NumeroEvidencia, @ClienteLancamento, @ObservacaoLancamento, @HorasLancamento);
-SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento FROM LANCAMENTO_HORARIOS WHERE (LancamentoHorarioId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [LANCAMENTO_HORARIOS] ([DataLancamento], [TipoLancamento], [NumeroEvidencia], [ClienteLancamento], [ObservacaoLancamento], [HorasLancamento], [nomeDesenvolvedor]) VALUES (@DataLancamento, @TipoLancamento, @NumeroEvidencia, @ClienteLancamento, @ObservacaoLancamento, @HorasLancamento, @nomeDesenvolvedor);
+SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento, nomeDesenvolvedor FROM LANCAMENTO_HORARIOS WHERE (LancamentoHorarioId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3601,10 +3647,11 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ObservacaoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ObservacaoLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HorasLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nomeDesenvolvedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[LANCAMENTO_HORARIOS] SET [DataLancamento] = @DataLancamento, [TipoLancamento] = @TipoLancamento, [NumeroEvidencia] = @NumeroEvidencia, [ClienteLancamento] = @ClienteLancamento, [ObservacaoLancamento] = @ObservacaoLancamento, [HorasLancamento] = @HorasLancamento WHERE (([LancamentoHorarioId] = @Original_LancamentoHorarioId) AND ((@IsNull_DataLancamento = 1 AND [DataLancamento] IS NULL) OR ([DataLancamento] = @Original_DataLancamento)) AND ((@IsNull_TipoLancamento = 1 AND [TipoLancamento] IS NULL) OR ([TipoLancamento] = @Original_TipoLancamento)) AND ((@IsNull_NumeroEvidencia = 1 AND [NumeroEvidencia] IS NULL) OR ([NumeroEvidencia] = @Original_NumeroEvidencia)) AND ((@IsNull_ClienteLancamento = 1 AND [ClienteLancamento] IS NULL) OR ([ClienteLancamento] = @Original_ClienteLancamento)) AND ((@IsNull_ObservacaoLancamento = 1 AND [ObservacaoLancamento] IS NULL) OR ([ObservacaoLancamento] = @Original_ObservacaoLancamento)) AND ((@IsNull_HorasLancamento = 1 AND [HorasLancamento] IS NULL) OR ([HorasLancamento] = @Original_HorasLancamento)));
-SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento FROM LANCAMENTO_HORARIOS WHERE (LancamentoHorarioId = @LancamentoHorarioId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [LANCAMENTO_HORARIOS] SET [DataLancamento] = @DataLancamento, [TipoLancamento] = @TipoLancamento, [NumeroEvidencia] = @NumeroEvidencia, [ClienteLancamento] = @ClienteLancamento, [ObservacaoLancamento] = @ObservacaoLancamento, [HorasLancamento] = @HorasLancamento, [nomeDesenvolvedor] = @nomeDesenvolvedor WHERE (([LancamentoHorarioId] = @Original_LancamentoHorarioId) AND ((@IsNull_DataLancamento = 1 AND [DataLancamento] IS NULL) OR ([DataLancamento] = @Original_DataLancamento)) AND ((@IsNull_TipoLancamento = 1 AND [TipoLancamento] IS NULL) OR ([TipoLancamento] = @Original_TipoLancamento)) AND ((@IsNull_NumeroEvidencia = 1 AND [NumeroEvidencia] IS NULL) OR ([NumeroEvidencia] = @Original_NumeroEvidencia)) AND ((@IsNull_ClienteLancamento = 1 AND [ClienteLancamento] IS NULL) OR ([ClienteLancamento] = @Original_ClienteLancamento)) AND ((@IsNull_ObservacaoLancamento = 1 AND [ObservacaoLancamento] IS NULL) OR ([ObservacaoLancamento] = @Original_ObservacaoLancamento)) AND ((@IsNull_HorasLancamento = 1 AND [HorasLancamento] IS NULL) OR ([HorasLancamento] = @Original_HorasLancamento)) AND ((@IsNull_nomeDesenvolvedor = 1 AND [nomeDesenvolvedor] IS NULL) OR ([nomeDesenvolvedor] = @Original_nomeDesenvolvedor)));
+SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento, nomeDesenvolvedor FROM LANCAMENTO_HORARIOS WHERE (LancamentoHorarioId = @LancamentoHorarioId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3612,6 +3659,7 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ObservacaoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ObservacaoLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HorasLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nomeDesenvolvedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LancamentoHorarioId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LancamentoHorarioId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataLancamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataLancamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataLancamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3625,6 +3673,8 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ObservacaoLancamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ObservacaoLancamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HorasLancamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HorasLancamento", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HorasLancamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nomeDesenvolvedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nomeDesenvolvedor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeDesenvolvedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LancamentoHorarioId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LancamentoHorarioId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3642,8 +3692,8 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Clie" +
-                "nteLancamento, ObservacaoLancamento, HorasLancamento FROM dbo.LANCAMENTO_HORARIO" +
-                "S";
+                "nteLancamento, ObservacaoLancamento, HorasLancamento, nomeDesenvolvedor FROM LAN" +
+                "CAMENTO_HORARIOS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3704,7 +3754,7 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_LancamentoHorarioId, global::System.Nullable<global::System.DateTime> Original_DataLancamento, string Original_TipoLancamento, global::System.Nullable<int> Original_NumeroEvidencia, string Original_ClienteLancamento, string Original_ObservacaoLancamento, global::System.Nullable<global::System.DateTime> Original_HorasLancamento) {
+        public virtual int Delete(int Original_LancamentoHorarioId, global::System.Nullable<global::System.DateTime> Original_DataLancamento, string Original_TipoLancamento, global::System.Nullable<int> Original_NumeroEvidencia, string Original_ClienteLancamento, string Original_ObservacaoLancamento, global::System.Nullable<global::System.DateTime> Original_HorasLancamento, string Original_nomeDesenvolvedor) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_LancamentoHorarioId));
             if ((Original_DataLancamento.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3754,6 +3804,14 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_nomeDesenvolvedor == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_nomeDesenvolvedor));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3774,7 +3832,7 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> DataLancamento, string TipoLancamento, global::System.Nullable<int> NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, global::System.Nullable<global::System.DateTime> HorasLancamento) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> DataLancamento, string TipoLancamento, global::System.Nullable<int> NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, global::System.Nullable<global::System.DateTime> HorasLancamento, string nomeDesenvolvedor) {
             if ((DataLancamento.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(DataLancamento.Value));
             }
@@ -3811,6 +3869,12 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            if ((nomeDesenvolvedor == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(nomeDesenvolvedor));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3831,7 +3895,23 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DataLancamento, string TipoLancamento, global::System.Nullable<int> NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, global::System.Nullable<global::System.DateTime> HorasLancamento, int Original_LancamentoHorarioId, global::System.Nullable<global::System.DateTime> Original_DataLancamento, string Original_TipoLancamento, global::System.Nullable<int> Original_NumeroEvidencia, string Original_ClienteLancamento, string Original_ObservacaoLancamento, global::System.Nullable<global::System.DateTime> Original_HorasLancamento, int LancamentoHorarioId) {
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> DataLancamento, 
+                    string TipoLancamento, 
+                    global::System.Nullable<int> NumeroEvidencia, 
+                    string ClienteLancamento, 
+                    string ObservacaoLancamento, 
+                    global::System.Nullable<global::System.DateTime> HorasLancamento, 
+                    string nomeDesenvolvedor, 
+                    int Original_LancamentoHorarioId, 
+                    global::System.Nullable<global::System.DateTime> Original_DataLancamento, 
+                    string Original_TipoLancamento, 
+                    global::System.Nullable<int> Original_NumeroEvidencia, 
+                    string Original_ClienteLancamento, 
+                    string Original_ObservacaoLancamento, 
+                    global::System.Nullable<global::System.DateTime> Original_HorasLancamento, 
+                    string Original_nomeDesenvolvedor, 
+                    int LancamentoHorarioId) {
             if ((DataLancamento.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DataLancamento.Value));
             }
@@ -3868,56 +3948,70 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_LancamentoHorarioId));
-            if ((Original_DataLancamento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DataLancamento.Value));
+            if ((nomeDesenvolvedor == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(nomeDesenvolvedor));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_LancamentoHorarioId));
+            if ((Original_DataLancamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DataLancamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoLancamento == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TipoLancamento));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_TipoLancamento));
             }
             if ((Original_NumeroEvidencia.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_NumeroEvidencia.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_NumeroEvidencia.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_ClienteLancamento == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ClienteLancamento));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ClienteLancamento));
             }
             if ((Original_ObservacaoLancamento == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ObservacaoLancamento));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_ObservacaoLancamento));
             }
             if ((Original_HorasLancamento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_HorasLancamento.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_HorasLancamento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(LancamentoHorarioId));
+            if ((Original_nomeDesenvolvedor == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_nomeDesenvolvedor));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(LancamentoHorarioId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3938,8 +4032,8 @@ SELECT LancamentoHorarioId, DataLancamento, TipoLancamento, NumeroEvidencia, Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DataLancamento, string TipoLancamento, global::System.Nullable<int> NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, global::System.Nullable<global::System.DateTime> HorasLancamento, int Original_LancamentoHorarioId, global::System.Nullable<global::System.DateTime> Original_DataLancamento, string Original_TipoLancamento, global::System.Nullable<int> Original_NumeroEvidencia, string Original_ClienteLancamento, string Original_ObservacaoLancamento, global::System.Nullable<global::System.DateTime> Original_HorasLancamento) {
-            return this.Update(DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento, Original_LancamentoHorarioId, Original_DataLancamento, Original_TipoLancamento, Original_NumeroEvidencia, Original_ClienteLancamento, Original_ObservacaoLancamento, Original_HorasLancamento, Original_LancamentoHorarioId);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> DataLancamento, string TipoLancamento, global::System.Nullable<int> NumeroEvidencia, string ClienteLancamento, string ObservacaoLancamento, global::System.Nullable<global::System.DateTime> HorasLancamento, string nomeDesenvolvedor, int Original_LancamentoHorarioId, global::System.Nullable<global::System.DateTime> Original_DataLancamento, string Original_TipoLancamento, global::System.Nullable<int> Original_NumeroEvidencia, string Original_ClienteLancamento, string Original_ObservacaoLancamento, global::System.Nullable<global::System.DateTime> Original_HorasLancamento, string Original_nomeDesenvolvedor) {
+            return this.Update(DataLancamento, TipoLancamento, NumeroEvidencia, ClienteLancamento, ObservacaoLancamento, HorasLancamento, nomeDesenvolvedor, Original_LancamentoHorarioId, Original_DataLancamento, Original_TipoLancamento, Original_NumeroEvidencia, Original_ClienteLancamento, Original_ObservacaoLancamento, Original_HorasLancamento, Original_nomeDesenvolvedor, Original_LancamentoHorarioId);
         }
     }
     
