@@ -396,6 +396,10 @@ namespace sisconGestão {
             
             private global::System.Data.DataColumn columnTipoDocumento;
             
+            private global::System.Data.DataColumn columnNomeArquivo;
+            
+            private global::System.Data.DataColumn columnArquivoSalvo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DOCUMENTOS_GERAISDataTable() {
@@ -479,6 +483,22 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NomeArquivoColumn {
+                get {
+                    return this.columnNomeArquivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArquivoSalvoColumn {
+                get {
+                    return this.columnArquivoSalvo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -514,7 +534,7 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DOCUMENTOS_GERAISRow AddDOCUMENTOS_GERAISRow(string NomeDocumento, string DescricaoDocumento, System.DateTime DataInclusao, byte[] Arquivos, string TipoDocumento) {
+            public DOCUMENTOS_GERAISRow AddDOCUMENTOS_GERAISRow(string NomeDocumento, string DescricaoDocumento, System.DateTime DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo) {
                 DOCUMENTOS_GERAISRow rowDOCUMENTOS_GERAISRow = ((DOCUMENTOS_GERAISRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -522,7 +542,9 @@ namespace sisconGestão {
                         DescricaoDocumento,
                         DataInclusao,
                         Arquivos,
-                        TipoDocumento};
+                        TipoDocumento,
+                        NomeArquivo,
+                        ArquivoSalvo};
                 rowDOCUMENTOS_GERAISRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDOCUMENTOS_GERAISRow);
                 return rowDOCUMENTOS_GERAISRow;
@@ -558,6 +580,8 @@ namespace sisconGestão {
                 this.columnDataInclusao = base.Columns["DataInclusao"];
                 this.columnArquivos = base.Columns["Arquivos"];
                 this.columnTipoDocumento = base.Columns["TipoDocumento"];
+                this.columnNomeArquivo = base.Columns["NomeArquivo"];
+                this.columnArquivoSalvo = base.Columns["ArquivoSalvo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +599,10 @@ namespace sisconGestão {
                 base.Columns.Add(this.columnArquivos);
                 this.columnTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoDocumento);
+                this.columnNomeArquivo = new global::System.Data.DataColumn("NomeArquivo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeArquivo);
+                this.columnArquivoSalvo = new global::System.Data.DataColumn("ArquivoSalvo", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArquivoSalvo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDocumentosGeraisId}, true));
                 this.columnDocumentosGeraisId.AutoIncrement = true;
@@ -586,6 +614,7 @@ namespace sisconGestão {
                 this.columnNomeDocumento.MaxLength = 200;
                 this.columnDescricaoDocumento.MaxLength = 1000;
                 this.columnTipoDocumento.MaxLength = 100;
+                this.columnNomeArquivo.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1840,6 +1869,38 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NomeArquivo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeArquivo\' na tabela \'DOCUMENTOS_GERAIS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] ArquivoSalvo {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ArquivoSalvo\' na tabela \'DOCUMENTOS_GERAIS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNomeDocumentoNull() {
                 return this.IsNull(this.tableDOCUMENTOS_GERAIS.NomeDocumentoColumn);
             }
@@ -1896,6 +1957,30 @@ namespace sisconGestão {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTipoDocumentoNull() {
                 this[this.tableDOCUMENTOS_GERAIS.TipoDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNomeArquivoNull() {
+                return this.IsNull(this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNomeArquivoNull() {
+                this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsArquivoSalvoNull() {
+                return this.IsNull(this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetArquivoSalvoNull() {
+                this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2693,10 +2778,12 @@ namespace sisconGestão.SISCONPROJECTSDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("DataInclusao", "DataInclusao");
             tableMapping.ColumnMappings.Add("Arquivos", "Arquivos");
             tableMapping.ColumnMappings.Add("TipoDocumento", "TipoDocumento");
+            tableMapping.ColumnMappings.Add("NomeArquivo", "NomeArquivo");
+            tableMapping.ColumnMappings.Add("ArquivoSalvo", "ArquivoSalvo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [DOCUMENTOS_GERAIS] WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [DOCUMENTOS_GERAIS] WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)) AND ((@IsNull_NomeArquivo = 1 AND [NomeArquivo] IS NULL) OR ([NomeArquivo] = @Original_NomeArquivo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentosGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2707,26 +2794,32 @@ namespace sisconGestão.SISCONPROJECTSDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeArquivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [DOCUMENTOS_GERAIS] ([NomeDocumento], [DescricaoDocumento], [DataInclusao], [Arquivos], [TipoDocumento]) VALUES (@NomeDocumento, @DescricaoDocumento, @DataInclusao, @Arquivos, @TipoDocumento);
-SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [DOCUMENTOS_GERAIS] ([NomeDocumento], [DescricaoDocumento], [DataInclusao], [Arquivos], [TipoDocumento], [NomeArquivo], [ArquivoSalvo]) VALUES (@NomeDocumento, @DescricaoDocumento, @DataInclusao, @Arquivos, @TipoDocumento, @NomeArquivo, @ArquivoSalvo);
+SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoSalvo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoSalvo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [DOCUMENTOS_GERAIS] SET [NomeDocumento] = @NomeDocumento, [DescricaoDocumento] = @DescricaoDocumento, [DataInclusao] = @DataInclusao, [Arquivos] = @Arquivos, [TipoDocumento] = @TipoDocumento WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)));
-SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = @DocumentosGeraisId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [DOCUMENTOS_GERAIS] SET [NomeDocumento] = @NomeDocumento, [DescricaoDocumento] = @DescricaoDocumento, [DataInclusao] = @DataInclusao, [Arquivos] = @Arquivos, [TipoDocumento] = @TipoDocumento, [NomeArquivo] = @NomeArquivo, [ArquivoSalvo] = @ArquivoSalvo WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)) AND ((@IsNull_NomeArquivo = 1 AND [NomeArquivo] IS NULL) OR ([NomeArquivo] = @Original_NomeArquivo)));
+SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = @DocumentosGeraisId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoSalvo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoSalvo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentosGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2736,6 +2829,8 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeArquivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentosGeraisId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2753,7 +2848,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqui" +
-                "vos, TipoDocumento FROM DOCUMENTOS_GERAIS";
+                "vos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2814,7 +2909,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
+        public virtual int Delete(int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_DocumentosGeraisId));
             if ((Original_NomeDocumento == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2848,6 +2943,14 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_TipoDocumento));
             }
+            if ((Original_NomeArquivo == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_NomeArquivo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2868,7 +2971,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento) {
+        public virtual int Insert(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo) {
             if ((NomeDocumento == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -2899,6 +3002,18 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(TipoDocumento));
             }
+            if ((NomeArquivo == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NomeArquivo));
+            }
+            if ((ArquivoSalvo == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(ArquivoSalvo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2919,7 +3034,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, int DocumentosGeraisId) {
+        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo, int DocumentosGeraisId) {
             if ((NomeDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -2950,40 +3065,60 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(TipoDocumento));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_DocumentosGeraisId));
-            if ((Original_NomeDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((NomeArquivo == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NomeDocumento));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NomeArquivo));
             }
-            if ((Original_DescricaoDocumento == null)) {
+            if ((ArquivoSalvo == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(ArquivoSalvo));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_DocumentosGeraisId));
+            if ((Original_NomeDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DescricaoDocumento));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_NomeDocumento));
             }
-            if ((Original_DataInclusao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DataInclusao.Value));
-            }
-            else {
+            if ((Original_DescricaoDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_TipoDocumento == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DescricaoDocumento));
+            }
+            if ((Original_DataInclusao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DataInclusao.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_TipoDocumento));
+            if ((Original_TipoDocumento == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(DocumentosGeraisId));
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_TipoDocumento));
+            }
+            if ((Original_NomeArquivo == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_NomeArquivo));
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(DocumentosGeraisId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3004,8 +3139,8 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
-            return this.Update(NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, Original_DocumentosGeraisId, Original_NomeDocumento, Original_DescricaoDocumento, Original_DataInclusao, Original_TipoDocumento, Original_DocumentosGeraisId);
+        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo) {
+            return this.Update(NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo, Original_DocumentosGeraisId, Original_NomeDocumento, Original_DescricaoDocumento, Original_DataInclusao, Original_TipoDocumento, Original_NomeArquivo, Original_DocumentosGeraisId);
         }
     }
     

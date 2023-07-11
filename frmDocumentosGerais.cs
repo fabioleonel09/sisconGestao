@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace sisconGestão
 {
     public partial class frmDocumentosGerais : Form
     {
+        #region VARIAVEL DE CONEXAO
+        private const string connectionString = "Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrated Security=True";
+        #endregion
+
         public frmDocumentosGerais()
         {
             InitializeComponent();
@@ -102,12 +110,83 @@ namespace sisconGestão
 
         private void tsbEnviar_Click(object sender, EventArgs e)
         {
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
 
+                if (filePath.EndsWith(".jpg") || filePath.EndsWith(".png") || filePath.EndsWith(".gif") || filePath.EndsWith(".bmp"))
+                {
+                    // Código para salvar o arquivo conforme especificado no primeiro "if"
+
+                    // Exemplo: Salvar o arquivo em uma coluna do tipo varbinary(max) no banco de dados
+                    byte[] fileBytes = File.ReadAllBytes(filePath);
+                    // Insira o "fileBytes" na coluna varbinary(max) do banco de dados
+
+                    this.arquivosPictureBox.Image = System.Drawing.Image.FromFile(filePath);
+                    arquivoSalvoTextBox.Text = filePath;
+                }
+                else
+                {
+                    // Código para salvar o arquivo de outro tipo na coluna do tipo varbinary(max)
+
+                    // Exemplo: Salvar o arquivo em uma coluna do tipo varbinary(max) no banco de dados
+                    byte[] fileBytes = File.ReadAllBytes(filePath);
+                    // Insira o "fileBytes" na coluna varbinary(max) do banco de dados
+
+                    arquivosPictureBox.Image = Icon.ExtractAssociatedIcon(filePath).ToBitmap();
+                    arquivoSalvoTextBox.Text = filePath;
+                }
+
+                MessageBox.Show("Arquivos enviados com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void tsbBaixar_Click(object sender, EventArgs e)
         {
+            if (dOCUMENTOS_GERAISDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dOCUMENTOS_GERAISDataGridView.SelectedRows[0];
+                string filePath = selectedRow.Cells["ArquivoSalvo"].Value.ToString(); // Supondo que a coluna que contém o caminho do arquivo se chama "CaminhoArquivo"
+                byte[] fileBytes = null;
 
+                // Obtenha o conteúdo do arquivo binário correspondente ao caminho do arquivo selecionado
+                // Exemplo: Use uma consulta SQL para recuperar os bytes do arquivo do banco de dados
+                // Armazene os bytes do arquivo na variável "fileBytes"
+
+                if (fileBytes != null)
+                {
+                    // Salve o arquivo temporariamente em algum local para permitir o download
+                    string tempFilePath = Path.GetTempFileName();
+                    File.WriteAllBytes(tempFilePath, fileBytes);
+
+                    // Abra o diálogo de salvar arquivo para permitir que o usuário escolha o local de download
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.FileName = Path.GetFileName(filePath); // Defina o nome de arquivo padrão como o nome original do arquivo
+                    saveFileDialog.Filter = "Todos os arquivos (*.*)|*.*";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string savePath = saveFileDialog.FileName;
+
+                        // Mova o arquivo temporário para o local selecionado pelo usuário
+                        File.Move(tempFilePath, savePath);
+
+                        MessageBox.Show("Arquivo baixado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Se o usuário cancelou a operação de salvar arquivo, exclua o arquivo temporário
+                        File.Delete(tempFilePath);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O arquivo selecionado não possui conteúdo para download.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum arquivo selecionado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void InabilitaComponetesTela()
