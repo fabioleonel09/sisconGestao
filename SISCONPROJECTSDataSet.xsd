@@ -88,7 +88,16 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
               <Mapping SourceColumn="NomeArquivo" DataSetColumn="NomeArquivo" />
               <Mapping SourceColumn="ArquivoSalvo" DataSetColumn="ArquivoSalvo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SISCONPROJECTSConnectionString (Settings)" DbObjectName="SISCONPROJECTS.dbo.DOCUMENTOS_GERAIS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="NomeDocsGeraisFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="NomeDocsGeraisGetDataBy" GeneratorSourceName="NomeDocsGeraisFillBy" GetMethodModifier="Public" GetMethodName="NomeDocsGeraisGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="NomeDocsGeraisGetDataBy" UserSourceName="NomeDocsGeraisFillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS order by NomeDocumento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EVIDENCIASTableAdapter" GeneratorDataComponentClassName="EVIDENCIASTableAdapter" Name="EVIDENCIAS" UserDataComponentName="EVIDENCIASTableAdapter">
             <MainSource>
@@ -359,14 +368,14 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NomeArquivo" msprop:Generator_UserColumnName="NomeArquivo" msprop:Generator_ColumnPropNameInTable="NomeArquivoColumn" msprop:Generator_ColumnPropNameInRow="NomeArquivo" msprop:Generator_ColumnVarNameInTable="columnNomeArquivo" minOccurs="0">
+              <xs:element name="NomeArquivo" msprop:Generator_ColumnPropNameInTable="NomeArquivoColumn" msprop:Generator_ColumnPropNameInRow="NomeArquivo" msprop:Generator_UserColumnName="NomeArquivo" msprop:Generator_ColumnVarNameInTable="columnNomeArquivo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ArquivoSalvo" msprop:Generator_ColumnPropNameInRow="ArquivoSalvo" msprop:Generator_ColumnPropNameInTable="ArquivoSalvoColumn" msprop:Generator_ColumnVarNameInTable="columnArquivoSalvo" msprop:Generator_UserColumnName="ArquivoSalvo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ArquivoSalvo" msprop:Generator_UserColumnName="ArquivoSalvo" msprop:Generator_ColumnPropNameInTable="ArquivoSalvoColumn" msprop:Generator_ColumnPropNameInRow="ArquivoSalvo" msprop:Generator_ColumnVarNameInTable="columnArquivoSalvo" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
