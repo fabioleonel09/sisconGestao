@@ -55,27 +55,8 @@ namespace sisconGestão
 
         private void btnPesquisarLancamentos_Click(object sender, EventArgs e)
         {
-            if (rbPesquisaNome.Checked || rbPesquisaTipo.Checked || rbPesquisaData.Checked == false)
-            {
-                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (string.IsNullOrEmpty(txtPesquisaHorarios.Text))
-            {
-                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (rbPesquisaNome.Checked == true)
-            {
-
-            }
-            else if (rbPesquisaTipo.Checked == true)
-            {
-
-            }
-            else if (rbPesquisaData.Checked == true)
-            {
-
-            }
-        }
+            FiltraPesquisa();
+        }       
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
@@ -130,5 +111,29 @@ namespace sisconGestão
             txtPesquisaHorarios.Enabled = true;
         }
 
+        private void FiltraPesquisa()
+        {
+            if (rbPesquisaNome.Checked == true)
+            {
+                lANCAMENTO_HORARIOSBindingSource.Filter = $"NomeDesenvolvedor like '*{txtPesquisaHorarios.Text}*'";
+            }
+            if (rbPesquisaTipo.Checked == true)
+            {
+                lANCAMENTO_HORARIOSBindingSource.Filter = $"TipoLancamento like '*{txtPesquisaHorarios.Text}*'";
+            }
+            if (rbPesquisaData.Checked == true)
+            {
+                txtPesquisaHorarios.Text = "A pesquisa será realizada por data.";
+                lANCAMENTO_HORARIOSBindingSource.Filter = $"DataLancamento >= '#{mkdtxtDataLancamento.Text}#'";
+            }
+            if ((rbPesquisaNome.Checked == false) && (rbPesquisaTipo.Checked == false) && (rbPesquisaData.Checked == false))
+            {
+                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (string.IsNullOrEmpty(txtPesquisaHorarios.Text))
+            {
+                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
