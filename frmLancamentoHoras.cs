@@ -85,6 +85,12 @@ namespace sisconGestão
             //deixa dos botões de enviar arquivo e baixar arquivo inabilitados na janela de lançamentos de horas
             tsbEnviar.Enabled = false;
             tsbBaixar.Enabled = false;
+        }       
+
+        private void tsbImprimirApontamentoHoras_Click(object sender, EventArgs e)
+        {
+            frmImpressaoApontamentosHoras fiaph = new frmImpressaoApontamentosHoras();
+            fiaph.Show();
         }
 
         private void SalvaAcao()
