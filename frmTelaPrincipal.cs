@@ -62,7 +62,9 @@ namespace sisconGestão
 
         private void btnEvidencias_Click(object sender, EventArgs e) //evento do botão evidências
         {
-            frmEvidencias fe = new frmEvidencias(); //instancia o frmEvidencias para ser chamado neste frm
+            string paraCliente = logado; //atribui o combobox a uma variável
+
+            var fe = new frmEvidencias(paraCliente); //instancia o frm que abrirá com a variável //instancia o frmEvidencias para ser chamado neste frm
             fe.ShowDialog(); //chama o frm e o mantém como ativo na tela
         }
 

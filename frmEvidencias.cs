@@ -12,13 +12,21 @@ namespace sisconGestão
 {
     public partial class frmEvidencias : Form
     {
-        public frmEvidencias()
+        #region DECLARAÇÃO DAS VARIÁVEIS PRIVADAS
+
+        private string logadoCliente; // Variável de classe para armazenar o valor
+
+        #endregion
+
+        public frmEvidencias(string paraCliente)
         {
             InitializeComponent();
 
+            logadoCliente = paraCliente;
+
             HabilitaPesquisa();
 
-            InabilitaComponetesTela();
+            InabilitaComponetesTela(); 
         }
 
         private void eVIDENCIASBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -100,10 +108,17 @@ namespace sisconGestão
 
         private void InabilitaComponetesTela()
         {
-            tbEvidencias.Enabled = false;
-            tsbEnviar.Enabled = false;
-            tsbBaixar.Enabled = false;
-        }
+            if (logadoCliente == "Cliente")
+            {
+                InabilitaComponetesParaCliente();
+            }
+            else
+            {
+                tbEvidencias.Enabled = false;
+                tsbEnviar.Enabled = false;
+                tsbBaixar.Enabled = false;
+            }      
+        }       
 
         private void SalvaAcao()
         {
@@ -146,6 +161,20 @@ namespace sisconGestão
             {
                 MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void InabilitaComponetesParaCliente()
+        {
+            ((Control)tbEvidencias.TabPages["tpCapaEvidencia"]).Enabled = false;
+            ((Control)tbEvidencias.TabPages["tpDetalhesEvidencia"]).Enabled = true;
+
+            bindingNavigatorAddNewItem.Enabled = false;
+            eVIDENCIASBindingNavigatorSaveItem.Enabled = false;
+            bindingNavigatorDeleteItem.Enabled = false;
+            tsbEditar.Enabled = false;
+            tsbBloquear.Enabled = false;
+            tsbEnviar.Enabled = false;
+            tsbBaixar.Enabled = false;
         }
     }
 }
