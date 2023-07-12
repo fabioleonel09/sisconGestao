@@ -39,7 +39,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvidencias));
             this.tlpEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbPesquisaEvidencia = new System.Windows.Forms.GroupBox();
-            this.dtpPesquisaData = new System.Windows.Forms.DateTimePicker();
             this.btnPesquisarEvidencias = new System.Windows.Forms.Button();
             this.rbPesquisaData = new System.Windows.Forms.RadioButton();
             this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
@@ -85,6 +84,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.eVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.EVIDENCIASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
             evidenciasIdLabel = new System.Windows.Forms.Label();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             descricaoEvidenciaLabel = new System.Windows.Forms.Label();
@@ -195,7 +195,7 @@
             // 
             // gbPesquisaEvidencia
             // 
-            this.gbPesquisaEvidencia.Controls.Add(this.dtpPesquisaData);
+            this.gbPesquisaEvidencia.Controls.Add(this.mkdtxtPesquisaData);
             this.gbPesquisaEvidencia.Controls.Add(this.btnPesquisarEvidencias);
             this.gbPesquisaEvidencia.Controls.Add(this.rbPesquisaData);
             this.gbPesquisaEvidencia.Controls.Add(this.rbPesquisaTipo);
@@ -208,14 +208,6 @@
             this.gbPesquisaEvidencia.TabIndex = 3;
             this.gbPesquisaEvidencia.TabStop = false;
             this.gbPesquisaEvidencia.Text = "Para realizar a pesquisa";
-            // 
-            // dtpPesquisaData
-            // 
-            this.dtpPesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPesquisaData.Location = new System.Drawing.Point(338, 37);
-            this.dtpPesquisaData.Name = "dtpPesquisaData";
-            this.dtpPesquisaData.Size = new System.Drawing.Size(130, 26);
-            this.dtpPesquisaData.TabIndex = 10;
             // 
             // btnPesquisarEvidencias
             // 
@@ -269,9 +261,9 @@
             // 
             // txtPesquisaEvidencia
             // 
-            this.txtPesquisaEvidencia.Location = new System.Drawing.Point(474, 37);
+            this.txtPesquisaEvidencia.Location = new System.Drawing.Point(426, 37);
             this.txtPesquisaEvidencia.Name = "txtPesquisaEvidencia";
-            this.txtPesquisaEvidencia.Size = new System.Drawing.Size(267, 26);
+            this.txtPesquisaEvidencia.Size = new System.Drawing.Size(315, 26);
             this.txtPesquisaEvidencia.TabIndex = 0;
             // 
             // eVIDENCIASBindingNavigator
@@ -687,6 +679,15 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
+            // mkdtxtPesquisaData
+            // 
+            this.mkdtxtPesquisaData.Location = new System.Drawing.Point(320, 37);
+            this.mkdtxtPesquisaData.Mask = "00/00/0000";
+            this.mkdtxtPesquisaData.Name = "mkdtxtPesquisaData";
+            this.mkdtxtPesquisaData.Size = new System.Drawing.Size(100, 26);
+            this.mkdtxtPesquisaData.TabIndex = 10;
+            this.mkdtxtPesquisaData.ValidatingType = typeof(System.DateTime);
+            // 
             // frmEvidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -759,7 +760,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DateTimePicker dtpPesquisaData;
         private System.Windows.Forms.Button btnPesquisarEvidencias;
         private System.Windows.Forms.RadioButton rbPesquisaData;
         private System.Windows.Forms.RadioButton rbPesquisaTipo;
@@ -769,5 +769,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbEnviar;
         private System.Windows.Forms.ToolStripButton tsbBaixar;
+        private System.Windows.Forms.MaskedTextBox mkdtxtPesquisaData;
     }
 }

@@ -135,7 +135,7 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, Arquivos, TipoDocumento FROM EVIDENCIAS</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -177,7 +177,16 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
               <Mapping SourceColumn="Arquivos" DataSetColumn="Arquivos" />
               <Mapping SourceColumn="TipoDocumento" DataSetColumn="TipoDocumento" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SISCONPROJECTSConnectionString (Settings)" DbObjectName="SISCONPROJECTS.dbo.EVIDENCIAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="NomeEvidenciaFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="NomeEvidenciaGetDataBy" GeneratorSourceName="NomeEvidenciaFillBy" GetMethodModifier="Public" GetMethodName="NomeEvidenciaGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="NomeEvidenciaGetDataBy" UserSourceName="NomeEvidenciaFillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Arquivos, DataInclusao, DescricaoEvidencia, DesenvolvedorEvidencia, EvidenciasId, NomeEvidencia, TipoDocumento FROM EVIDENCIAS ORDER BY NomeEvidencia</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LANCAMENTO_HORARIOSTableAdapter" GeneratorDataComponentClassName="LANCAMENTO_HORARIOSTableAdapter" Name="LANCAMENTO_HORARIOS" UserDataComponentName="LANCAMENTO_HORARIOSTableAdapter">
             <MainSource>

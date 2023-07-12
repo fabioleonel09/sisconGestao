@@ -53,27 +53,8 @@ namespace sisconGestão
 
         private void btnPesquisarEvidencias_Click(object sender, EventArgs e)
         {
-            if (rbPesquisaNome.Checked || rbPesquisaTipo.Checked || rbPesquisaData.Checked == false)
-            {
-                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (string.IsNullOrEmpty(txtPesquisaEvidencia.Text))
-            {
-                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (rbPesquisaNome.Checked == true)
-            {
-
-            }
-            else if (rbPesquisaTipo.Checked == true)
-            {
-
-            }
-            else if (rbPesquisaData.Checked == true)
-            {
-
-            }
-        }
+            FiltrosPesquisa();
+        }        
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
@@ -142,5 +123,29 @@ namespace sisconGestão
             }
         }
 
+        private void FiltrosPesquisa()
+        {
+            if (rbPesquisaNome.Checked == true)
+            {
+                eVIDENCIASBindingSource.Filter = $"NomeEvidencia like '*{txtPesquisaEvidencia.Text}*'";
+            }
+            if (rbPesquisaTipo.Checked == true)
+            {
+                eVIDENCIASBindingSource.Filter = $"TipoDocumento like '*{txtPesquisaEvidencia.Text}*'";
+            }
+            if (rbPesquisaData.Checked == true)
+            {
+                txtPesquisaEvidencia.Text = "A pesquisa será realizada por data.";
+                eVIDENCIASBindingSource.Filter = $"DataInclusao >= '#{mkdtxtPesquisaData.Text}#'";
+            }
+            if ((rbPesquisaNome.Checked == false) && (rbPesquisaTipo.Checked == false) && (rbPesquisaData.Checked == false))
+            {
+                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (string.IsNullOrEmpty(txtPesquisaEvidencia.Text))
+            {
+                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

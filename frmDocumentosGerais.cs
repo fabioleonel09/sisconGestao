@@ -42,29 +42,9 @@ namespace sisconGestão
 
         private void btnPesquisarDocsGerais_Click(object sender, EventArgs e)
         {
-            if (rbPesquisaNome.Checked == true)
-            {
-                dOCUMENTOS_GERAISBindingSource.Filter = $"NomeDocumento like '*{txtPesquisaDocumento.Text}*'";
-            }
-            if (rbPesquisaTipo.Checked == true)
-            {
-                dOCUMENTOS_GERAISBindingSource.Filter = $"TipoDocumento like '*{txtPesquisaDocumento.Text}*'";
-            }
-            if (rbPesquisaData.Checked == true)
-            {
-                txtPesquisaDocumento.Text = "A pesquisa será realizada por data.";
-                dOCUMENTOS_GERAISBindingSource.Filter = $"DataInclusao >= '#{mkdtxtPesquisaData.Text}#'";
-            }
-            if ((rbPesquisaNome.Checked == false) && (rbPesquisaTipo.Checked == false) && (rbPesquisaData.Checked == false))
-            {
-                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
-            {
-                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }          
+            FiltrosPesquisa();   
         }
- 
+
         private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
         {
             HabilitaPesquisa();
@@ -148,6 +128,31 @@ namespace sisconGestão
         {
             //inicia a txt como habilitada
             txtPesquisaDocumento.Enabled = true;
+        }
+
+        private void FiltrosPesquisa()
+        {
+            if (rbPesquisaNome.Checked == true)
+            {
+                dOCUMENTOS_GERAISBindingSource.Filter = $"NomeDocumento like '*{txtPesquisaDocumento.Text}*'";
+            }
+            if (rbPesquisaTipo.Checked == true)
+            {
+                dOCUMENTOS_GERAISBindingSource.Filter = $"TipoDocumento like '*{txtPesquisaDocumento.Text}*'";
+            }
+            if (rbPesquisaData.Checked == true)
+            {
+                txtPesquisaDocumento.Text = "A pesquisa será realizada por data.";
+                dOCUMENTOS_GERAISBindingSource.Filter = $"DataInclusao >= '#{mkdtxtPesquisaData.Text}#'";
+            }
+            if ((rbPesquisaNome.Checked == false) && (rbPesquisaTipo.Checked == false) && (rbPesquisaData.Checked == false))
+            {
+                MessageBox.Show("Escolha uma das opções para realizar a pesquisa.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
+            {
+                MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
