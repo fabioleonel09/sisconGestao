@@ -28,19 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImpressaoApontamentosHoras));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rpvApontamentosHoras = new Microsoft.Reporting.WinForms.ReportViewer();
             this.gbPesquisaDatas = new System.Windows.Forms.GroupBox();
-            this.txtNomeDesenvolvedor = new System.Windows.Forms.TextBox();
-            this.mkdtxtDe = new System.Windows.Forms.MaskedTextBox();
-            this.lblNomedesenvolvedor = new System.Windows.Forms.Label();
-            this.lblDe = new System.Windows.Forms.Label();
-            this.mkdtxtAte = new System.Windows.Forms.MaskedTextBox();
-            this.lblAte = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.lblAte = new System.Windows.Forms.Label();
+            this.mkdtxtAte = new System.Windows.Forms.MaskedTextBox();
+            this.lblDe = new System.Windows.Forms.Label();
+            this.lblNomedesenvolvedor = new System.Windows.Forms.Label();
+            this.mkdtxtDe = new System.Windows.Forms.MaskedTextBox();
+            this.txtNomeDesenvolvedor = new System.Windows.Forms.TextBox();
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
+            this.sISCONPROJECTSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lANCAMENTOHORARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lANCAMENTO_HORARIOSTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.LANCAMENTO_HORARIOSTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbPesquisaDatas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTOHORARIOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,6 +71,9 @@
             // rpvApontamentosHoras
             // 
             this.rpvApontamentosHoras.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.lANCAMENTOHORARIOSBindingSource;
+            this.rpvApontamentosHoras.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvApontamentosHoras.LocalReport.ReportEmbeddedResource = "sisconGestão.ImprenssaoApontamentoHoras.rdlc";
             this.rpvApontamentosHoras.Location = new System.Drawing.Point(4, 105);
             this.rpvApontamentosHoras.Name = "rpvApontamentosHoras";
@@ -86,62 +98,6 @@
             this.gbPesquisaDatas.TabStop = false;
             this.gbPesquisaDatas.Text = "Pequise o intervalo entre datas";
             // 
-            // txtNomeDesenvolvedor
-            // 
-            this.txtNomeDesenvolvedor.Enabled = false;
-            this.txtNomeDesenvolvedor.Location = new System.Drawing.Point(81, 62);
-            this.txtNomeDesenvolvedor.Name = "txtNomeDesenvolvedor";
-            this.txtNomeDesenvolvedor.Size = new System.Drawing.Size(258, 26);
-            this.txtNomeDesenvolvedor.TabIndex = 0;
-            // 
-            // mkdtxtDe
-            // 
-            this.mkdtxtDe.Location = new System.Drawing.Point(346, 62);
-            this.mkdtxtDe.Mask = "00/00/0000";
-            this.mkdtxtDe.Name = "mkdtxtDe";
-            this.mkdtxtDe.Size = new System.Drawing.Size(100, 26);
-            this.mkdtxtDe.TabIndex = 1;
-            this.mkdtxtDe.ValidatingType = typeof(System.DateTime);
-            // 
-            // lblNomedesenvolvedor
-            // 
-            this.lblNomedesenvolvedor.AutoSize = true;
-            this.lblNomedesenvolvedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomedesenvolvedor.Location = new System.Drawing.Point(79, 41);
-            this.lblNomedesenvolvedor.Name = "lblNomedesenvolvedor";
-            this.lblNomedesenvolvedor.Size = new System.Drawing.Size(202, 19);
-            this.lblNomedesenvolvedor.TabIndex = 2;
-            this.lblNomedesenvolvedor.Text = "Nome do desenvolvedor:";
-            // 
-            // lblDe
-            // 
-            this.lblDe.AutoSize = true;
-            this.lblDe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDe.Location = new System.Drawing.Point(343, 41);
-            this.lblDe.Name = "lblDe";
-            this.lblDe.Size = new System.Drawing.Size(36, 19);
-            this.lblDe.TabIndex = 3;
-            this.lblDe.Text = "De:";
-            // 
-            // mkdtxtAte
-            // 
-            this.mkdtxtAte.Location = new System.Drawing.Point(452, 62);
-            this.mkdtxtAte.Mask = "00/00/0000";
-            this.mkdtxtAte.Name = "mkdtxtAte";
-            this.mkdtxtAte.Size = new System.Drawing.Size(100, 26);
-            this.mkdtxtAte.TabIndex = 4;
-            this.mkdtxtAte.ValidatingType = typeof(System.DateTime);
-            // 
-            // lblAte
-            // 
-            this.lblAte.AutoSize = true;
-            this.lblAte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAte.Location = new System.Drawing.Point(449, 41);
-            this.lblAte.Name = "lblAte";
-            this.lblAte.Size = new System.Drawing.Size(40, 19);
-            this.lblAte.TabIndex = 5;
-            this.lblAte.Text = "Até:";
-            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -154,6 +110,81 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // lblAte
+            // 
+            this.lblAte.AutoSize = true;
+            this.lblAte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAte.Location = new System.Drawing.Point(449, 41);
+            this.lblAte.Name = "lblAte";
+            this.lblAte.Size = new System.Drawing.Size(40, 19);
+            this.lblAte.TabIndex = 5;
+            this.lblAte.Text = "Até:";
+            // 
+            // mkdtxtAte
+            // 
+            this.mkdtxtAte.Location = new System.Drawing.Point(452, 62);
+            this.mkdtxtAte.Mask = "00/00/0000";
+            this.mkdtxtAte.Name = "mkdtxtAte";
+            this.mkdtxtAte.Size = new System.Drawing.Size(100, 26);
+            this.mkdtxtAte.TabIndex = 4;
+            this.mkdtxtAte.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblDe
+            // 
+            this.lblDe.AutoSize = true;
+            this.lblDe.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDe.Location = new System.Drawing.Point(343, 41);
+            this.lblDe.Name = "lblDe";
+            this.lblDe.Size = new System.Drawing.Size(36, 19);
+            this.lblDe.TabIndex = 3;
+            this.lblDe.Text = "De:";
+            // 
+            // lblNomedesenvolvedor
+            // 
+            this.lblNomedesenvolvedor.AutoSize = true;
+            this.lblNomedesenvolvedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomedesenvolvedor.Location = new System.Drawing.Point(79, 41);
+            this.lblNomedesenvolvedor.Name = "lblNomedesenvolvedor";
+            this.lblNomedesenvolvedor.Size = new System.Drawing.Size(202, 19);
+            this.lblNomedesenvolvedor.TabIndex = 2;
+            this.lblNomedesenvolvedor.Text = "Nome do desenvolvedor:";
+            // 
+            // mkdtxtDe
+            // 
+            this.mkdtxtDe.Location = new System.Drawing.Point(346, 62);
+            this.mkdtxtDe.Mask = "00/00/0000";
+            this.mkdtxtDe.Name = "mkdtxtDe";
+            this.mkdtxtDe.Size = new System.Drawing.Size(100, 26);
+            this.mkdtxtDe.TabIndex = 1;
+            this.mkdtxtDe.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNomeDesenvolvedor
+            // 
+            this.txtNomeDesenvolvedor.Enabled = false;
+            this.txtNomeDesenvolvedor.Location = new System.Drawing.Point(81, 62);
+            this.txtNomeDesenvolvedor.Name = "txtNomeDesenvolvedor";
+            this.txtNomeDesenvolvedor.Size = new System.Drawing.Size(258, 26);
+            this.txtNomeDesenvolvedor.TabIndex = 0;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sISCONPROJECTSDataSetBindingSource
+            // 
+            this.sISCONPROJECTSDataSetBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            this.sISCONPROJECTSDataSetBindingSource.Position = 0;
+            // 
+            // lANCAMENTOHORARIOSBindingSource
+            // 
+            this.lANCAMENTOHORARIOSBindingSource.DataMember = "LANCAMENTO_HORARIOS";
+            this.lANCAMENTOHORARIOSBindingSource.DataSource = this.sISCONPROJECTSDataSetBindingSource;
+            // 
+            // lANCAMENTO_HORARIOSTableAdapter
+            // 
+            this.lANCAMENTO_HORARIOSTableAdapter.ClearBeforeFill = true;
             // 
             // frmImpressaoApontamentosHoras
             // 
@@ -171,6 +202,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbPesquisaDatas.ResumeLayout(false);
             this.gbPesquisaDatas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTOHORARIOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +221,9 @@
         private System.Windows.Forms.Label lblAte;
         private System.Windows.Forms.MaskedTextBox mkdtxtAte;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.BindingSource sISCONPROJECTSDataSetBindingSource;
+        private SISCONPROJECTSDataSet sISCONPROJECTSDataSet;
+        private System.Windows.Forms.BindingSource lANCAMENTOHORARIOSBindingSource;
+        private SISCONPROJECTSDataSetTableAdapters.LANCAMENTO_HORARIOSTableAdapter lANCAMENTO_HORARIOSTableAdapter;
     }
 }
