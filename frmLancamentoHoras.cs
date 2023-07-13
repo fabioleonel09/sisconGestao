@@ -89,7 +89,8 @@ namespace sisconGestão
 
         private void tsbImprimirApontamentoHoras_Click(object sender, EventArgs e)
         {
-            frmImpressaoApontamentosHoras fiaph = new frmImpressaoApontamentosHoras();
+            string nomeDesenvolvedor = nomeDesenvolvedorTextBox.Text;
+            var fiaph = new frmImpressaoApontamentosHoras(nomeDesenvolvedor); 
             fiaph.Show();
         }
 
