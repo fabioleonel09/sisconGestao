@@ -42,14 +42,13 @@
             this.mkdtxtDe = new System.Windows.Forms.MaskedTextBox();
             this.txtNomeDesenvolvedor = new System.Windows.Forms.TextBox();
             this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
-            this.sISCONPROJECTSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lANCAMENTOHORARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lANCAMENTO_HORARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lANCAMENTO_HORARIOSTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.LANCAMENTO_HORARIOSTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbPesquisaDatas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTOHORARIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,7 +71,7 @@
             // 
             this.rpvApontamentosHoras.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.lANCAMENTOHORARIOSBindingSource;
+            reportDataSource1.Value = this.lANCAMENTO_HORARIOSBindingSource;
             this.rpvApontamentosHoras.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvApontamentosHoras.LocalReport.ReportEmbeddedResource = "sisconGestão.ImprenssaoApontamentoHoras.rdlc";
             this.rpvApontamentosHoras.Location = new System.Drawing.Point(4, 105);
@@ -172,19 +171,23 @@
             this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
             this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sISCONPROJECTSDataSetBindingSource
+            // lANCAMENTO_HORARIOSBindingSource
             // 
-            this.sISCONPROJECTSDataSetBindingSource.DataSource = this.sISCONPROJECTSDataSet;
-            this.sISCONPROJECTSDataSetBindingSource.Position = 0;
-            // 
-            // lANCAMENTOHORARIOSBindingSource
-            // 
-            this.lANCAMENTOHORARIOSBindingSource.DataMember = "LANCAMENTO_HORARIOS";
-            this.lANCAMENTOHORARIOSBindingSource.DataSource = this.sISCONPROJECTSDataSetBindingSource;
+            this.lANCAMENTO_HORARIOSBindingSource.DataMember = "LANCAMENTO_HORARIOS";
+            this.lANCAMENTO_HORARIOSBindingSource.DataSource = this.sISCONPROJECTSDataSet;
             // 
             // lANCAMENTO_HORARIOSTableAdapter
             // 
             this.lANCAMENTO_HORARIOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
+            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
+            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = this.lANCAMENTO_HORARIOSTableAdapter;
+            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
             // frmImpressaoApontamentosHoras
             // 
@@ -203,8 +206,7 @@
             this.gbPesquisaDatas.ResumeLayout(false);
             this.gbPesquisaDatas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTOHORARIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,9 +223,9 @@
         private System.Windows.Forms.Label lblAte;
         private System.Windows.Forms.MaskedTextBox mkdtxtAte;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.BindingSource sISCONPROJECTSDataSetBindingSource;
         private SISCONPROJECTSDataSet sISCONPROJECTSDataSet;
-        private System.Windows.Forms.BindingSource lANCAMENTOHORARIOSBindingSource;
+        private System.Windows.Forms.BindingSource lANCAMENTO_HORARIOSBindingSource;
         private SISCONPROJECTSDataSetTableAdapters.LANCAMENTO_HORARIOSTableAdapter lANCAMENTO_HORARIOSTableAdapter;
+        private SISCONPROJECTSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

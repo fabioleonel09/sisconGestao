@@ -29,40 +29,33 @@ namespace sisconGestão
 
             this.rpvApontamentosHoras.RefreshReport();
             this.rpvApontamentosHoras.RefreshReport();
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //gerenciamentoEmpreendedorBindingSource.Filter = string.Format("dataVenda >= '#{0:dd/MM/yyyy}#' And dataVenda <= '#{1:dd/MM/yyyy}#'", maskedTextBox1.Text, maskedTextBox2.Text); //filtra a BD por protutos vendidos
-            lANCAMENTOHORARIOSBindingSource.Filter = $"NomeDesenvolvedor like '*{txtNomeDesenvolvedor.Text}*'";
-            lANCAMENTOHORARIOSBindingSource.Filter = $"DataLancamento >= '#{mkdtxtDe.Text}#' AND DataLancamento <= '#{mkdtxtAte.Text}#'";
-            rpvApontamentosHoras.Visible = true;
+            FiltroPesquisa();
         }
 
-        private void dataLancamentoFillByToolStripButton_Click(object sender, EventArgs e)
+        private void FiltroPesquisa()
         {
-            try
+            if (string.IsNullOrEmpty(mkdtxtDe.Text) || string.IsNullOrEmpty(mkdtxtAte.Text))
             {
-                this.lANCAMENTO_HORARIOSTableAdapter.DataLancamentoFillBy(this.sISCONPROJECTSDataSet.LANCAMENTO_HORARIOS);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+                MessageBox.Show("Atenção, preencha todos os campos de datas para a pesquisa!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information);//lança msg
 
-        }
-
-        private void dataLancamentoFillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.lANCAMENTO_HORARIOSTableAdapter.DataLancamentoFillBy(this.sISCONPROJECTSDataSet.LANCAMENTO_HORARIOS);
+                mkdtxtDe.Clear();
+                mkdtxtAte.Clear();
             }
-            catch (System.Exception ex)
+            else
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+                this.rpvApontamentosHoras.RefreshReport();
 
+                lANCAMENTO_HORARIOSBindingSource.Filter = $"NomeDesenvolvedor like '*{txtNomeDesenvolvedor.Text}*'";
+
+                lANCAMENTO_HORARIOSBindingSource.Filter = string.Format("DataLancamento >= '#{0:dd/MM/yyyy}#' And DataLancamento <= '#{1:dd/MM/yyyy}#'", mkdtxtDe.Text, mkdtxtAte.Text); //filtra a BD por protutos vendidos
+
+                rpvApontamentosHoras.Visible = true;
+            }
         }
     }
 }
