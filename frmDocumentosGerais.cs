@@ -91,12 +91,12 @@ namespace sisconGestão
 
         private void tsbEnviar_Click(object sender, EventArgs e)
         {
-            
+            EnviaImagem();
         }
 
         private void tsbBaixar_Click(object sender, EventArgs e)
         {
-            
+            BaixaImagem();
         }
 
         private void InabilitaComponetesTela()
@@ -152,6 +152,53 @@ namespace sisconGestão
             if (string.IsNullOrEmpty(txtPesquisaDocumento.Text))
             {
                 MessageBox.Show("Preencha o campo de pesquisa com o mome ou o tipo de documento.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void EnviaImagem()
+        {
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK) //se a caixa de diálogo tiver resultado como ok
+            {
+                string filePath = openFileDialog.FileName;
+
+                if (filePath.EndsWith(".jpg") || filePath.EndsWith(".png") || filePath.EndsWith(".gif") || filePath.EndsWith(".bmp"))
+                {
+                    this.arquivosPictureBox.Image = System.Drawing.Image.FromFile(this.openFileDialog.FileName); //pega-se a imagem e coloca no pictureBox
+                }
+                else
+                {
+                    MessageBox.Show("Tipo de arquivo não suportado para salvar!.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void BaixaImagem()
+        {
+            int index = Convert.ToInt32(documentosGeraisIdTextBox.Text);
+            // Conectar-se ao banco de dados e recuperar a imagem como um array de bytes
+            string connectionString = "Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrated Security=True";
+            string query = "SELECT Arquivos FROM DOCUMENTOS_GERAIS WHERE DocumentosGeraisId = @DOCUMENTOSGERAISID"; // substitua 'tabela' pelo nome da tabela e 'id' pelo identificador da imagem a ser baixada
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@DOCUMENTOSGERAISID", index); // substitua '1' pelo valor do identificador da imagem a ser baixada
+
+                    connection.Open();
+                    byte[] imageData = (byte[])command.ExecuteScalar();
+                    connection.Close();
+
+                    // Salvar o array de bytes em um arquivo
+                    string savePath = "C:\\Users"; // substitua pelo caminho onde você deseja salvar a imagem
+                    string fileName = "ImagemSalva.png"; // substitua pelo nome desejado para a imagem
+
+                    string fullPath = Path.Combine(savePath, fileName);
+                    File.WriteAllBytes(fullPath, imageData);
+
+                    // Exibir uma mensagem de sucesso
+                    MessageBox.Show("Imagem baixada com sucesso, na unidade C:\\Usuários!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

@@ -39,6 +39,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEvidencias));
             this.tlpEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbPesquisaEvidencia = new System.Windows.Forms.GroupBox();
+            this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
             this.btnPesquisarEvidencias = new System.Windows.Forms.Button();
             this.rbPesquisaData = new System.Windows.Forms.RadioButton();
             this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
@@ -84,7 +85,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.eVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.EVIDENCIASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             evidenciasIdLabel = new System.Windows.Forms.Label();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             descricaoEvidenciaLabel = new System.Windows.Forms.Label();
@@ -208,6 +209,15 @@
             this.gbPesquisaEvidencia.TabIndex = 3;
             this.gbPesquisaEvidencia.TabStop = false;
             this.gbPesquisaEvidencia.Text = "Para realizar a pesquisa";
+            // 
+            // mkdtxtPesquisaData
+            // 
+            this.mkdtxtPesquisaData.Location = new System.Drawing.Point(320, 37);
+            this.mkdtxtPesquisaData.Mask = "00/00/0000";
+            this.mkdtxtPesquisaData.Name = "mkdtxtPesquisaData";
+            this.mkdtxtPesquisaData.Size = new System.Drawing.Size(100, 26);
+            this.mkdtxtPesquisaData.TabIndex = 10;
+            this.mkdtxtPesquisaData.ValidatingType = typeof(System.DateTime);
             // 
             // btnPesquisarEvidencias
             // 
@@ -679,14 +689,9 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
-            // mkdtxtPesquisaData
+            // openFileDialog
             // 
-            this.mkdtxtPesquisaData.Location = new System.Drawing.Point(320, 37);
-            this.mkdtxtPesquisaData.Mask = "00/00/0000";
-            this.mkdtxtPesquisaData.Name = "mkdtxtPesquisaData";
-            this.mkdtxtPesquisaData.Size = new System.Drawing.Size(100, 26);
-            this.mkdtxtPesquisaData.TabIndex = 10;
-            this.mkdtxtPesquisaData.ValidatingType = typeof(System.DateTime);
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // frmEvidencias
             // 
@@ -770,5 +775,6 @@
         private System.Windows.Forms.ToolStripButton tsbEnviar;
         private System.Windows.Forms.ToolStripButton tsbBaixar;
         private System.Windows.Forms.MaskedTextBox mkdtxtPesquisaData;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
