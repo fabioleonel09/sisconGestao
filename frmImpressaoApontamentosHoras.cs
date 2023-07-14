@@ -13,11 +13,17 @@ namespace sisconGestão
 {
     public partial class frmImpressaoApontamentosHoras : Form
     {
+        #region VARIAVEIS E CONSTANTES
+        public string nome;
+        #endregion
+
         public frmImpressaoApontamentosHoras(string nomeDesenvolvedor)
         {
             InitializeComponent();
 
-            txtNomeDesenvolvedor.Text = nomeDesenvolvedor;
+            nome = nomeDesenvolvedor;
+
+            txtNomeDesenvolvedor.Text = nome;
 
             rpvApontamentosHoras.Visible = false;
         }
@@ -37,6 +43,11 @@ namespace sisconGestão
             FiltroPesquisa();
         }
 
+        private void btnLimpaNomeDev_Click(object sender, EventArgs e)
+        {
+            LimpaNomeDev();
+        }
+      
         private void FiltroPesquisa()
         {
             if (string.IsNullOrEmpty(mkdtxtDe.Text) || string.IsNullOrEmpty(mkdtxtAte.Text))
@@ -55,6 +66,20 @@ namespace sisconGestão
                 lANCAMENTO_HORARIOSBindingSource.Filter = string.Format("DataLancamento >= '#{0:dd/MM/yyyy}#' And DataLancamento <= '#{1:dd/MM/yyyy}#'", mkdtxtDe.Text, mkdtxtAte.Text); //filtra a BD por protutos vendidos
 
                 rpvApontamentosHoras.Visible = true;
+            }
+        }
+
+        private void LimpaNomeDev()
+        {
+            //instancia a messageBox 
+            dynamic mboxResult = MessageBox.Show("Deseja apagar o campo de nome do desenvolvedor?", "Confirmação!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (mboxResult == DialogResult.Cancel)  //se escolher cancel no dialógo
+            {
+                txtNomeDesenvolvedor.Text = nome;
+            }
+            else if (mboxResult == DialogResult.OK) //se escolher ok
+            {
+                txtNomeDesenvolvedor.Clear();
             }
         }
     }

@@ -30,16 +30,7 @@ namespace sisconGestão
 
             //deixa a grid de cadastro inabilitada
             uSUARIOS_SENHASDataGridView.Enabled = false;
-        }
-
-        //este comando controla a velocidade da barra de status e o tempo de aparecimento da janela "Aguarde"
-        void OpenData()
-        {
-            for (int i = 0; i <= 400; i++)
-            {
-                Thread.Sleep(5);
-            }
-        }
+        }       
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -149,6 +140,41 @@ namespace sisconGestão
         private void tsbBloquear_Click(object sender, EventArgs e)
         {
             SalvaAcao(); //entra neste método
+        }       
+
+        //evento do btn finaliza na aba de cadastros
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            gbCadastroUsuario.Visible = false; //inicia o gb do cadastro de usuários com visibilidade falsa
+
+            //deixa a grid de cadastro inabilitada
+            uSUARIOS_SENHASDataGridView.Enabled = false;
+
+            txtSenhaAdm.Clear(); //limpa a txt da senha do adm
+        }       
+
+        private void btnMascara_Click(object sender, EventArgs e)
+        {
+            if (btnMascara.Text == "| | |")
+            {
+                txtSenha.PasswordChar = '\0';
+                
+                btnMascara.Text = "* * *";
+            }
+            else if(btnMascara.Text == "* * *")
+            {
+                txtSenha.PasswordChar = '*';
+                btnMascara.Text = "| | |";
+            }
+        }
+
+        //este comando controla a velocidade da barra de status e o tempo de aparecimento da janela "Aguarde"
+        void OpenData()
+        {
+            for (int i = 0; i <= 400; i++)
+            {
+                Thread.Sleep(5);
+            }
         }
 
         private void SalvaAcao() //método salva ação
@@ -169,17 +195,6 @@ namespace sisconGestão
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        //evento do btn finaliza na aba de cadastros
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            gbCadastroUsuario.Visible = false; //inicia o gb do cadastro de usuários com visibilidade falsa
-
-            //deixa a grid de cadastro inabilitada
-            uSUARIOS_SENHASDataGridView.Enabled = false;
-
-            txtSenhaAdm.Clear(); //limpa a txt da senha do adm
         }
 
         private void InabilitaBotoesBarraFerramentas()

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,12 +95,23 @@ namespace sisconGestão
 
         private void tsbEnviar_Click(object sender, EventArgs e)
         {
-            EnviaImagem();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                EnviaArquivo(filePath);
+            }
         }
 
         private void tsbBaixar_Click(object sender, EventArgs e)
         {
-            BaixaImagem();
+            int index = Convert.ToInt32(evidenciasIdTextBox.Text);
+            string savePath = "C:\\Usuários"; // substitua pelo caminho onde você deseja salvar o arquivo
+
+            //*********** MUDAR AQUI *****************
+            string fileName = "nome_do_arquivo.extensao"; // substitua pelo nome desejado e extensão do arquivo
+
+            BaixaArquivo(index, savePath, fileName);
         }
 
         private void HabilitaPesquisa()
@@ -179,49 +191,60 @@ namespace sisconGestão
             tsbBaixar.Enabled = false;
         }
 
-        private void EnviaImagem()
+        private void EnviaArquivo(string filePath)
         {
-            if (this.openFileDialog.ShowDialog() == DialogResult.OK) //se a caixa de diálogo tiver resultado como ok
-            {
-                string filePath = openFileDialog.FileName;
+            string extension = Path.GetExtension(filePath);
 
-                if (filePath.EndsWith(".jpg") || filePath.EndsWith(".png") || filePath.EndsWith(".gif") || filePath.EndsWith(".bmp"))
-                {
-                    this.arquivosPictureBox.Image = System.Drawing.Image.FromFile(this.openFileDialog.FileName); //pega-se a imagem e coloca no pictureBox
-                }
-                else
-                {
-                    MessageBox.Show("Tipo de arquivo não suportado para salvar!.", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (extension.Equals(".jpg") || extension.Equals(".png") || extension.Equals(".gif") || extension.Equals(".bmp"))
+            {
+                // Lógica para salvar a imagem
+                this.arquivosPictureBox.Image = System.Drawing.Image.FromFile(filePath);
+            }
+            else if (extension.Equals(".doc") || extension.Equals(".docx"))
+            {
+                // Lógica para salvar o arquivo do Word (.doc ou .docx)
+                // Implemente o código aqui para salvar o arquivo .doc ou .docx no banco de dados ou em outro local desejado
+            }
+            else if (extension.Equals(".pdf"))
+            {
+                // Lógica para salvar o arquivo PDF
+                // Implemente o código aqui para salvar o arquivo PDF no banco de dados ou em outro local desejado
+            }
+            else if (extension.Equals(".xls") || extension.Equals(".xlsx"))
+            {
+                // Lógica para salvar o arquivo do Excel (.xls ou .xlsx)
+                // Implemente o código aqui para salvar o arquivo .xls ou .xlsx no banco de dados ou em outro local desejado
+            }
+            else
+            {
+                MessageBox.Show("Tipo de arquivo não suportado para salvar!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void BaixaImagem()
+        private void BaixaArquivo(int index, string savePath, string fileName)
         {
-            int index = Convert.ToInt32(evidenciasIdTextBox.Text);
-            // Conectar-se ao banco de dados e recuperar a imagem como um array de bytes
-            string connectionString = "Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrated Security=True";
-            string query = "SELECT Arquivos FROM EVIDENCIAS WHERE EvidenciasId = @EVIDENCIASID"; // substitua 'tabela' pelo nome da tabela e 'id' pelo identificador da imagem a ser baixada
+            string extension = Path.GetExtension(fileName).ToLower();
+
+            // Conectar-se ao banco de dados e recuperar o arquivo como um array de bytes
+            string connectionString = "sua_string_de_conexao";
+            string query = "SELECT Arquivos FROM EVIDENCIAS WHERE EvidenciasId = @EVIDENCIASID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@EVIDENCIASID", index); // substitua '1' pelo valor do identificador da imagem a ser baixada
+                    command.Parameters.AddWithValue("@EVIDENCIASID", index);
 
                     connection.Open();
-                    byte[] imageData = (byte[])command.ExecuteScalar();
+                    byte[] fileData = (byte[])command.ExecuteScalar();
                     connection.Close();
 
                     // Salvar o array de bytes em um arquivo
-                    string savePath = "C:\\Users"; // substitua pelo caminho onde você deseja salvar a imagem
-                    string fileName = "ImagemSalva.png"; // substitua pelo nome desejado para a imagem
-
                     string fullPath = Path.Combine(savePath, fileName);
-                    File.WriteAllBytes(fullPath, imageData);
+                    File.WriteAllBytes(fullPath, fileData);
 
                     // Exibir uma mensagem de sucesso
-                    MessageBox.Show("Imagem baixada com sucesso, na unidade C:\\Usuários!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Arquivo baixado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
