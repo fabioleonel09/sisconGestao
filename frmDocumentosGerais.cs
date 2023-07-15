@@ -154,16 +154,18 @@ namespace sisconGestão
         private void EnviaArquivo()
         {
             string nomeDocumentoGeral = nomeDocumentoTextBox.Text;
+            string codigo = ".Enviar";
 
-            var fadg = new frmArquivosDocsGerais(nomeDocumentoGeral);
+            var fadg = new frmArquivosDocsGerais(nomeDocumentoGeral, codigo);
             fadg.ShowDialog();
         }
 
         private void BaixaArquivo()
         {
             string nomeDocumentoGeral = nomeDocumentoTextBox.Text;
+            string codigo = ".Baixar";
 
-            var fadg = new frmArquivosDocsGerais(nomeDocumentoGeral);
+            var fadg = new frmArquivosDocsGerais(nomeDocumentoGeral, codigo);
             fadg.ShowDialog();
         }
     }

@@ -183,16 +183,18 @@ namespace sisconGestão
         private void EnviaArquivo()
         {
             string nomeEvidencia = nomeEvidenciaTextBox.Text;
+            string codigo = ".Enviar";
 
-            var fae = new frmArquivosEvidencias(nomeEvidencia);
+            var fae = new frmArquivosEvidencias(nomeEvidencia, codigo);
             fae.ShowDialog();
         }
 
         private void BaixaArquivo()
         {
             string nomeEvidencia = nomeEvidenciaTextBox.Text;
+            string codigo = ".Baixar";
 
-            var fae = new frmArquivosEvidencias(nomeEvidencia);
+            var fae = new frmArquivosEvidencias(nomeEvidencia,codigo);
             fae.ShowDialog();
         }
     }

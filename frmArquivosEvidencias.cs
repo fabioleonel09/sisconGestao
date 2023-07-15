@@ -14,15 +14,34 @@ namespace sisconGestão
     {
         #region VARIAVEIS PRIVADAS E STRINGS DE CONEXAO
         private string nomeEvidenciaPesquisa;
+        private string codigoFormulario;
         #endregion
 
-        public frmArquivosEvidencias( string nomeEvidencia)
+        public frmArquivosEvidencias( string nomeEvidencia, string codigo)
         {
             InitializeComponent();
 
             nomeEvidenciaPesquisa = nomeEvidencia;
+            codigoFormulario = codigo;
 
             txtPesquisaNomeArquivoEvidencias.Text = nomeEvidenciaPesquisa;
+
+            CondicionalFormulario();
+        }
+
+        private void CondicionalFormulario()
+        {
+            if (codigoFormulario == ".Enviar")
+            {
+                btnLimpaPesquisaArquivoEvidencias.Enabled = false;
+                btnPesquisarArquivosEvidencias.Enabled = false;
+                btnApagaArquivoEvidencias.Enabled = false;
+                btnAbrirArquivoEvidencias.Enabled = false;
+            }
+            else if (codigoFormulario == ".Baixar")
+            {
+                btnSalvarArquivoEvidencias.Enabled = false;
+            }
         }
     }
 }
