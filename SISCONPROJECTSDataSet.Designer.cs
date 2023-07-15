@@ -32,6 +32,10 @@ namespace sisconGestão {
         
         private USUARIOS_SENHASDataTable tableUSUARIOS_SENHAS;
         
+        private ARQUIVOS_DOCS_GERAISDataTable tableARQUIVOS_DOCS_GERAIS;
+        
+        private ARQUIVOS_EVIDENCIASDataTable tableARQUIVOS_EVIDENCIAS;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -71,6 +75,12 @@ namespace sisconGestão {
                 }
                 if ((ds.Tables["USUARIOS_SENHAS"] != null)) {
                     base.Tables.Add(new USUARIOS_SENHASDataTable(ds.Tables["USUARIOS_SENHAS"]));
+                }
+                if ((ds.Tables["ARQUIVOS_DOCS_GERAIS"] != null)) {
+                    base.Tables.Add(new ARQUIVOS_DOCS_GERAISDataTable(ds.Tables["ARQUIVOS_DOCS_GERAIS"]));
+                }
+                if ((ds.Tables["ARQUIVOS_EVIDENCIAS"] != null)) {
+                    base.Tables.Add(new ARQUIVOS_EVIDENCIASDataTable(ds.Tables["ARQUIVOS_EVIDENCIAS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -127,6 +137,26 @@ namespace sisconGestão {
         public USUARIOS_SENHASDataTable USUARIOS_SENHAS {
             get {
                 return this.tableUSUARIOS_SENHAS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ARQUIVOS_DOCS_GERAISDataTable ARQUIVOS_DOCS_GERAIS {
+            get {
+                return this.tableARQUIVOS_DOCS_GERAIS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ARQUIVOS_EVIDENCIASDataTable ARQUIVOS_EVIDENCIAS {
+            get {
+                return this.tableARQUIVOS_EVIDENCIAS;
             }
         }
         
@@ -209,6 +239,12 @@ namespace sisconGestão {
                 if ((ds.Tables["USUARIOS_SENHAS"] != null)) {
                     base.Tables.Add(new USUARIOS_SENHASDataTable(ds.Tables["USUARIOS_SENHAS"]));
                 }
+                if ((ds.Tables["ARQUIVOS_DOCS_GERAIS"] != null)) {
+                    base.Tables.Add(new ARQUIVOS_DOCS_GERAISDataTable(ds.Tables["ARQUIVOS_DOCS_GERAIS"]));
+                }
+                if ((ds.Tables["ARQUIVOS_EVIDENCIAS"] != null)) {
+                    base.Tables.Add(new ARQUIVOS_EVIDENCIASDataTable(ds.Tables["ARQUIVOS_EVIDENCIAS"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -266,6 +302,18 @@ namespace sisconGestão {
                     this.tableUSUARIOS_SENHAS.InitVars();
                 }
             }
+            this.tableARQUIVOS_DOCS_GERAIS = ((ARQUIVOS_DOCS_GERAISDataTable)(base.Tables["ARQUIVOS_DOCS_GERAIS"]));
+            if ((initTable == true)) {
+                if ((this.tableARQUIVOS_DOCS_GERAIS != null)) {
+                    this.tableARQUIVOS_DOCS_GERAIS.InitVars();
+                }
+            }
+            this.tableARQUIVOS_EVIDENCIAS = ((ARQUIVOS_EVIDENCIASDataTable)(base.Tables["ARQUIVOS_EVIDENCIAS"]));
+            if ((initTable == true)) {
+                if ((this.tableARQUIVOS_EVIDENCIAS != null)) {
+                    this.tableARQUIVOS_EVIDENCIAS.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +332,10 @@ namespace sisconGestão {
             base.Tables.Add(this.tableLANCAMENTO_HORARIOS);
             this.tableUSUARIOS_SENHAS = new USUARIOS_SENHASDataTable();
             base.Tables.Add(this.tableUSUARIOS_SENHAS);
+            this.tableARQUIVOS_DOCS_GERAIS = new ARQUIVOS_DOCS_GERAISDataTable();
+            base.Tables.Add(this.tableARQUIVOS_DOCS_GERAIS);
+            this.tableARQUIVOS_EVIDENCIAS = new ARQUIVOS_EVIDENCIASDataTable();
+            base.Tables.Add(this.tableARQUIVOS_EVIDENCIAS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +359,18 @@ namespace sisconGestão {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeUSUARIOS_SENHAS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeARQUIVOS_DOCS_GERAIS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeARQUIVOS_EVIDENCIAS() {
             return false;
         }
         
@@ -377,6 +441,12 @@ namespace sisconGestão {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void USUARIOS_SENHASRowChangeEventHandler(object sender, USUARIOS_SENHASRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ARQUIVOS_DOCS_GERAISRowChangeEventHandler(object sender, ARQUIVOS_DOCS_GERAISRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ARQUIVOS_EVIDENCIASRowChangeEventHandler(object sender, ARQUIVOS_EVIDENCIASRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -392,13 +462,7 @@ namespace sisconGestão {
             
             private global::System.Data.DataColumn columnDataInclusao;
             
-            private global::System.Data.DataColumn columnArquivos;
-            
             private global::System.Data.DataColumn columnTipoDocumento;
-            
-            private global::System.Data.DataColumn columnNomeArquivo;
-            
-            private global::System.Data.DataColumn columnArquivoSalvo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -467,33 +531,9 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ArquivosColumn {
-                get {
-                    return this.columnArquivos;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn TipoDocumentoColumn {
                 get {
                     return this.columnTipoDocumento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NomeArquivoColumn {
-                get {
-                    return this.columnNomeArquivo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ArquivoSalvoColumn {
-                get {
-                    return this.columnArquivoSalvo;
                 }
             }
             
@@ -534,17 +574,14 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DOCUMENTOS_GERAISRow AddDOCUMENTOS_GERAISRow(string NomeDocumento, string DescricaoDocumento, System.DateTime DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo) {
+            public DOCUMENTOS_GERAISRow AddDOCUMENTOS_GERAISRow(string NomeDocumento, string DescricaoDocumento, System.DateTime DataInclusao, string TipoDocumento) {
                 DOCUMENTOS_GERAISRow rowDOCUMENTOS_GERAISRow = ((DOCUMENTOS_GERAISRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NomeDocumento,
                         DescricaoDocumento,
                         DataInclusao,
-                        Arquivos,
-                        TipoDocumento,
-                        NomeArquivo,
-                        ArquivoSalvo};
+                        TipoDocumento};
                 rowDOCUMENTOS_GERAISRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDOCUMENTOS_GERAISRow);
                 return rowDOCUMENTOS_GERAISRow;
@@ -578,10 +615,7 @@ namespace sisconGestão {
                 this.columnNomeDocumento = base.Columns["NomeDocumento"];
                 this.columnDescricaoDocumento = base.Columns["DescricaoDocumento"];
                 this.columnDataInclusao = base.Columns["DataInclusao"];
-                this.columnArquivos = base.Columns["Arquivos"];
                 this.columnTipoDocumento = base.Columns["TipoDocumento"];
-                this.columnNomeArquivo = base.Columns["NomeArquivo"];
-                this.columnArquivoSalvo = base.Columns["ArquivoSalvo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -595,14 +629,8 @@ namespace sisconGestão {
                 base.Columns.Add(this.columnDescricaoDocumento);
                 this.columnDataInclusao = new global::System.Data.DataColumn("DataInclusao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataInclusao);
-                this.columnArquivos = new global::System.Data.DataColumn("Arquivos", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArquivos);
                 this.columnTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoDocumento);
-                this.columnNomeArquivo = new global::System.Data.DataColumn("NomeArquivo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNomeArquivo);
-                this.columnArquivoSalvo = new global::System.Data.DataColumn("ArquivoSalvo", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArquivoSalvo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDocumentosGeraisId}, true));
                 this.columnDocumentosGeraisId.AutoIncrement = true;
@@ -614,7 +642,6 @@ namespace sisconGestão {
                 this.columnNomeDocumento.MaxLength = 200;
                 this.columnDescricaoDocumento.MaxLength = 1000;
                 this.columnTipoDocumento.MaxLength = 100;
-                this.columnNomeArquivo.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -758,8 +785,6 @@ namespace sisconGestão {
             
             private global::System.Data.DataColumn columnDataInclusao;
             
-            private global::System.Data.DataColumn columnArquivos;
-            
             private global::System.Data.DataColumn columnTipoDocumento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -837,14 +862,6 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ArquivosColumn {
-                get {
-                    return this.columnArquivos;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn TipoDocumentoColumn {
                 get {
                     return this.columnTipoDocumento;
@@ -888,7 +905,7 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EVIDENCIASRow AddEVIDENCIASRow(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, System.DateTime DataInclusao, byte[] Arquivos, string TipoDocumento) {
+            public EVIDENCIASRow AddEVIDENCIASRow(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, System.DateTime DataInclusao, string TipoDocumento) {
                 EVIDENCIASRow rowEVIDENCIASRow = ((EVIDENCIASRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -896,7 +913,6 @@ namespace sisconGestão {
                         DescricaoEvidencia,
                         DesenvolvedorEvidencia,
                         DataInclusao,
-                        Arquivos,
                         TipoDocumento};
                 rowEVIDENCIASRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEVIDENCIASRow);
@@ -932,7 +948,6 @@ namespace sisconGestão {
                 this.columnDescricaoEvidencia = base.Columns["DescricaoEvidencia"];
                 this.columnDesenvolvedorEvidencia = base.Columns["DesenvolvedorEvidencia"];
                 this.columnDataInclusao = base.Columns["DataInclusao"];
-                this.columnArquivos = base.Columns["Arquivos"];
                 this.columnTipoDocumento = base.Columns["TipoDocumento"];
             }
             
@@ -949,8 +964,6 @@ namespace sisconGestão {
                 base.Columns.Add(this.columnDesenvolvedorEvidencia);
                 this.columnDataInclusao = new global::System.Data.DataColumn("DataInclusao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataInclusao);
-                this.columnArquivos = new global::System.Data.DataColumn("Arquivos", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArquivos);
                 this.columnTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoDocumento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1763,6 +1776,588 @@ namespace sisconGestão {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ARQUIVOS_DOCS_GERAISDataTable : global::System.Data.TypedTableBase<ARQUIVOS_DOCS_GERAISRow> {
+            
+            private global::System.Data.DataColumn columnArquivoDocsGeraisId;
+            
+            private global::System.Data.DataColumn columnNomeDocGeral;
+            
+            private global::System.Data.DataColumn columnArquivoDocGeral;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISDataTable() {
+                this.TableName = "ARQUIVOS_DOCS_GERAIS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ARQUIVOS_DOCS_GERAISDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ARQUIVOS_DOCS_GERAISDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArquivoDocsGeraisIdColumn {
+                get {
+                    return this.columnArquivoDocsGeraisId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NomeDocGeralColumn {
+                get {
+                    return this.columnNomeDocGeral;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArquivoDocGeralColumn {
+                get {
+                    return this.columnArquivoDocGeral;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRow this[int index] {
+                get {
+                    return ((ARQUIVOS_DOCS_GERAISRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_DOCS_GERAISRowChangeEventHandler ARQUIVOS_DOCS_GERAISRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_DOCS_GERAISRowChangeEventHandler ARQUIVOS_DOCS_GERAISRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_DOCS_GERAISRowChangeEventHandler ARQUIVOS_DOCS_GERAISRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_DOCS_GERAISRowChangeEventHandler ARQUIVOS_DOCS_GERAISRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddARQUIVOS_DOCS_GERAISRow(ARQUIVOS_DOCS_GERAISRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRow AddARQUIVOS_DOCS_GERAISRow(string NomeDocGeral, byte[] ArquivoDocGeral) {
+                ARQUIVOS_DOCS_GERAISRow rowARQUIVOS_DOCS_GERAISRow = ((ARQUIVOS_DOCS_GERAISRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NomeDocGeral,
+                        ArquivoDocGeral};
+                rowARQUIVOS_DOCS_GERAISRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowARQUIVOS_DOCS_GERAISRow);
+                return rowARQUIVOS_DOCS_GERAISRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRow FindByArquivoDocsGeraisId(int ArquivoDocsGeraisId) {
+                return ((ARQUIVOS_DOCS_GERAISRow)(this.Rows.Find(new object[] {
+                            ArquivoDocsGeraisId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ARQUIVOS_DOCS_GERAISDataTable cln = ((ARQUIVOS_DOCS_GERAISDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ARQUIVOS_DOCS_GERAISDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnArquivoDocsGeraisId = base.Columns["ArquivoDocsGeraisId"];
+                this.columnNomeDocGeral = base.Columns["NomeDocGeral"];
+                this.columnArquivoDocGeral = base.Columns["ArquivoDocGeral"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnArquivoDocsGeraisId = new global::System.Data.DataColumn("ArquivoDocsGeraisId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArquivoDocsGeraisId);
+                this.columnNomeDocGeral = new global::System.Data.DataColumn("NomeDocGeral", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeDocGeral);
+                this.columnArquivoDocGeral = new global::System.Data.DataColumn("ArquivoDocGeral", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArquivoDocGeral);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnArquivoDocsGeraisId}, true));
+                this.columnArquivoDocsGeraisId.AutoIncrement = true;
+                this.columnArquivoDocsGeraisId.AutoIncrementSeed = -1;
+                this.columnArquivoDocsGeraisId.AutoIncrementStep = -1;
+                this.columnArquivoDocsGeraisId.AllowDBNull = false;
+                this.columnArquivoDocsGeraisId.ReadOnly = true;
+                this.columnArquivoDocsGeraisId.Unique = true;
+                this.columnNomeDocGeral.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRow NewARQUIVOS_DOCS_GERAISRow() {
+                return ((ARQUIVOS_DOCS_GERAISRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ARQUIVOS_DOCS_GERAISRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ARQUIVOS_DOCS_GERAISRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ARQUIVOS_DOCS_GERAISRowChanged != null)) {
+                    this.ARQUIVOS_DOCS_GERAISRowChanged(this, new ARQUIVOS_DOCS_GERAISRowChangeEvent(((ARQUIVOS_DOCS_GERAISRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ARQUIVOS_DOCS_GERAISRowChanging != null)) {
+                    this.ARQUIVOS_DOCS_GERAISRowChanging(this, new ARQUIVOS_DOCS_GERAISRowChangeEvent(((ARQUIVOS_DOCS_GERAISRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ARQUIVOS_DOCS_GERAISRowDeleted != null)) {
+                    this.ARQUIVOS_DOCS_GERAISRowDeleted(this, new ARQUIVOS_DOCS_GERAISRowChangeEvent(((ARQUIVOS_DOCS_GERAISRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ARQUIVOS_DOCS_GERAISRowDeleting != null)) {
+                    this.ARQUIVOS_DOCS_GERAISRowDeleting(this, new ARQUIVOS_DOCS_GERAISRowChangeEvent(((ARQUIVOS_DOCS_GERAISRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveARQUIVOS_DOCS_GERAISRow(ARQUIVOS_DOCS_GERAISRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SISCONPROJECTSDataSet ds = new SISCONPROJECTSDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ARQUIVOS_DOCS_GERAISDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ARQUIVOS_EVIDENCIASDataTable : global::System.Data.TypedTableBase<ARQUIVOS_EVIDENCIASRow> {
+            
+            private global::System.Data.DataColumn columnArquivoEvidenciaId;
+            
+            private global::System.Data.DataColumn columnNomeEvidencia;
+            
+            private global::System.Data.DataColumn columnArquivoEvidencia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASDataTable() {
+                this.TableName = "ARQUIVOS_EVIDENCIAS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ARQUIVOS_EVIDENCIASDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ARQUIVOS_EVIDENCIASDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArquivoEvidenciaIdColumn {
+                get {
+                    return this.columnArquivoEvidenciaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NomeEvidenciaColumn {
+                get {
+                    return this.columnNomeEvidencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ArquivoEvidenciaColumn {
+                get {
+                    return this.columnArquivoEvidencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRow this[int index] {
+                get {
+                    return ((ARQUIVOS_EVIDENCIASRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_EVIDENCIASRowChangeEventHandler ARQUIVOS_EVIDENCIASRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_EVIDENCIASRowChangeEventHandler ARQUIVOS_EVIDENCIASRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_EVIDENCIASRowChangeEventHandler ARQUIVOS_EVIDENCIASRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ARQUIVOS_EVIDENCIASRowChangeEventHandler ARQUIVOS_EVIDENCIASRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddARQUIVOS_EVIDENCIASRow(ARQUIVOS_EVIDENCIASRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRow AddARQUIVOS_EVIDENCIASRow(string NomeEvidencia, byte[] ArquivoEvidencia) {
+                ARQUIVOS_EVIDENCIASRow rowARQUIVOS_EVIDENCIASRow = ((ARQUIVOS_EVIDENCIASRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NomeEvidencia,
+                        ArquivoEvidencia};
+                rowARQUIVOS_EVIDENCIASRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowARQUIVOS_EVIDENCIASRow);
+                return rowARQUIVOS_EVIDENCIASRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRow FindByArquivoEvidenciaId(int ArquivoEvidenciaId) {
+                return ((ARQUIVOS_EVIDENCIASRow)(this.Rows.Find(new object[] {
+                            ArquivoEvidenciaId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ARQUIVOS_EVIDENCIASDataTable cln = ((ARQUIVOS_EVIDENCIASDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ARQUIVOS_EVIDENCIASDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnArquivoEvidenciaId = base.Columns["ArquivoEvidenciaId"];
+                this.columnNomeEvidencia = base.Columns["NomeEvidencia"];
+                this.columnArquivoEvidencia = base.Columns["ArquivoEvidencia"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnArquivoEvidenciaId = new global::System.Data.DataColumn("ArquivoEvidenciaId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArquivoEvidenciaId);
+                this.columnNomeEvidencia = new global::System.Data.DataColumn("NomeEvidencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeEvidencia);
+                this.columnArquivoEvidencia = new global::System.Data.DataColumn("ArquivoEvidencia", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArquivoEvidencia);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnArquivoEvidenciaId}, true));
+                this.columnArquivoEvidenciaId.AutoIncrement = true;
+                this.columnArquivoEvidenciaId.AutoIncrementSeed = -1;
+                this.columnArquivoEvidenciaId.AutoIncrementStep = -1;
+                this.columnArquivoEvidenciaId.AllowDBNull = false;
+                this.columnArquivoEvidenciaId.ReadOnly = true;
+                this.columnArquivoEvidenciaId.Unique = true;
+                this.columnNomeEvidencia.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRow NewARQUIVOS_EVIDENCIASRow() {
+                return ((ARQUIVOS_EVIDENCIASRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ARQUIVOS_EVIDENCIASRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ARQUIVOS_EVIDENCIASRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ARQUIVOS_EVIDENCIASRowChanged != null)) {
+                    this.ARQUIVOS_EVIDENCIASRowChanged(this, new ARQUIVOS_EVIDENCIASRowChangeEvent(((ARQUIVOS_EVIDENCIASRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ARQUIVOS_EVIDENCIASRowChanging != null)) {
+                    this.ARQUIVOS_EVIDENCIASRowChanging(this, new ARQUIVOS_EVIDENCIASRowChangeEvent(((ARQUIVOS_EVIDENCIASRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ARQUIVOS_EVIDENCIASRowDeleted != null)) {
+                    this.ARQUIVOS_EVIDENCIASRowDeleted(this, new ARQUIVOS_EVIDENCIASRowChangeEvent(((ARQUIVOS_EVIDENCIASRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ARQUIVOS_EVIDENCIASRowDeleting != null)) {
+                    this.ARQUIVOS_EVIDENCIASRowDeleting(this, new ARQUIVOS_EVIDENCIASRowChangeEvent(((ARQUIVOS_EVIDENCIASRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveARQUIVOS_EVIDENCIASRow(ARQUIVOS_EVIDENCIASRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SISCONPROJECTSDataSet ds = new SISCONPROJECTSDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ARQUIVOS_EVIDENCIASDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DOCUMENTOS_GERAISRow : global::System.Data.DataRow {
@@ -1837,22 +2432,6 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Arquivos {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableDOCUMENTOS_GERAIS.ArquivosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Arquivos\' na tabela \'DOCUMENTOS_GERAIS\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDOCUMENTOS_GERAIS.ArquivosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string TipoDocumento {
                 get {
                     try {
@@ -1864,38 +2443,6 @@ namespace sisconGestão {
                 }
                 set {
                     this[this.tableDOCUMENTOS_GERAIS.TipoDocumentoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NomeArquivo {
-                get {
-                    try {
-                        return ((string)(this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeArquivo\' na tabela \'DOCUMENTOS_GERAIS\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] ArquivoSalvo {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ArquivoSalvo\' na tabela \'DOCUMENTOS_GERAIS\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn] = value;
                 }
             }
             
@@ -1937,18 +2484,6 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsArquivosNull() {
-                return this.IsNull(this.tableDOCUMENTOS_GERAIS.ArquivosColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetArquivosNull() {
-                this[this.tableDOCUMENTOS_GERAIS.ArquivosColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTipoDocumentoNull() {
                 return this.IsNull(this.tableDOCUMENTOS_GERAIS.TipoDocumentoColumn);
             }
@@ -1957,30 +2492,6 @@ namespace sisconGestão {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTipoDocumentoNull() {
                 this[this.tableDOCUMENTOS_GERAIS.TipoDocumentoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNomeArquivoNull() {
-                return this.IsNull(this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNomeArquivoNull() {
-                this[this.tableDOCUMENTOS_GERAIS.NomeArquivoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsArquivoSalvoNull() {
-                return this.IsNull(this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetArquivoSalvoNull() {
-                this[this.tableDOCUMENTOS_GERAIS.ArquivoSalvoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2075,22 +2586,6 @@ namespace sisconGestão {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Arquivos {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableEVIDENCIAS.ArquivosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Arquivos\' na tabela \'EVIDENCIAS\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEVIDENCIAS.ArquivosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string TipoDocumento {
                 get {
                     try {
@@ -2151,18 +2646,6 @@ namespace sisconGestão {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDataInclusaoNull() {
                 this[this.tableEVIDENCIAS.DataInclusaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsArquivosNull() {
-                return this.IsNull(this.tableEVIDENCIAS.ArquivosColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetArquivosNull() {
-                this[this.tableEVIDENCIAS.ArquivosColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2512,6 +2995,170 @@ namespace sisconGestão {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ARQUIVOS_DOCS_GERAISRow : global::System.Data.DataRow {
+            
+            private ARQUIVOS_DOCS_GERAISDataTable tableARQUIVOS_DOCS_GERAIS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ARQUIVOS_DOCS_GERAISRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableARQUIVOS_DOCS_GERAIS = ((ARQUIVOS_DOCS_GERAISDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ArquivoDocsGeraisId {
+                get {
+                    return ((int)(this[this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocsGeraisIdColumn]));
+                }
+                set {
+                    this[this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocsGeraisIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NomeDocGeral {
+                get {
+                    try {
+                        return ((string)(this[this.tableARQUIVOS_DOCS_GERAIS.NomeDocGeralColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeDocGeral\' na tabela \'ARQUIVOS_DOCS_GERAIS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableARQUIVOS_DOCS_GERAIS.NomeDocGeralColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] ArquivoDocGeral {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocGeralColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ArquivoDocGeral\' na tabela \'ARQUIVOS_DOCS_GERAIS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocGeralColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNomeDocGeralNull() {
+                return this.IsNull(this.tableARQUIVOS_DOCS_GERAIS.NomeDocGeralColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNomeDocGeralNull() {
+                this[this.tableARQUIVOS_DOCS_GERAIS.NomeDocGeralColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsArquivoDocGeralNull() {
+                return this.IsNull(this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocGeralColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetArquivoDocGeralNull() {
+                this[this.tableARQUIVOS_DOCS_GERAIS.ArquivoDocGeralColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ARQUIVOS_EVIDENCIASRow : global::System.Data.DataRow {
+            
+            private ARQUIVOS_EVIDENCIASDataTable tableARQUIVOS_EVIDENCIAS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ARQUIVOS_EVIDENCIASRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableARQUIVOS_EVIDENCIAS = ((ARQUIVOS_EVIDENCIASDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ArquivoEvidenciaId {
+                get {
+                    return ((int)(this[this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaIdColumn]));
+                }
+                set {
+                    this[this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NomeEvidencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableARQUIVOS_EVIDENCIAS.NomeEvidenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NomeEvidencia\' na tabela \'ARQUIVOS_EVIDENCIAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableARQUIVOS_EVIDENCIAS.NomeEvidenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] ArquivoEvidencia {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ArquivoEvidencia\' na tabela \'ARQUIVOS_EVIDENCIAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNomeEvidenciaNull() {
+                return this.IsNull(this.tableARQUIVOS_EVIDENCIAS.NomeEvidenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNomeEvidenciaNull() {
+                this[this.tableARQUIVOS_EVIDENCIAS.NomeEvidenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsArquivoEvidenciaNull() {
+                return this.IsNull(this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetArquivoEvidenciaNull() {
+                this[this.tableARQUIVOS_EVIDENCIAS.ArquivoEvidenciaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2633,6 +3280,74 @@ namespace sisconGestão {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public USUARIOS_SENHASRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ARQUIVOS_DOCS_GERAISRowChangeEvent : global::System.EventArgs {
+            
+            private ARQUIVOS_DOCS_GERAISRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRowChangeEvent(ARQUIVOS_DOCS_GERAISRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_DOCS_GERAISRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ARQUIVOS_EVIDENCIASRowChangeEvent : global::System.EventArgs {
+            
+            private ARQUIVOS_EVIDENCIASRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRowChangeEvent(ARQUIVOS_EVIDENCIASRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ARQUIVOS_EVIDENCIASRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2776,14 +3491,11 @@ namespace sisconGestão.SISCONPROJECTSDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NomeDocumento", "NomeDocumento");
             tableMapping.ColumnMappings.Add("DescricaoDocumento", "DescricaoDocumento");
             tableMapping.ColumnMappings.Add("DataInclusao", "DataInclusao");
-            tableMapping.ColumnMappings.Add("Arquivos", "Arquivos");
             tableMapping.ColumnMappings.Add("TipoDocumento", "TipoDocumento");
-            tableMapping.ColumnMappings.Add("NomeArquivo", "NomeArquivo");
-            tableMapping.ColumnMappings.Add("ArquivoSalvo", "ArquivoSalvo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [DOCUMENTOS_GERAIS] WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)) AND ((@IsNull_NomeArquivo = 1 AND [NomeArquivo] IS NULL) OR ([NomeArquivo] = @Original_NomeArquivo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [DOCUMENTOS_GERAIS] WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentosGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2794,32 +3506,24 @@ namespace sisconGestão.SISCONPROJECTSDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeArquivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [DOCUMENTOS_GERAIS] ([NomeDocumento], [DescricaoDocumento], [DataInclusao], [Arquivos], [TipoDocumento], [NomeArquivo], [ArquivoSalvo]) VALUES (@NomeDocumento, @DescricaoDocumento, @DataInclusao, @Arquivos, @TipoDocumento, @NomeArquivo, @ArquivoSalvo);
-SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [DOCUMENTOS_GERAIS] ([NomeDocumento], [DescricaoDocumento], [DataInclusao], [TipoDocumento]) VALUES (@NomeDocumento, @DescricaoDocumento, @DataInclusao, @TipoDocumento);
+SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, TipoDocumento FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoSalvo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoSalvo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [DOCUMENTOS_GERAIS] SET [NomeDocumento] = @NomeDocumento, [DescricaoDocumento] = @DescricaoDocumento, [DataInclusao] = @DataInclusao, [Arquivos] = @Arquivos, [TipoDocumento] = @TipoDocumento, [NomeArquivo] = @NomeArquivo, [ArquivoSalvo] = @ArquivoSalvo WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)) AND ((@IsNull_NomeArquivo = 1 AND [NomeArquivo] IS NULL) OR ([NomeArquivo] = @Original_NomeArquivo)));
-SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = @DocumentosGeraisId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [DOCUMENTOS_GERAIS] SET [NomeDocumento] = @NomeDocumento, [DescricaoDocumento] = @DescricaoDocumento, [DataInclusao] = @DataInclusao, [TipoDocumento] = @TipoDocumento WHERE (([DocumentosGeraisId] = @Original_DocumentosGeraisId) AND ((@IsNull_NomeDocumento = 1 AND [NomeDocumento] IS NULL) OR ([NomeDocumento] = @Original_NomeDocumento)) AND ((@IsNull_DescricaoDocumento = 1 AND [DescricaoDocumento] IS NULL) OR ([DescricaoDocumento] = @Original_DescricaoDocumento)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)));
+SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, TipoDocumento FROM DOCUMENTOS_GERAIS WHERE (DocumentosGeraisId = @DocumentosGeraisId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoSalvo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoSalvo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DocumentosGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2829,8 +3533,6 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeArquivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeArquivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeArquivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentosGeraisId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentosGeraisId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2847,14 +3549,13 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqui" +
-                "vos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS";
+            this._commandCollection[0].CommandText = "SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, TipoD" +
+                "ocumento FROM DOCUMENTOS_GERAIS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqui" +
-                "vos, TipoDocumento, NomeArquivo, ArquivoSalvo FROM DOCUMENTOS_GERAIS order by No" +
-                "meDocumento";
+            this._commandCollection[1].CommandText = "SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, TipoD" +
+                "ocumento FROM DOCUMENTOS_GERAIS ORDER BY NomeDocumento";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2939,7 +3640,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo) {
+        public virtual int Delete(int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_DocumentosGeraisId));
             if ((Original_NomeDocumento == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2973,14 +3674,6 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_TipoDocumento));
             }
-            if ((Original_NomeArquivo == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_NomeArquivo));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3001,7 +3694,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo) {
+        public virtual int Insert(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento) {
             if ((NomeDocumento == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3020,29 +3713,11 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Arquivos == null)) {
+            if ((TipoDocumento == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(Arquivos));
-            }
-            if ((TipoDocumento == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(TipoDocumento));
-            }
-            if ((NomeArquivo == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NomeArquivo));
-            }
-            if ((ArquivoSalvo == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(ArquivoSalvo));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TipoDocumento));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3064,7 +3739,7 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo, int DocumentosGeraisId) {
+        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, int DocumentosGeraisId) {
             if ((NomeDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3083,72 +3758,46 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Arquivos == null)) {
+            if ((TipoDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(Arquivos));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TipoDocumento));
             }
-            if ((TipoDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(TipoDocumento));
-            }
-            if ((NomeArquivo == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NomeArquivo));
-            }
-            if ((ArquivoSalvo == null)) {
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_DocumentosGeraisId));
+            if ((Original_NomeDocumento == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(ArquivoSalvo));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_DocumentosGeraisId));
-            if ((Original_NomeDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_NomeDocumento));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_NomeDocumento));
             }
             if ((Original_DescricaoDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DescricaoDocumento));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_DescricaoDocumento));
             }
             if ((Original_DataInclusao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DataInclusao.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DataInclusao.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_TipoDocumento));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_TipoDocumento));
             }
-            if ((Original_NomeArquivo == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_NomeArquivo));
-            }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(DocumentosGeraisId));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(DocumentosGeraisId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3169,8 +3818,8 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, string NomeArquivo, byte[] ArquivoSalvo, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, string Original_NomeArquivo) {
-            return this.Update(NomeDocumento, DescricaoDocumento, DataInclusao, Arquivos, TipoDocumento, NomeArquivo, ArquivoSalvo, Original_DocumentosGeraisId, Original_NomeDocumento, Original_DescricaoDocumento, Original_DataInclusao, Original_TipoDocumento, Original_NomeArquivo, Original_DocumentosGeraisId);
+        public virtual int Update(string NomeDocumento, string DescricaoDocumento, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento, int Original_DocumentosGeraisId, string Original_NomeDocumento, string Original_DescricaoDocumento, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
+            return this.Update(NomeDocumento, DescricaoDocumento, DataInclusao, TipoDocumento, Original_DocumentosGeraisId, Original_NomeDocumento, Original_DescricaoDocumento, Original_DataInclusao, Original_TipoDocumento, Original_DocumentosGeraisId);
         }
     }
     
@@ -3300,7 +3949,6 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             tableMapping.ColumnMappings.Add("DescricaoEvidencia", "DescricaoEvidencia");
             tableMapping.ColumnMappings.Add("DesenvolvedorEvidencia", "DesenvolvedorEvidencia");
             tableMapping.ColumnMappings.Add("DataInclusao", "DataInclusao");
-            tableMapping.ColumnMappings.Add("Arquivos", "Arquivos");
             tableMapping.ColumnMappings.Add("TipoDocumento", "TipoDocumento");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -3320,25 +3968,23 @@ SELECT DocumentosGeraisId, NomeDocumento, DescricaoDocumento, DataInclusao, Arqu
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EVIDENCIAS] ([NomeEvidencia], [DescricaoEvidencia], [DesenvolvedorEvidencia], [DataInclusao], [Arquivos], [TipoDocumento]) VALUES (@NomeEvidencia, @DescricaoEvidencia, @DesenvolvedorEvidencia, @DataInclusao, @Arquivos, @TipoDocumento);
-SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, Arquivos, TipoDocumento FROM EVIDENCIAS WHERE (EvidenciasId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EVIDENCIAS] ([NomeEvidencia], [DescricaoEvidencia], [DesenvolvedorEvidencia], [DataInclusao], [TipoDocumento]) VALUES (@NomeEvidencia, @DescricaoEvidencia, @DesenvolvedorEvidencia, @DataInclusao, @TipoDocumento);
+SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, TipoDocumento FROM EVIDENCIAS WHERE (EvidenciasId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DesenvolvedorEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DesenvolvedorEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [EVIDENCIAS] SET [NomeEvidencia] = @NomeEvidencia, [DescricaoEvidencia] = @DescricaoEvidencia, [DesenvolvedorEvidencia] = @DesenvolvedorEvidencia, [DataInclusao] = @DataInclusao, [Arquivos] = @Arquivos, [TipoDocumento] = @TipoDocumento WHERE (([EvidenciasId] = @Original_EvidenciasId) AND ((@IsNull_NomeEvidencia = 1 AND [NomeEvidencia] IS NULL) OR ([NomeEvidencia] = @Original_NomeEvidencia)) AND ((@IsNull_DescricaoEvidencia = 1 AND [DescricaoEvidencia] IS NULL) OR ([DescricaoEvidencia] = @Original_DescricaoEvidencia)) AND ((@IsNull_DesenvolvedorEvidencia = 1 AND [DesenvolvedorEvidencia] IS NULL) OR ([DesenvolvedorEvidencia] = @Original_DesenvolvedorEvidencia)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)));
-SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, Arquivos, TipoDocumento FROM EVIDENCIAS WHERE (EvidenciasId = @EvidenciasId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [EVIDENCIAS] SET [NomeEvidencia] = @NomeEvidencia, [DescricaoEvidencia] = @DescricaoEvidencia, [DesenvolvedorEvidencia] = @DesenvolvedorEvidencia, [DataInclusao] = @DataInclusao, [TipoDocumento] = @TipoDocumento WHERE (([EvidenciasId] = @Original_EvidenciasId) AND ((@IsNull_NomeEvidencia = 1 AND [NomeEvidencia] IS NULL) OR ([NomeEvidencia] = @Original_NomeEvidencia)) AND ((@IsNull_DescricaoEvidencia = 1 AND [DescricaoEvidencia] IS NULL) OR ([DescricaoEvidencia] = @Original_DescricaoEvidencia)) AND ((@IsNull_DesenvolvedorEvidencia = 1 AND [DesenvolvedorEvidencia] IS NULL) OR ([DesenvolvedorEvidencia] = @Original_DesenvolvedorEvidencia)) AND ((@IsNull_DataInclusao = 1 AND [DataInclusao] IS NULL) OR ([DataInclusao] = @Original_DataInclusao)) AND ((@IsNull_TipoDocumento = 1 AND [TipoDocumento] IS NULL) OR ([TipoDocumento] = @Original_TipoDocumento)));
+SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, TipoDocumento FROM EVIDENCIAS WHERE (EvidenciasId = @EvidenciasId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescricaoEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescricaoEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DesenvolvedorEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DesenvolvedorEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInclusao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInclusao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arquivos", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arquivos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoDocumento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EvidenciasId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EvidenciasId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeEvidencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3368,12 +4014,12 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, D" +
-                "ataInclusao, Arquivos, TipoDocumento FROM EVIDENCIAS";
+                "ataInclusao, TipoDocumento FROM EVIDENCIAS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Arquivos, DataInclusao, DescricaoEvidencia, DesenvolvedorEvidencia, Eviden" +
-                "ciasId, NomeEvidencia, TipoDocumento FROM EVIDENCIAS ORDER BY NomeEvidencia";
+            this._commandCollection[1].CommandText = "SELECT DataInclusao, DescricaoEvidencia, DesenvolvedorEvidencia, EvidenciasId, No" +
+                "meEvidencia, TipoDocumento FROM EVIDENCIAS ORDER BY NomeEvidencia";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3520,7 +4166,7 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento) {
+        public virtual int Insert(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento) {
             if ((NomeEvidencia == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3545,17 +4191,11 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Arquivos == null)) {
+            if ((TipoDocumento == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((byte[])(Arquivos));
-            }
-            if ((TipoDocumento == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(TipoDocumento));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(TipoDocumento));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3577,7 +4217,7 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, int Original_EvidenciasId, string Original_NomeEvidencia, string Original_DescricaoEvidencia, string Original_DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, int EvidenciasId) {
+        public virtual int Update(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento, int Original_EvidenciasId, string Original_NomeEvidencia, string Original_DescricaoEvidencia, string Original_DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento, int EvidenciasId) {
             if ((NomeEvidencia == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3602,60 +4242,54 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Arquivos == null)) {
+            if ((TipoDocumento == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((byte[])(Arquivos));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(TipoDocumento));
             }
-            if ((TipoDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(TipoDocumento));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_EvidenciasId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_EvidenciasId));
             if ((Original_NomeEvidencia == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NomeEvidencia));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NomeEvidencia));
             }
             if ((Original_DescricaoEvidencia == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DescricaoEvidencia));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DescricaoEvidencia));
             }
             if ((Original_DesenvolvedorEvidencia == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DesenvolvedorEvidencia));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DesenvolvedorEvidencia));
             }
             if ((Original_DataInclusao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_DataInclusao.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DataInclusao.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoDocumento == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_TipoDocumento));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_TipoDocumento));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(EvidenciasId));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(EvidenciasId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3676,8 +4310,8 @@ SELECT EvidenciasId, NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, byte[] Arquivos, string TipoDocumento, int Original_EvidenciasId, string Original_NomeEvidencia, string Original_DescricaoEvidencia, string Original_DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
-            return this.Update(NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, Arquivos, TipoDocumento, Original_EvidenciasId, Original_NomeEvidencia, Original_DescricaoEvidencia, Original_DesenvolvedorEvidencia, Original_DataInclusao, Original_TipoDocumento, Original_EvidenciasId);
+        public virtual int Update(string NomeEvidencia, string DescricaoEvidencia, string DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> DataInclusao, string TipoDocumento, int Original_EvidenciasId, string Original_NomeEvidencia, string Original_DescricaoEvidencia, string Original_DesenvolvedorEvidencia, global::System.Nullable<global::System.DateTime> Original_DataInclusao, string Original_TipoDocumento) {
+            return this.Update(NomeEvidencia, DescricaoEvidencia, DesenvolvedorEvidencia, DataInclusao, TipoDocumento, Original_EvidenciasId, Original_NomeEvidencia, Original_DescricaoEvidencia, Original_DesenvolvedorEvidencia, Original_DataInclusao, Original_TipoDocumento, Original_EvidenciasId);
         }
     }
     
@@ -4655,6 +5289,690 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ARQUIVOS_DOCS_GERAISTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ARQUIVOS_DOCS_GERAISTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ARQUIVOS_DOCS_GERAIS";
+            tableMapping.ColumnMappings.Add("ArquivoDocsGeraisId", "ArquivoDocsGeraisId");
+            tableMapping.ColumnMappings.Add("NomeDocGeral", "NomeDocGeral");
+            tableMapping.ColumnMappings.Add("ArquivoDocGeral", "ArquivoDocGeral");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ARQUIVOS_DOCS_GERAIS] WHERE (([ArquivoDocsGeraisId] = @Origina" +
+                "l_ArquivoDocsGeraisId) AND ((@IsNull_NomeDocGeral = 1 AND [NomeDocGeral] IS NULL" +
+                ") OR ([NomeDocGeral] = @Original_NomeDocGeral)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArquivoDocsGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoDocsGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocGeral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeDocGeral", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ARQUIVOS_DOCS_GERAIS] ([NomeDocGeral], [ArquivoDocGeral]) VALU" +
+                "ES (@NomeDocGeral, @ArquivoDocGeral);\r\nSELECT ArquivoDocsGeraisId, NomeDocGeral," +
+                " ArquivoDocGeral FROM ARQUIVOS_DOCS_GERAIS WHERE (ArquivoDocsGeraisId = SCOPE_ID" +
+                "ENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocGeral", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoDocGeral", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoDocGeral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ARQUIVOS_DOCS_GERAIS] SET [NomeDocGeral] = @NomeDocGeral, [ArquivoDocGeral] = @ArquivoDocGeral WHERE (([ArquivoDocsGeraisId] = @Original_ArquivoDocsGeraisId) AND ((@IsNull_NomeDocGeral = 1 AND [NomeDocGeral] IS NULL) OR ([NomeDocGeral] = @Original_NomeDocGeral)));
+SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM ARQUIVOS_DOCS_GERAIS WHERE (ArquivoDocsGeraisId = @ArquivoDocsGeraisId)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeDocGeral", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoDocGeral", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoDocGeral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArquivoDocsGeraisId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoDocsGeraisId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeDocGeral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeDocGeral", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeDocGeral", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoDocsGeraisId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoDocsGeraisId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::sisconGestão.Properties.Settings.Default.SISCONPROJECTSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM dbo.ARQUIVOS_DOCS_" +
+                "GERAIS";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SISCONPROJECTSDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ARQUIVOS_DOCS_GERAIS");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ArquivoDocsGeraisId, string Original_NomeDocGeral) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ArquivoDocsGeraisId));
+            if ((Original_NomeDocGeral == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NomeDocGeral));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NomeDocGeral, byte[] ArquivoDocGeral) {
+            if ((NomeDocGeral == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NomeDocGeral));
+            }
+            if ((ArquivoDocGeral == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(ArquivoDocGeral));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NomeDocGeral, byte[] ArquivoDocGeral, int Original_ArquivoDocsGeraisId, string Original_NomeDocGeral, int ArquivoDocsGeraisId) {
+            if ((NomeDocGeral == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NomeDocGeral));
+            }
+            if ((ArquivoDocGeral == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(ArquivoDocGeral));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ArquivoDocsGeraisId));
+            if ((Original_NomeDocGeral == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_NomeDocGeral));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ArquivoDocsGeraisId));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NomeDocGeral, byte[] ArquivoDocGeral, int Original_ArquivoDocsGeraisId, string Original_NomeDocGeral) {
+            return this.Update(NomeDocGeral, ArquivoDocGeral, Original_ArquivoDocsGeraisId, Original_NomeDocGeral, Original_ArquivoDocsGeraisId);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ARQUIVOS_EVIDENCIASTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ARQUIVOS_EVIDENCIASTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ARQUIVOS_EVIDENCIAS";
+            tableMapping.ColumnMappings.Add("ArquivoEvidenciaId", "ArquivoEvidenciaId");
+            tableMapping.ColumnMappings.Add("NomeEvidencia", "NomeEvidencia");
+            tableMapping.ColumnMappings.Add("ArquivoEvidencia", "ArquivoEvidencia");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ARQUIVOS_EVIDENCIAS] WHERE (([ArquivoEvidenciaId] = @Original_" +
+                "ArquivoEvidenciaId) AND ((@IsNull_NomeEvidencia = 1 AND [NomeEvidencia] IS NULL)" +
+                " OR ([NomeEvidencia] = @Original_NomeEvidencia)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArquivoEvidenciaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoEvidenciaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeEvidencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ARQUIVOS_EVIDENCIAS] ([NomeEvidencia], [ArquivoEvidencia]) VAL" +
+                "UES (@NomeEvidencia, @ArquivoEvidencia);\r\nSELECT ArquivoEvidenciaId, NomeEvidenc" +
+                "ia, ArquivoEvidencia FROM ARQUIVOS_EVIDENCIAS WHERE (ArquivoEvidenciaId = SCOPE_" +
+                "IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoEvidencia", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ARQUIVOS_EVIDENCIAS] SET [NomeEvidencia] = @NomeEvidencia, [ArquivoEvidencia] = @ArquivoEvidencia WHERE (([ArquivoEvidenciaId] = @Original_ArquivoEvidenciaId) AND ((@IsNull_NomeEvidencia = 1 AND [NomeEvidencia] IS NULL) OR ([NomeEvidencia] = @Original_NomeEvidencia)));
+SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM ARQUIVOS_EVIDENCIAS WHERE (ArquivoEvidenciaId = @ArquivoEvidenciaId)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoEvidencia", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoEvidencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArquivoEvidenciaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoEvidenciaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomeEvidencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NomeEvidencia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomeEvidencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArquivoEvidenciaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ArquivoEvidenciaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::sisconGestão.Properties.Settings.Default.SISCONPROJECTSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM dbo.ARQUIVOS_EVID" +
+                "ENCIAS";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SISCONPROJECTSDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ARQUIVOS_EVIDENCIAS");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ArquivoEvidenciaId, string Original_NomeEvidencia) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ArquivoEvidenciaId));
+            if ((Original_NomeEvidencia == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NomeEvidencia));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NomeEvidencia, byte[] ArquivoEvidencia) {
+            if ((NomeEvidencia == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NomeEvidencia));
+            }
+            if ((ArquivoEvidencia == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(ArquivoEvidencia));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NomeEvidencia, byte[] ArquivoEvidencia, int Original_ArquivoEvidenciaId, string Original_NomeEvidencia, int ArquivoEvidenciaId) {
+            if ((NomeEvidencia == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NomeEvidencia));
+            }
+            if ((ArquivoEvidencia == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(ArquivoEvidencia));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ArquivoEvidenciaId));
+            if ((Original_NomeEvidencia == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_NomeEvidencia));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ArquivoEvidenciaId));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NomeEvidencia, byte[] ArquivoEvidencia, int Original_ArquivoEvidenciaId, string Original_NomeEvidencia) {
+            return this.Update(NomeEvidencia, ArquivoEvidencia, Original_ArquivoEvidenciaId, Original_NomeEvidencia, Original_ArquivoEvidenciaId);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4673,6 +5991,10 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
         private LANCAMENTO_HORARIOSTableAdapter _lANCAMENTO_HORARIOSTableAdapter;
         
         private USUARIOS_SENHASTableAdapter _uSUARIOS_SENHASTableAdapter;
+        
+        private ARQUIVOS_DOCS_GERAISTableAdapter _aRQUIVOS_DOCS_GERAISTableAdapter;
+        
+        private ARQUIVOS_EVIDENCIASTableAdapter _aRQUIVOS_EVIDENCIASTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4747,6 +6069,34 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ARQUIVOS_DOCS_GERAISTableAdapter ARQUIVOS_DOCS_GERAISTableAdapter {
+            get {
+                return this._aRQUIVOS_DOCS_GERAISTableAdapter;
+            }
+            set {
+                this._aRQUIVOS_DOCS_GERAISTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ARQUIVOS_EVIDENCIASTableAdapter ARQUIVOS_EVIDENCIASTableAdapter {
+            get {
+                return this._aRQUIVOS_EVIDENCIASTableAdapter;
+            }
+            set {
+                this._aRQUIVOS_EVIDENCIASTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -4780,6 +6130,14 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                             && (this._uSUARIOS_SENHASTableAdapter.Connection != null))) {
                     return this._uSUARIOS_SENHASTableAdapter.Connection;
                 }
+                if (((this._aRQUIVOS_DOCS_GERAISTableAdapter != null) 
+                            && (this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection != null))) {
+                    return this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection;
+                }
+                if (((this._aRQUIVOS_EVIDENCIASTableAdapter != null) 
+                            && (this._aRQUIVOS_EVIDENCIASTableAdapter.Connection != null))) {
+                    return this._aRQUIVOS_EVIDENCIASTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -4803,6 +6161,12 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                     count = (count + 1);
                 }
                 if ((this._uSUARIOS_SENHASTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4852,6 +6216,24 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ARQUIVOS_DOCS_GERAIS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aRQUIVOS_DOCS_GERAISTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ARQUIVOS_EVIDENCIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aRQUIVOS_EVIDENCIASTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -4894,6 +6276,22 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ARQUIVOS_DOCS_GERAIS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aRQUIVOS_DOCS_GERAISTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ARQUIVOS_EVIDENCIAS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aRQUIVOS_EVIDENCIASTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -4904,6 +6302,22 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(SISCONPROJECTSDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ARQUIVOS_EVIDENCIAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aRQUIVOS_EVIDENCIASTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ARQUIVOS_DOCS_GERAIS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aRQUIVOS_DOCS_GERAISTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._uSUARIOS_SENHASTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.USUARIOS_SENHAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4995,6 +6409,16 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
+            if (((this._aRQUIVOS_DOCS_GERAISTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
+            if (((this._aRQUIVOS_EVIDENCIASTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aRQUIVOS_EVIDENCIASTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager não contém informações de conexão. Defina cada propriedade Ta" +
@@ -5061,6 +6485,24 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                     if (this._uSUARIOS_SENHASTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._uSUARIOS_SENHASTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._uSUARIOS_SENHASTableAdapter.Adapter);
+                    }
+                }
+                if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                    revertConnections.Add(this._aRQUIVOS_DOCS_GERAISTableAdapter, this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection);
+                    this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._aRQUIVOS_DOCS_GERAISTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._aRQUIVOS_DOCS_GERAISTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aRQUIVOS_DOCS_GERAISTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aRQUIVOS_DOCS_GERAISTableAdapter.Adapter);
+                    }
+                }
+                if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
+                    revertConnections.Add(this._aRQUIVOS_EVIDENCIASTableAdapter, this._aRQUIVOS_EVIDENCIASTableAdapter.Connection);
+                    this._aRQUIVOS_EVIDENCIASTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._aRQUIVOS_EVIDENCIASTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._aRQUIVOS_EVIDENCIASTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aRQUIVOS_EVIDENCIASTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aRQUIVOS_EVIDENCIASTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5136,6 +6578,14 @@ SELECT UsuariosSenhasId, Usuario, Senha, Competencia FROM USUARIOS_SENHAS WHERE 
                 if ((this._uSUARIOS_SENHASTableAdapter != null)) {
                     this._uSUARIOS_SENHASTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._uSUARIOS_SENHASTableAdapter]));
                     this._uSUARIOS_SENHASTableAdapter.Transaction = null;
+                }
+                if ((this._aRQUIVOS_DOCS_GERAISTableAdapter != null)) {
+                    this._aRQUIVOS_DOCS_GERAISTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aRQUIVOS_DOCS_GERAISTableAdapter]));
+                    this._aRQUIVOS_DOCS_GERAISTableAdapter.Transaction = null;
+                }
+                if ((this._aRQUIVOS_EVIDENCIASTableAdapter != null)) {
+                    this._aRQUIVOS_EVIDENCIASTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aRQUIVOS_EVIDENCIASTableAdapter]));
+                    this._aRQUIVOS_EVIDENCIASTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

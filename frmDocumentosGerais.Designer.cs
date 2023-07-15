@@ -33,16 +33,11 @@
             System.Windows.Forms.Label nomeDocumentoLabel;
             System.Windows.Forms.Label descricaoDocumentoLabel;
             System.Windows.Forms.Label dataInclusaoLabel;
-            System.Windows.Forms.Label arquivosLabel;
             System.Windows.Forms.Label tipoDocumentoLabel;
-            System.Windows.Forms.Label nomeArquivoLabel;
-            System.Windows.Forms.Label arquivoSalvoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocumentosGerais));
             this.tlpDocumentosGerais = new System.Windows.Forms.TableLayoutPanel();
             this.dOCUMENTOS_GERAISBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.dOCUMENTOS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -61,52 +56,46 @@
             this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
             this.tbDocumentosGerais = new System.Windows.Forms.TabControl();
             this.tpCapa = new System.Windows.Forms.TabPage();
-            this.arquivoSalvoTextBox = new System.Windows.Forms.TextBox();
-            this.nomeArquivoTextBox = new System.Windows.Forms.TextBox();
             this.tipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
-            this.arquivosPictureBox = new System.Windows.Forms.PictureBox();
             this.documentosGeraisIdTextBox = new System.Windows.Forms.TextBox();
             this.nomeDocumentoTextBox = new System.Windows.Forms.TextBox();
             this.descricaoDocumentoTextBox = new System.Windows.Forms.TextBox();
             this.dataInclusaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tpDetalhes = new System.Windows.Forms.TabPage();
             this.dOCUMENTOS_GERAISDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ArquivoSalvo = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbPesquisaDocumento = new System.Windows.Forms.GroupBox();
+            this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
             this.btnPesquisarDocsGerais = new System.Windows.Forms.Button();
             this.rbPesquisaData = new System.Windows.Forms.RadioButton();
             this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
             this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
             this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.dOCUMENTOS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
             documentosGeraisIdLabel = new System.Windows.Forms.Label();
             nomeDocumentoLabel = new System.Windows.Forms.Label();
             descricaoDocumentoLabel = new System.Windows.Forms.Label();
             dataInclusaoLabel = new System.Windows.Forms.Label();
-            arquivosLabel = new System.Windows.Forms.Label();
             tipoDocumentoLabel = new System.Windows.Forms.Label();
-            nomeArquivoLabel = new System.Windows.Forms.Label();
-            arquivoSalvoLabel = new System.Windows.Forms.Label();
             this.tlpDocumentosGerais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingNavigator)).BeginInit();
             this.dOCUMENTOS_GERAISBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.tbDocumentosGerais.SuspendLayout();
             this.tpCapa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arquivosPictureBox)).BeginInit();
             this.tpDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISDataGridView)).BeginInit();
             this.gbPesquisaDocumento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // documentosGeraisIdLabel
@@ -149,16 +138,6 @@
             dataInclusaoLabel.TabIndex = 6;
             dataInclusaoLabel.Text = "Data Inclusao:";
             // 
-            // arquivosLabel
-            // 
-            arquivosLabel.AutoSize = true;
-            arquivosLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            arquivosLabel.Location = new System.Drawing.Point(677, 3);
-            arquivosLabel.Name = "arquivosLabel";
-            arquivosLabel.Size = new System.Drawing.Size(84, 19);
-            arquivosLabel.TabIndex = 8;
-            arquivosLabel.Text = "Arquivos:";
-            // 
             // tipoDocumentoLabel
             // 
             tipoDocumentoLabel.AutoSize = true;
@@ -168,25 +147,6 @@
             tipoDocumentoLabel.Size = new System.Drawing.Size(142, 19);
             tipoDocumentoLabel.TabIndex = 10;
             tipoDocumentoLabel.Text = "Tipo Documento:";
-            // 
-            // nomeArquivoLabel
-            // 
-            nomeArquivoLabel.AutoSize = true;
-            nomeArquivoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeArquivoLabel.Location = new System.Drawing.Point(678, 186);
-            nomeArquivoLabel.Name = "nomeArquivoLabel";
-            nomeArquivoLabel.Size = new System.Drawing.Size(123, 19);
-            nomeArquivoLabel.TabIndex = 12;
-            nomeArquivoLabel.Text = "Nome Arquivo:";
-            // 
-            // arquivoSalvoLabel
-            // 
-            arquivoSalvoLabel.AutoSize = true;
-            arquivoSalvoLabel.Location = new System.Drawing.Point(680, 119);
-            arquivoSalvoLabel.Name = "arquivoSalvoLabel";
-            arquivoSalvoLabel.Size = new System.Drawing.Size(108, 18);
-            arquivoSalvoLabel.TabIndex = 14;
-            arquivoSalvoLabel.Text = "Arquivo Salvo:";
             // 
             // tlpDocumentosGerais
             // 
@@ -254,16 +214,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // dOCUMENTOS_GERAISBindingSource
-            // 
-            this.dOCUMENTOS_GERAISBindingSource.DataMember = "DOCUMENTOS_GERAIS";
-            this.dOCUMENTOS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
-            // 
-            // sISCONPROJECTSDataSet
-            // 
-            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
-            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -422,14 +372,8 @@
             // tpCapa
             // 
             this.tpCapa.AutoScroll = true;
-            this.tpCapa.Controls.Add(arquivoSalvoLabel);
-            this.tpCapa.Controls.Add(this.arquivoSalvoTextBox);
-            this.tpCapa.Controls.Add(nomeArquivoLabel);
-            this.tpCapa.Controls.Add(this.nomeArquivoTextBox);
             this.tpCapa.Controls.Add(tipoDocumentoLabel);
             this.tpCapa.Controls.Add(this.tipoDocumentoComboBox);
-            this.tpCapa.Controls.Add(arquivosLabel);
-            this.tpCapa.Controls.Add(this.arquivosPictureBox);
             this.tpCapa.Controls.Add(documentosGeraisIdLabel);
             this.tpCapa.Controls.Add(this.documentosGeraisIdTextBox);
             this.tpCapa.Controls.Add(nomeDocumentoLabel);
@@ -445,23 +389,6 @@
             this.tpCapa.TabIndex = 0;
             this.tpCapa.Text = "Capa Documentos Gerais";
             this.tpCapa.UseVisualStyleBackColor = true;
-            // 
-            // arquivoSalvoTextBox
-            // 
-            this.arquivoSalvoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "ArquivoSalvo", true));
-            this.arquivoSalvoTextBox.Location = new System.Drawing.Point(683, 140);
-            this.arquivoSalvoTextBox.Name = "arquivoSalvoTextBox";
-            this.arquivoSalvoTextBox.Size = new System.Drawing.Size(100, 26);
-            this.arquivoSalvoTextBox.TabIndex = 15;
-            // 
-            // nomeArquivoTextBox
-            // 
-            this.nomeArquivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dOCUMENTOS_GERAISBindingSource, "NomeArquivo", true));
-            this.nomeArquivoTextBox.Enabled = false;
-            this.nomeArquivoTextBox.Location = new System.Drawing.Point(680, 207);
-            this.nomeArquivoTextBox.Name = "nomeArquivoTextBox";
-            this.nomeArquivoTextBox.Size = new System.Drawing.Size(173, 26);
-            this.nomeArquivoTextBox.TabIndex = 13;
             // 
             // tipoDocumentoComboBox
             // 
@@ -481,16 +408,6 @@
             this.tipoDocumentoComboBox.Name = "tipoDocumentoComboBox";
             this.tipoDocumentoComboBox.Size = new System.Drawing.Size(138, 26);
             this.tipoDocumentoComboBox.TabIndex = 11;
-            // 
-            // arquivosPictureBox
-            // 
-            this.arquivosPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.arquivosPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.dOCUMENTOS_GERAISBindingSource, "Arquivos", true));
-            this.arquivosPictureBox.Location = new System.Drawing.Point(680, 24);
-            this.arquivosPictureBox.Name = "arquivosPictureBox";
-            this.arquivosPictureBox.Size = new System.Drawing.Size(173, 92);
-            this.arquivosPictureBox.TabIndex = 9;
-            this.arquivosPictureBox.TabStop = false;
             // 
             // documentosGeraisIdTextBox
             // 
@@ -517,7 +434,7 @@
             this.descricaoDocumentoTextBox.Multiline = true;
             this.descricaoDocumentoTextBox.Name = "descricaoDocumentoTextBox";
             this.descricaoDocumentoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descricaoDocumentoTextBox.Size = new System.Drawing.Size(664, 158);
+            this.descricaoDocumentoTextBox.Size = new System.Drawing.Size(843, 158);
             this.descricaoDocumentoTextBox.TabIndex = 5;
             // 
             // dataInclusaoDateTimePicker
@@ -553,31 +470,14 @@
             this.TipoDocumento,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewImageColumn1,
             this.ArquivoSalvo});
             this.dOCUMENTOS_GERAISDataGridView.DataSource = this.dOCUMENTOS_GERAISBindingSource;
             this.dOCUMENTOS_GERAISDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dOCUMENTOS_GERAISDataGridView.Location = new System.Drawing.Point(3, 3);
             this.dOCUMENTOS_GERAISDataGridView.Name = "dOCUMENTOS_GERAISDataGridView";
             this.dOCUMENTOS_GERAISDataGridView.ReadOnly = true;
-            this.dOCUMENTOS_GERAISDataGridView.Size = new System.Drawing.Size(853, 233);
+            this.dOCUMENTOS_GERAISDataGridView.Size = new System.Drawing.Size(853, 238);
             this.dOCUMENTOS_GERAISDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DocumentosGeraisId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Identificação Documento";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 205;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeDocumento";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome Documento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 160;
             // 
             // TipoDocumento
             // 
@@ -586,29 +486,6 @@
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoDocumento";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição Documento";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 195;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataInclusao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Data Inclusão";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Arquivos";
-            this.dataGridViewImageColumn1.HeaderText = "Arquivos";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
             // 
             // ArquivoSalvo
             // 
@@ -633,6 +510,15 @@
             this.gbPesquisaDocumento.TabIndex = 2;
             this.gbPesquisaDocumento.TabStop = false;
             this.gbPesquisaDocumento.Text = "Para realizar a pesquisa";
+            // 
+            // mkdtxtPesquisaData
+            // 
+            this.mkdtxtPesquisaData.Location = new System.Drawing.Point(320, 34);
+            this.mkdtxtPesquisaData.Mask = "00/00/0000";
+            this.mkdtxtPesquisaData.Name = "mkdtxtPesquisaData";
+            this.mkdtxtPesquisaData.Size = new System.Drawing.Size(108, 26);
+            this.mkdtxtPesquisaData.TabIndex = 5;
+            this.mkdtxtPesquisaData.ValidatingType = typeof(System.DateTime);
             // 
             // btnPesquisarDocsGerais
             // 
@@ -695,6 +581,48 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // dOCUMENTOS_GERAISBindingSource
+            // 
+            this.dOCUMENTOS_GERAISBindingSource.DataMember = "DOCUMENTOS_GERAIS";
+            this.dOCUMENTOS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DocumentosGeraisId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Identificação Documento";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 205;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeDocumento";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome Documento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoDocumento";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição Documento";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 195;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataInclusao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Data Inclusão";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
             // dOCUMENTOS_GERAISTableAdapter
             // 
             this.dOCUMENTOS_GERAISTableAdapter.ClearBeforeFill = true;
@@ -708,15 +636,6 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
-            // mkdtxtPesquisaData
-            // 
-            this.mkdtxtPesquisaData.Location = new System.Drawing.Point(320, 34);
-            this.mkdtxtPesquisaData.Mask = "00/00/0000";
-            this.mkdtxtPesquisaData.Name = "mkdtxtPesquisaData";
-            this.mkdtxtPesquisaData.Size = new System.Drawing.Size(108, 26);
-            this.mkdtxtPesquisaData.TabIndex = 5;
-            this.mkdtxtPesquisaData.ValidatingType = typeof(System.DateTime);
-            // 
             // frmDocumentosGerais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -728,23 +647,22 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDocumentosGerais";
-            this.Text = "SISCON PROJECTS - Documentos Gerais";
+            this.Text = "SISCON PROJECTS - Documentos Gerais - Cadastros";
             this.Load += new System.EventHandler(this.frmDocumentosGerais_Load);
             this.tlpDocumentosGerais.ResumeLayout(false);
             this.tlpDocumentosGerais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingNavigator)).EndInit();
             this.dOCUMENTOS_GERAISBindingNavigator.ResumeLayout(false);
             this.dOCUMENTOS_GERAISBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.tbDocumentosGerais.ResumeLayout(false);
             this.tpCapa.ResumeLayout(false);
             this.tpCapa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arquivosPictureBox)).EndInit();
             this.tpDetalhes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISDataGridView)).EndInit();
             this.gbPesquisaDocumento.ResumeLayout(false);
             this.gbPesquisaDocumento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -778,7 +696,6 @@
         private System.Windows.Forms.DateTimePicker dataInclusaoDateTimePicker;
         private System.Windows.Forms.GroupBox gbPesquisaDocumento;
         private System.Windows.Forms.TextBox txtPesquisaDocumento;
-        private System.Windows.Forms.PictureBox arquivosPictureBox;
         private System.Windows.Forms.ComboBox tipoDocumentoComboBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbEditar;
@@ -790,15 +707,12 @@
         private System.Windows.Forms.RadioButton rbPesquisaTipo;
         private System.Windows.Forms.RadioButton rbPesquisaNome;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.TextBox nomeArquivoTextBox;
-        private System.Windows.Forms.TextBox arquivoSalvoTextBox;
         private System.Windows.Forms.DataGridView dOCUMENTOS_GERAISDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn ArquivoSalvo;
         private System.Windows.Forms.MaskedTextBox mkdtxtPesquisaData;
     }

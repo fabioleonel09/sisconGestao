@@ -118,25 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sisconImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sisconImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lancarHoras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lancarHoras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="evidencias" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\evidencias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SalvaDocumentosEvidencias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalvaDocumentosEvidencias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="documentosGerais" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documentosGerais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="conexao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conexao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buscarusuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscarusuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ApagaDocumentoEvidencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ApagaDocumentoEvidencia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documentosGerais" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentosGerais.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sisconImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sisconImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="aguarde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aguarde.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DocumentosEvidencias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DocumentosEvidencias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LimpaTxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LimpaTxt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

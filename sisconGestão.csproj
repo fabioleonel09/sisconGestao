@@ -97,6 +97,18 @@
     <Compile Include="frmAguarde.Designer.cs">
       <DependentUpon>frmAguarde.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArquivosDocsGerais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArquivosDocsGerais.Designer.cs">
+      <DependentUpon>frmArquivosDocsGerais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArquivosEvidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArquivosEvidencias.Designer.cs">
+      <DependentUpon>frmArquivosEvidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDocumentosGerais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAguarde.resx">
       <DependentUpon>frmAguarde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArquivosDocsGerais.resx">
+      <DependentUpon>frmArquivosDocsGerais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArquivosEvidencias.resx">
+      <DependentUpon>frmArquivosEvidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocumentosGerais.resx">
       <DependentUpon>frmDocumentosGerais.cs</DependentUpon>
@@ -214,6 +232,11 @@
     <None Include="Resources\aguarde.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\buscarusuario.png" />
+    <None Include="Resources\DocumentosEvidencias.png" />
+    <None Include="Resources\ApagaDocumentoEvidencia.png" />
+    <None Include="Resources\SalvaDocumentosEvidencias.png" />
+    <None Include="Resources\LimpaTxt.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

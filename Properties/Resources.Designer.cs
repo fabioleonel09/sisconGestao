@@ -73,9 +73,39 @@ namespace sisconGestão.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ApagaDocumentoEvidencia {
+            get {
+                object obj = ResourceManager.GetObject("ApagaDocumentoEvidencia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscarusuario {
+            get {
+                object obj = ResourceManager.GetObject("buscarusuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap conexao {
             get {
                 object obj = ResourceManager.GetObject("conexao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DocumentosEvidencias {
+            get {
+                object obj = ResourceManager.GetObject("DocumentosEvidencias", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +146,26 @@ namespace sisconGestão.Properties {
         internal static System.Drawing.Bitmap lancarHoras {
             get {
                 object obj = ResourceManager.GetObject("lancarHoras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LimpaTxt {
+            get {
+                object obj = ResourceManager.GetObject("LimpaTxt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SalvaDocumentosEvidencias {
+            get {
+                object obj = ResourceManager.GetObject("SalvaDocumentosEvidencias", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
