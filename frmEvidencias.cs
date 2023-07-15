@@ -95,23 +95,12 @@ namespace sisconGestão
 
         private void tsbEnviar_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = openFileDialog.FileName;
-
-                EnviaArquivo(filePath);
-            }
+            EnviaArquivo(); 
         }
 
         private void tsbBaixar_Click(object sender, EventArgs e)
         {
-            int index = Convert.ToInt32(evidenciasIdTextBox.Text);
-            string savePath = "C:\\Usuários"; // substitua pelo caminho onde você deseja salvar o arquivo
-
-            //*********** MUDAR AQUI *****************
-            string fileName = "nome_do_arquivo.extensao"; // substitua pelo nome desejado e extensão do arquivo
-
-            BaixaArquivo(index, savePath, fileName);
+            BaixaArquivo();
         }
 
         private void HabilitaPesquisa()
@@ -191,62 +180,14 @@ namespace sisconGestão
             tsbBaixar.Enabled = false;
         }
 
-        private void EnviaArquivo(string filePath)
+        private void EnviaArquivo()
         {
-            string extension = Path.GetExtension(filePath);
-
-            if (extension.Equals(".jpg") || extension.Equals(".png") || extension.Equals(".gif") || extension.Equals(".bmp"))
-            {
-                // Lógica para salvar a imagem
-                this.arquivosPictureBox.Image = System.Drawing.Image.FromFile(filePath);
-            }
-            else if (extension.Equals(".doc") || extension.Equals(".docx"))
-            {
-                // Lógica para salvar o arquivo do Word (.doc ou .docx)
-                // Implemente o código aqui para salvar o arquivo .doc ou .docx no banco de dados ou em outro local desejado
-            }
-            else if (extension.Equals(".pdf"))
-            {
-                // Lógica para salvar o arquivo PDF
-                // Implemente o código aqui para salvar o arquivo PDF no banco de dados ou em outro local desejado
-            }
-            else if (extension.Equals(".xls") || extension.Equals(".xlsx"))
-            {
-                // Lógica para salvar o arquivo do Excel (.xls ou .xlsx)
-                // Implemente o código aqui para salvar o arquivo .xls ou .xlsx no banco de dados ou em outro local desejado
-            }
-            else
-            {
-                MessageBox.Show("Tipo de arquivo não suportado para salvar!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
-        private void BaixaArquivo(int index, string savePath, string fileName)
+        private void BaixaArquivo()
         {
-            string extension = Path.GetExtension(fileName).ToLower();
-
-            // Conectar-se ao banco de dados e recuperar o arquivo como um array de bytes
-            string connectionString = "sua_string_de_conexao";
-            string query = "SELECT Arquivos FROM EVIDENCIAS WHERE EvidenciasId = @EVIDENCIASID";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@EVIDENCIASID", index);
-
-                    connection.Open();
-                    byte[] fileData = (byte[])command.ExecuteScalar();
-                    connection.Close();
-
-                    // Salvar o array de bytes em um arquivo
-                    string fullPath = Path.Combine(savePath, fileName);
-                    File.WriteAllBytes(fullPath, fileData);
-
-                    // Exibir uma mensagem de sucesso
-                    MessageBox.Show("Arquivo baixado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            
         }
     }
 }

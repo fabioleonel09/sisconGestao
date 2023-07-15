@@ -14,11 +14,13 @@ namespace sisconGestão
 {
     public partial class Form1 : Form
     {
+        #region VARIAVEIS E INSTANCIAS DE CONEXAO
         //aqui ocorre as instâncias do sql: conexão, comandos e leituras. E dá nome à conexão.
-        SqlConnection conexao;
+        private SqlConnection conexao;
         SqlCommand comando;
         SqlDataReader dr;
         string strSQL;
+        #endregion
 
         public Form1()
         {
@@ -37,51 +39,45 @@ namespace sisconGestão
             try //try e cacth para tratamento de erros de conexão com o banco de dados.
             {
                 //instancia-se a conexão como o banco de dados, escolhendo a tabela e as colunas e associando-as aos txt`s
-                conexao = new SqlConnection("Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrated Security=True");
-                strSQL = "SELECT * FROM USUARIOS_SENHAS WHERE Usuario = @USUARIO AND Competencia = @COMPETENCIA AND Senha = @SENHA";
-                comando = new SqlCommand(strSQL, conexao);
-                comando.Parameters.AddWithValue("@USUARIO", txtUsuario.Text);
-                comando.Parameters.AddWithValue("@COMPETENCIA", cbLogarComo.Text);
-                comando.Parameters.AddWithValue("@SENHA", txtSenha.Text);
-
-                conexao.Open(); //abre a conexão
-
-                dr = comando.ExecuteReader(); //executa a leitura da tabela e das colunas escolhidas
-
-                if (dr.Read()) //se acontecer a leitura
+                using (conexao = ConexaoDB.AbrirConexao())
                 {
-                    //esta classe "autenticação" foi criada e funciona como um MVC, controlando o que tem de dados nas colunas e comparando-os
-                    autenticacao.Entrar(dr["Usuario"].ToString(), dr["Competencia"].ToString(), dr["Senha"].ToString());
+                    BuscaColunasTabela();
 
-                    this.Visible = false; //deixa este frm invisível
-
-                    //este evento chama o frm Aguarde e o associa ao método OpenData criado
-                    using (frmAguarde fa = new frmAguarde(OpenData))
+                    if (dr.Read()) //se acontecer a leitura
                     {
-                        fa.ShowDialog(this);
+                        //esta classe "autenticação" foi criada e funciona como um MVC, controlando o que tem de dados nas colunas e comparando-os
+                        autenticacao.Entrar(dr["Usuario"].ToString(), dr["Competencia"].ToString(), dr["Senha"].ToString());
+
+                        this.Visible = false; //deixa este frm invisível
+
+                        //este evento chama o frm Aguarde e o associa ao método OpenData criado
+                        using (frmAguarde fa = new frmAguarde(OpenData))
+                        {
+                            fa.ShowDialog(this);
+                        }
+
+                        //este evento chama o frmTelaProncipal
+                        string logadoComo = cbLogarComo.Text;//atribui o combobox a uma variável
+
+                        var ftp = new frmTelaPrincipal(logadoComo);//instancia o frm que abrirá com a variável
+                        ftp.Show(); //mostra o frm instanciado
                     }
+                    else if ((txtUsuario.Text == "") || (txtSenha.Text == "") || (cbLogarComo.Text == "")) //caso os txt's vazios
+                    {
+                        MessageBox.Show("Preencha os campos vazios com os dados corretos!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information); //lança a msg de aviso
+                    }
+                    else //caso os dados não coincidam com os que estão na DB
+                    {
+                        MessageBox.Show("Dados incorretos. Preencha novamente. Verifique o usuário, a senha e o campo 'Logar como'.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //lança a msg de aviso
 
-                    //este evento chama o frmTelaProncipal
-                    string logadoComo = cbLogarComo.Text;//atribui o combobox a uma variável
+                        //limpa os txt`s
+                        txtUsuario.Clear();
+                        txtSenha.Clear();
 
-                    var ftp = new frmTelaPrincipal(logadoComo);//instancia o frm que abrirá com a variável
-                    ftp.Show(); //mostra o frm instanciado
-                }
-                else if ((txtUsuario.Text == "") || (txtSenha.Text == "") || (cbLogarComo.Text == "")) //caso os txt's vazios
-                {
-                    MessageBox.Show("Preencha os campos vazios com os dados corretos!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information); //lança a msg de aviso
-                }
-                else //caso os dados não coincidam com os que estão na DB
-                {
-                    MessageBox.Show("Dados incorretos. Preencha novamente. Verifique o usuário, a senha e o campo 'Logar como'.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //lança a msg de aviso
-
-                    //limpa os txt`s
-                    txtUsuario.Clear();
-                    txtSenha.Clear();
-
-                    //volta com o cb para um índice vazio
-                    cbLogarComo.SelectedIndex = -1;
-                }               
+                        //volta com o cb para um índice vazio
+                        cbLogarComo.SelectedIndex = -1;
+                    }
+                }                  
             }
             catch //caso erro de conexão com o servidor da DB
             {
@@ -168,6 +164,17 @@ namespace sisconGestão
             }
         }
 
+        private void BuscaColunasTabela()
+        {
+            strSQL = "SELECT * FROM USUARIOS_SENHAS WHERE Usuario = @USUARIO AND Competencia = @COMPETENCIA AND Senha = @SENHA";
+            comando = new SqlCommand(strSQL, conexao);
+            comando.Parameters.AddWithValue("@USUARIO", txtUsuario.Text);
+            comando.Parameters.AddWithValue("@COMPETENCIA", cbLogarComo.Text);
+            comando.Parameters.AddWithValue("@SENHA", txtSenha.Text);
+
+            dr = comando.ExecuteReader(); //executa a leitura da tabela e das colunas escolhidas
+        }
+       
         //este comando controla a velocidade da barra de status e o tempo de aparecimento da janela "Aguarde"
         void OpenData()
         {
