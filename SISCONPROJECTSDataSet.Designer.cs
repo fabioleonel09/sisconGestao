@@ -5454,12 +5454,17 @@ SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM ARQUIVOS_DOCS_GER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM dbo.ARQUIVOS_DOCS_" +
                 "GERAIS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM dbo.ARQUIVOS_DOCS_" +
+                "GERAIS order by NomeDocGeral asc";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5481,6 +5486,30 @@ SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM ARQUIVOS_DOCS_GER
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ArquivosDocsGeraisFillBy(SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable ArquivosDocsGeraisGetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAISDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5796,12 +5825,17 @@ SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM ARQUIVOS_EVIDENC
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM dbo.ARQUIVOS_EVID" +
                 "ENCIAS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM dbo.ARQUIVOS_EVID" +
+                "ENCIAS order by NomeEvidencia asc";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5823,6 +5857,30 @@ SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM ARQUIVOS_EVIDENC
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ArquivosEvidenciasFillBy(SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable ArquivosEvidenciasGetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable dataTable = new SISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

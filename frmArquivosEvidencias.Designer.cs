@@ -28,24 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label nomeEvidenciaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArquivosEvidencias));
             this.tlpArquivosEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbArquivosEvidencias = new System.Windows.Forms.GroupBox();
+            this.lblNomePesquisa = new System.Windows.Forms.Label();
+            this.nomeEvidenciaTextBox = new System.Windows.Forms.TextBox();
+            this.aRQUIVOS_EVIDENCIASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
+            this.btnLimpaPesquisaArquivoEvidencias = new System.Windows.Forms.Button();
             this.txtPesquisaNomeArquivoEvidencias = new System.Windows.Forms.TextBox();
             this.tlpAcoesGeraisEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAcoesBotoesEvidencias = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvArquivosEvidencias = new System.Windows.Forms.DataGridView();
-            this.btnLimpaPesquisaArquivoEvidencias = new System.Windows.Forms.Button();
             this.btnAbrirArquivoEvidencias = new System.Windows.Forms.Button();
             this.btnSalvarArquivoEvidencias = new System.Windows.Forms.Button();
             this.btnApagaArquivoEvidencias = new System.Windows.Forms.Button();
             this.btnPesquisarArquivosEvidencias = new System.Windows.Forms.Button();
+            this.dgvArquivosEvidencias = new System.Windows.Forms.DataGridView();
+            this.aRQUIVOS_EVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_EVIDENCIASTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            nomeEvidenciaLabel = new System.Windows.Forms.Label();
             this.tlpArquivosEvidencias.SuspendLayout();
             this.gbArquivosEvidencias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.tlpAcoesGeraisEvidencias.SuspendLayout();
             this.tlpAcoesBotoesEvidencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nomeEvidenciaLabel
+            // 
+            nomeEvidenciaLabel.AutoSize = true;
+            nomeEvidenciaLabel.Enabled = false;
+            nomeEvidenciaLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeEvidenciaLabel.Location = new System.Drawing.Point(8, 22);
+            nomeEvidenciaLabel.Name = "nomeEvidenciaLabel";
+            nomeEvidenciaLabel.Size = new System.Drawing.Size(139, 19);
+            nomeEvidenciaLabel.TabIndex = 5;
+            nomeEvidenciaLabel.Text = "Nome Evidencia:";
             // 
             // tlpArquivosEvidencias
             // 
@@ -58,29 +80,77 @@
             this.tlpArquivosEvidencias.Location = new System.Drawing.Point(0, 0);
             this.tlpArquivosEvidencias.Name = "tlpArquivosEvidencias";
             this.tlpArquivosEvidencias.RowCount = 2;
-            this.tlpArquivosEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpArquivosEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpArquivosEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.99029F));
+            this.tlpArquivosEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.00971F));
             this.tlpArquivosEvidencias.Size = new System.Drawing.Size(453, 516);
             this.tlpArquivosEvidencias.TabIndex = 1;
             // 
             // gbArquivosEvidencias
             // 
+            this.gbArquivosEvidencias.Controls.Add(this.lblNomePesquisa);
+            this.gbArquivosEvidencias.Controls.Add(nomeEvidenciaLabel);
+            this.gbArquivosEvidencias.Controls.Add(this.nomeEvidenciaTextBox);
             this.gbArquivosEvidencias.Controls.Add(this.btnLimpaPesquisaArquivoEvidencias);
             this.gbArquivosEvidencias.Controls.Add(this.txtPesquisaNomeArquivoEvidencias);
             this.gbArquivosEvidencias.Controls.Add(this.tlpAcoesGeraisEvidencias);
             this.gbArquivosEvidencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbArquivosEvidencias.Location = new System.Drawing.Point(4, 312);
+            this.gbArquivosEvidencias.Location = new System.Drawing.Point(4, 246);
             this.gbArquivosEvidencias.Name = "gbArquivosEvidencias";
-            this.gbArquivosEvidencias.Size = new System.Drawing.Size(445, 200);
+            this.gbArquivosEvidencias.Size = new System.Drawing.Size(445, 266);
             this.gbArquivosEvidencias.TabIndex = 0;
             this.gbArquivosEvidencias.TabStop = false;
             this.gbArquivosEvidencias.Text = "Ações";
+            // 
+            // lblNomePesquisa
+            // 
+            this.lblNomePesquisa.AutoSize = true;
+            this.lblNomePesquisa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePesquisa.Location = new System.Drawing.Point(8, 77);
+            this.lblNomePesquisa.Name = "lblNomePesquisa";
+            this.lblNomePesquisa.Size = new System.Drawing.Size(173, 19);
+            this.lblNomePesquisa.TabIndex = 8;
+            this.lblNomePesquisa.Text = "Nome para Pesquisa:";
+            // 
+            // nomeEvidenciaTextBox
+            // 
+            this.nomeEvidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRQUIVOS_EVIDENCIASBindingSource, "NomeEvidencia", true));
+            this.nomeEvidenciaTextBox.Location = new System.Drawing.Point(11, 43);
+            this.nomeEvidenciaTextBox.Name = "nomeEvidenciaTextBox";
+            this.nomeEvidenciaTextBox.Size = new System.Drawing.Size(423, 26);
+            this.nomeEvidenciaTextBox.TabIndex = 6;
+            // 
+            // aRQUIVOS_EVIDENCIASBindingSource
+            // 
+            this.aRQUIVOS_EVIDENCIASBindingSource.DataMember = "ARQUIVOS_EVIDENCIAS";
+            this.aRQUIVOS_EVIDENCIASBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnLimpaPesquisaArquivoEvidencias
+            // 
+            this.btnLimpaPesquisaArquivoEvidencias.BackColor = System.Drawing.Color.White;
+            this.btnLimpaPesquisaArquivoEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpaPesquisaArquivoEvidencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpaPesquisaArquivoEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpaPesquisaArquivoEvidencias.Image = global::sisconGestão.Properties.Resources.LimpaTxt;
+            this.btnLimpaPesquisaArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpaPesquisaArquivoEvidencias.Location = new System.Drawing.Point(304, 75);
+            this.btnLimpaPesquisaArquivoEvidencias.Name = "btnLimpaPesquisaArquivoEvidencias";
+            this.btnLimpaPesquisaArquivoEvidencias.Size = new System.Drawing.Size(130, 50);
+            this.btnLimpaPesquisaArquivoEvidencias.TabIndex = 5;
+            this.btnLimpaPesquisaArquivoEvidencias.Text = "Limpar";
+            this.btnLimpaPesquisaArquivoEvidencias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpaPesquisaArquivoEvidencias.UseVisualStyleBackColor = false;
+            this.btnLimpaPesquisaArquivoEvidencias.Click += new System.EventHandler(this.btnLimpaPesquisaArquivoEvidencias_Click);
             // 
             // txtPesquisaNomeArquivoEvidencias
             // 
             this.txtPesquisaNomeArquivoEvidencias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPesquisaNomeArquivoEvidencias.Enabled = false;
-            this.txtPesquisaNomeArquivoEvidencias.Location = new System.Drawing.Point(11, 28);
+            this.txtPesquisaNomeArquivoEvidencias.Location = new System.Drawing.Point(11, 99);
             this.txtPesquisaNomeArquivoEvidencias.Name = "txtPesquisaNomeArquivoEvidencias";
             this.txtPesquisaNomeArquivoEvidencias.Size = new System.Drawing.Size(287, 26);
             this.txtPesquisaNomeArquivoEvidencias.TabIndex = 3;
@@ -94,11 +164,11 @@
             this.tlpAcoesGeraisEvidencias.ColumnCount = 1;
             this.tlpAcoesGeraisEvidencias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAcoesGeraisEvidencias.Controls.Add(this.tlpAcoesBotoesEvidencias, 0, 0);
-            this.tlpAcoesGeraisEvidencias.Location = new System.Drawing.Point(3, 69);
+            this.tlpAcoesGeraisEvidencias.Location = new System.Drawing.Point(3, 131);
             this.tlpAcoesGeraisEvidencias.Name = "tlpAcoesGeraisEvidencias";
             this.tlpAcoesGeraisEvidencias.RowCount = 1;
             this.tlpAcoesGeraisEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpAcoesGeraisEvidencias.Size = new System.Drawing.Size(439, 128);
+            this.tlpAcoesGeraisEvidencias.Size = new System.Drawing.Size(439, 132);
             this.tlpAcoesGeraisEvidencias.TabIndex = 0;
             // 
             // tlpAcoesBotoesEvidencias
@@ -117,36 +187,8 @@
             this.tlpAcoesBotoesEvidencias.RowCount = 2;
             this.tlpAcoesBotoesEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAcoesBotoesEvidencias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAcoesBotoesEvidencias.Size = new System.Drawing.Size(431, 120);
+            this.tlpAcoesBotoesEvidencias.Size = new System.Drawing.Size(431, 124);
             this.tlpAcoesBotoesEvidencias.TabIndex = 3;
-            // 
-            // dgvArquivosEvidencias
-            // 
-            this.dgvArquivosEvidencias.AllowUserToAddRows = false;
-            this.dgvArquivosEvidencias.AllowUserToDeleteRows = false;
-            this.dgvArquivosEvidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArquivosEvidencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvArquivosEvidencias.Location = new System.Drawing.Point(4, 4);
-            this.dgvArquivosEvidencias.Name = "dgvArquivosEvidencias";
-            this.dgvArquivosEvidencias.ReadOnly = true;
-            this.dgvArquivosEvidencias.Size = new System.Drawing.Size(445, 301);
-            this.dgvArquivosEvidencias.TabIndex = 1;
-            // 
-            // btnLimpaPesquisaArquivoEvidencias
-            // 
-            this.btnLimpaPesquisaArquivoEvidencias.BackColor = System.Drawing.Color.White;
-            this.btnLimpaPesquisaArquivoEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpaPesquisaArquivoEvidencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpaPesquisaArquivoEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpaPesquisaArquivoEvidencias.Image = global::sisconGestão.Properties.Resources.LimpaTxt;
-            this.btnLimpaPesquisaArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpaPesquisaArquivoEvidencias.Location = new System.Drawing.Point(304, 20);
-            this.btnLimpaPesquisaArquivoEvidencias.Name = "btnLimpaPesquisaArquivoEvidencias";
-            this.btnLimpaPesquisaArquivoEvidencias.Size = new System.Drawing.Size(130, 41);
-            this.btnLimpaPesquisaArquivoEvidencias.TabIndex = 5;
-            this.btnLimpaPesquisaArquivoEvidencias.Text = "Limpar";
-            this.btnLimpaPesquisaArquivoEvidencias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpaPesquisaArquivoEvidencias.UseVisualStyleBackColor = false;
             // 
             // btnAbrirArquivoEvidencias
             // 
@@ -157,12 +199,13 @@
             this.btnAbrirArquivoEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrirArquivoEvidencias.Image = global::sisconGestão.Properties.Resources.DocumentosEvidencias;
             this.btnAbrirArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbrirArquivoEvidencias.Location = new System.Drawing.Point(219, 63);
+            this.btnAbrirArquivoEvidencias.Location = new System.Drawing.Point(219, 65);
             this.btnAbrirArquivoEvidencias.Name = "btnAbrirArquivoEvidencias";
-            this.btnAbrirArquivoEvidencias.Size = new System.Drawing.Size(208, 53);
+            this.btnAbrirArquivoEvidencias.Size = new System.Drawing.Size(208, 55);
             this.btnAbrirArquivoEvidencias.TabIndex = 6;
             this.btnAbrirArquivoEvidencias.Text = "Abrir";
             this.btnAbrirArquivoEvidencias.UseVisualStyleBackColor = false;
+            this.btnAbrirArquivoEvidencias.Click += new System.EventHandler(this.btnAbrirArquivoEvidencias_Click);
             // 
             // btnSalvarArquivoEvidencias
             // 
@@ -173,12 +216,13 @@
             this.btnSalvarArquivoEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarArquivoEvidencias.Image = global::sisconGestão.Properties.Resources.SalvaDocumentosEvidencias;
             this.btnSalvarArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarArquivoEvidencias.Location = new System.Drawing.Point(4, 63);
+            this.btnSalvarArquivoEvidencias.Location = new System.Drawing.Point(4, 65);
             this.btnSalvarArquivoEvidencias.Name = "btnSalvarArquivoEvidencias";
-            this.btnSalvarArquivoEvidencias.Size = new System.Drawing.Size(208, 53);
+            this.btnSalvarArquivoEvidencias.Size = new System.Drawing.Size(208, 55);
             this.btnSalvarArquivoEvidencias.TabIndex = 5;
             this.btnSalvarArquivoEvidencias.Text = "Salvar";
             this.btnSalvarArquivoEvidencias.UseVisualStyleBackColor = false;
+            this.btnSalvarArquivoEvidencias.Click += new System.EventHandler(this.btnSalvarArquivoEvidencias_Click);
             // 
             // btnApagaArquivoEvidencias
             // 
@@ -191,10 +235,11 @@
             this.btnApagaArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnApagaArquivoEvidencias.Location = new System.Drawing.Point(219, 4);
             this.btnApagaArquivoEvidencias.Name = "btnApagaArquivoEvidencias";
-            this.btnApagaArquivoEvidencias.Size = new System.Drawing.Size(208, 52);
+            this.btnApagaArquivoEvidencias.Size = new System.Drawing.Size(208, 54);
             this.btnApagaArquivoEvidencias.TabIndex = 4;
             this.btnApagaArquivoEvidencias.Text = "Apagar";
             this.btnApagaArquivoEvidencias.UseVisualStyleBackColor = false;
+            this.btnApagaArquivoEvidencias.Click += new System.EventHandler(this.btnApagaArquivoEvidencias_Click);
             // 
             // btnPesquisarArquivosEvidencias
             // 
@@ -207,10 +252,37 @@
             this.btnPesquisarArquivosEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPesquisarArquivosEvidencias.Location = new System.Drawing.Point(4, 4);
             this.btnPesquisarArquivosEvidencias.Name = "btnPesquisarArquivosEvidencias";
-            this.btnPesquisarArquivosEvidencias.Size = new System.Drawing.Size(208, 52);
+            this.btnPesquisarArquivosEvidencias.Size = new System.Drawing.Size(208, 54);
             this.btnPesquisarArquivosEvidencias.TabIndex = 0;
             this.btnPesquisarArquivosEvidencias.Text = "Pesquisar";
             this.btnPesquisarArquivosEvidencias.UseVisualStyleBackColor = false;
+            this.btnPesquisarArquivosEvidencias.Click += new System.EventHandler(this.btnPesquisarArquivosEvidencias_Click);
+            // 
+            // dgvArquivosEvidencias
+            // 
+            this.dgvArquivosEvidencias.AllowUserToAddRows = false;
+            this.dgvArquivosEvidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArquivosEvidencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvArquivosEvidencias.Location = new System.Drawing.Point(4, 4);
+            this.dgvArquivosEvidencias.Name = "dgvArquivosEvidencias";
+            this.dgvArquivosEvidencias.ReadOnly = true;
+            this.dgvArquivosEvidencias.Size = new System.Drawing.Size(445, 235);
+            this.dgvArquivosEvidencias.TabIndex = 1;
+            // 
+            // aRQUIVOS_EVIDENCIASTableAdapter
+            // 
+            this.aRQUIVOS_EVIDENCIASTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = null;
+            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = this.aRQUIVOS_EVIDENCIASTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
+            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
+            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
             // frmArquivosEvidencias
             // 
@@ -221,12 +293,15 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmArquivosEvidencias";
             this.Text = "Evidências - Janela de Arquivos";
+            this.Load += new System.EventHandler(this.frmArquivosEvidencias_Load);
             this.tlpArquivosEvidencias.ResumeLayout(false);
             this.gbArquivosEvidencias.ResumeLayout(false);
             this.gbArquivosEvidencias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.tlpAcoesGeraisEvidencias.ResumeLayout(false);
             this.tlpAcoesBotoesEvidencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).EndInit();
@@ -247,5 +322,11 @@
         private System.Windows.Forms.Button btnApagaArquivoEvidencias;
         private System.Windows.Forms.Button btnPesquisarArquivosEvidencias;
         private System.Windows.Forms.DataGridView dgvArquivosEvidencias;
+        private SISCONPROJECTSDataSet sISCONPROJECTSDataSet;
+        private System.Windows.Forms.BindingSource aRQUIVOS_EVIDENCIASBindingSource;
+        private SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_EVIDENCIASTableAdapter aRQUIVOS_EVIDENCIASTableAdapter;
+        private SISCONPROJECTSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox nomeEvidenciaTextBox;
+        private System.Windows.Forms.Label lblNomePesquisa;
     }
 }

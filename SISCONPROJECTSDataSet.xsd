@@ -385,7 +385,16 @@ SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM ARQUIVOS_DOCS_GER
               <Mapping SourceColumn="NomeDocGeral" DataSetColumn="NomeDocGeral" />
               <Mapping SourceColumn="ArquivoDocGeral" DataSetColumn="ArquivoDocGeral" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SISCONPROJECTSConnectionString (Settings)" DbObjectName="SISCONPROJECTS.dbo.ARQUIVOS_DOCS_GERAIS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ArquivosDocsGeraisFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ArquivosDocsGeraisGetDataBy" GeneratorSourceName="ArquivosDocsGeraisFillBy" GetMethodModifier="Public" GetMethodName="ArquivosDocsGeraisGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ArquivosDocsGeraisGetDataBy" UserSourceName="ArquivosDocsGeraisFillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM dbo.ARQUIVOS_DOCS_GERAIS order by NomeDocGeral asc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ARQUIVOS_EVIDENCIASTableAdapter" GeneratorDataComponentClassName="ARQUIVOS_EVIDENCIASTableAdapter" Name="ARQUIVOS_EVIDENCIAS" UserDataComponentName="ARQUIVOS_EVIDENCIASTableAdapter">
             <MainSource>
@@ -437,7 +446,16 @@ SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM ARQUIVOS_EVIDENC
               <Mapping SourceColumn="NomeEvidencia" DataSetColumn="NomeEvidencia" />
               <Mapping SourceColumn="ArquivoEvidencia" DataSetColumn="ArquivoEvidencia" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SISCONPROJECTSConnectionString (Settings)" DbObjectName="SISCONPROJECTS.dbo.ARQUIVOS_EVIDENCIAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ArquivosEvidenciasFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ArquivosEvidenciasGetDataBy" GeneratorSourceName="ArquivosEvidenciasFillBy" GetMethodModifier="Public" GetMethodName="ArquivosEvidenciasGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ArquivosEvidenciasGetDataBy" UserSourceName="ArquivosEvidenciasFillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM dbo.ARQUIVOS_EVIDENCIAS order by NomeEvidencia asc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
