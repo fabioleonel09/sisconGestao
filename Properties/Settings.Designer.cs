@@ -23,11 +23,21 @@ namespace sisconGestão.Properties {
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Configuração {
+            get {
+                return ((string)(this["Configuração"]));
+            }
+            set {
+                this["Configuração"] = value;
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-N8EH36C\\PARTICULARSQL;Initial Catalog=SISCONPROJECTS;Integrat" +
-            "ed Security=True")]
         public string SISCONPROJECTSConnectionString {
             get {
                 return ((string)(this["SISCONPROJECTSConnectionString"]));

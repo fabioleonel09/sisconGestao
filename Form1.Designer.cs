@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbcTelaLogin = new System.Windows.Forms.TabControl();
             this.tbpLoginUsuario = new System.Windows.Forms.TabPage();
             this.tblTelaLogin = new System.Windows.Forms.TableLayoutPanel();
             this.pbTelaLoginLogo = new System.Windows.Forms.PictureBox();
             this.gbTelaLogin = new System.Windows.Forms.GroupBox();
+            this.btnMascara = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogarComo = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -81,7 +82,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uSUARIOS_SENHASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.USUARIOS_SENHASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.btnMascara = new System.Windows.Forms.Button();
+            this.btnConexaoServidor = new System.Windows.Forms.Button();
             this.tbcTelaLogin.SuspendLayout();
             this.tbpLoginUsuario.SuspendLayout();
             this.tblTelaLogin.SuspendLayout();
@@ -154,6 +155,7 @@
             // gbTelaLogin
             // 
             this.gbTelaLogin.BackColor = System.Drawing.Color.DimGray;
+            this.gbTelaLogin.Controls.Add(this.btnConexaoServidor);
             this.gbTelaLogin.Controls.Add(this.btnMascara);
             this.gbTelaLogin.Controls.Add(this.pictureBox1);
             this.gbTelaLogin.Controls.Add(this.lblLogarComo);
@@ -171,6 +173,18 @@
             this.gbTelaLogin.TabIndex = 1;
             this.gbTelaLogin.TabStop = false;
             this.gbTelaLogin.Text = "Login de usuário";
+            // 
+            // btnMascara
+            // 
+            this.btnMascara.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMascara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMascara.Location = new System.Drawing.Point(263, 235);
+            this.btnMascara.Name = "btnMascara";
+            this.btnMascara.Size = new System.Drawing.Size(68, 26);
+            this.btnMascara.TabIndex = 8;
+            this.btnMascara.Text = "| | |";
+            this.btnMascara.UseVisualStyleBackColor = true;
+            this.btnMascara.Click += new System.EventHandler(this.btnMascara_Click);
             // 
             // pictureBox1
             // 
@@ -211,7 +225,7 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.LightGray;
+            this.btnEntrar.BackColor = System.Drawing.Color.MintCream;
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEntrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -594,8 +608,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Usuario";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn2.HeaderText = "Usuário";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 250;
@@ -603,8 +617,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Senha";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn3.HeaderText = "Senha";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 150;
@@ -612,8 +626,8 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Competencia";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn4.HeaderText = "Competência";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 345;
@@ -624,6 +638,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = null;
+            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
             this.tableAdapterManager.EVIDENCIASTableAdapter = null;
@@ -631,17 +647,22 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = this.uSUARIOS_SENHASTableAdapter;
             // 
-            // btnMascara
+            // btnConexaoServidor
             // 
-            this.btnMascara.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMascara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMascara.Location = new System.Drawing.Point(263, 235);
-            this.btnMascara.Name = "btnMascara";
-            this.btnMascara.Size = new System.Drawing.Size(68, 26);
-            this.btnMascara.TabIndex = 8;
-            this.btnMascara.Text = "| | |";
-            this.btnMascara.UseVisualStyleBackColor = true;
-            this.btnMascara.Click += new System.EventHandler(this.btnMascara_Click);
+            this.btnConexaoServidor.BackColor = System.Drawing.SystemColors.Info;
+            this.btnConexaoServidor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConexaoServidor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConexaoServidor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConexaoServidor.ForeColor = System.Drawing.Color.DimGray;
+            this.btnConexaoServidor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConexaoServidor.Location = new System.Drawing.Point(9, 363);
+            this.btnConexaoServidor.Name = "btnConexaoServidor";
+            this.btnConexaoServidor.Size = new System.Drawing.Size(209, 56);
+            this.btnConexaoServidor.TabIndex = 9;
+            this.btnConexaoServidor.Text = "Conexão com o Servidor";
+            this.btnConexaoServidor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConexaoServidor.UseVisualStyleBackColor = false;
+            this.btnConexaoServidor.Click += new System.EventHandler(this.btnConexaoServidor_Click);
             // 
             // Form1
             // 
@@ -733,6 +754,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnMascara;
+        private System.Windows.Forms.Button btnConexaoServidor;
     }
 }
 

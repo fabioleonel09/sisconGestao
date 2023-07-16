@@ -164,6 +164,12 @@ namespace sisconGestão
             }
         }
 
+        private void btnConexaoServidor_Click(object sender, EventArgs e)
+        {
+            frmConexaoServidor fdc = new frmConexaoServidor();
+            fdc.ShowDialog();
+        }
+
         private void BuscaColunasTabela()
         {
             strSQL = "SELECT * FROM USUARIOS_SENHAS WHERE Usuario = @USUARIO AND Competencia = @COMPETENCIA AND Senha = @SENHA";
@@ -174,7 +180,7 @@ namespace sisconGestão
 
             dr = comando.ExecuteReader(); //executa a leitura da tabela e das colunas escolhidas
         }
-       
+
         //este comando controla a velocidade da barra de status e o tempo de aparecimento da janela "Aguarde"
         void OpenData()
         {
