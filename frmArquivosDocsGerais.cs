@@ -111,6 +111,11 @@ namespace sisconGestão
             }
         }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcaoApagar();
+        }
+
         private void CondicionalFormulario()
         {
             if (codigoFormulario == ".Enviar")
@@ -134,7 +139,7 @@ namespace sisconGestão
                 {
                     using (var conectar = conexao.CreateCommand())
                     {
-                        conectar.CommandText = "SELECT ArquivoDocsGeraisId, NomeDocGeral, ArquivoDocGeral FROM ARQUIVOS_DOCS_GERAIS";
+                        conectar.CommandText = "SELECT ArquivoDocsGeraisId, NomeDocGeral FROM ARQUIVOS_DOCS_GERAIS";
                         var reader = conectar.ExecuteReader();
                         var table = new DataTable();
                         table.Load(reader);
@@ -169,7 +174,7 @@ namespace sisconGestão
                 using (var conectar = conexao.CreateCommand())
                 {
                     conectar.CommandText = "INSERT INTO ARQUIVOS_DOCS_GERAIS (NomeDocGeral, ArquivoDocGeral) VALUES (@NomeDocGeral, @ArquivoDocGeral)";
-                    
+
                     ConfigurarParametrosSalvar(conectar, arquivo);
                     conectar.ExecuteNonQuery();
                     CarregaGrid();
@@ -188,26 +193,6 @@ namespace sisconGestão
             conectar.Parameters.Add(new SqlParameter("ArquivoDocsGeraisId", dgvArquivosDosGerais.CurrentRow.Cells["ArquivoDocsGeraisId"].Value));
         }
 
-        //*** Apenas para fazer a ponte de conexão entre o frm e a DB para usar a txt da coluna nome do documento ***
-        private void aRQUIVOS_DOCS_GERAISBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.aRQUIVOS_DOCS_GERAISBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
-
-        }
-
-        private void frmArquivosDocsGerais_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS'. Você pode movê-la ou removê-la conforme necessário.
-            this.aRQUIVOS_DOCS_GERAISTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS);
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            SalvaAcaoApagar();
-        }
-
         private void SalvaAcaoApagar()
         {
             try
@@ -224,6 +209,21 @@ namespace sisconGestão
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        //*** Apenas para fazer a ponte de conexão entre o frm e a DB para usar a txt da coluna nome do documento ***
+        private void aRQUIVOS_DOCS_GERAISBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aRQUIVOS_DOCS_GERAISBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+        }
+
+        private void frmArquivosDocsGerais_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS'. Você pode movê-la ou removê-la conforme necessário.
+            this.aRQUIVOS_DOCS_GERAISTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS);
         }
     }
 }

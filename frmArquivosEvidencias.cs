@@ -111,6 +111,11 @@ namespace sisconGestão
             }
         }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcaoApagar();
+        }
+
         private void CondicionalFormulario()
         {
             if (codigoFormulario == ".Enviar")
@@ -126,7 +131,6 @@ namespace sisconGestão
             }
         }
 
-
         private void CarregaGrid()
         {
             try
@@ -135,7 +139,7 @@ namespace sisconGestão
                 {
                     using (var conectar = conexao.CreateCommand())
                     {
-                        conectar.CommandText = "SELECT ArquivoEvidenciaId, NomeEvidencia, ArquivoEvidencia FROM ARQUIVOS_EVIDENCIAS";
+                        conectar.CommandText = "SELECT ArquivoEvidenciaId, NomeEvidencia FROM ARQUIVOS_EVIDENCIAS";
                         var reader = conectar.ExecuteReader();
                         var table = new DataTable();
                         table.Load(reader);
@@ -189,26 +193,6 @@ namespace sisconGestão
             conectar.Parameters.Add(new SqlParameter("ArquivoEvidenciaId", dgvArquivosEvidencias.CurrentRow.Cells["ArquivoEvidenciaId"].Value));
         }
 
-        //*** Apenas para fazer a ponte de conexão entre o frm e a DB para usar a txt da coluna nome do documento ***
-        private void aRQUIVOS_EVIDENCIASBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.aRQUIVOS_EVIDENCIASBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
-
-        }
-
-        private void frmArquivosEvidencias_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS'. Você pode movê-la ou removê-la conforme necessário.
-            this.aRQUIVOS_EVIDENCIASTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS);
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            SalvaAcaoApagar();
-        }
-
         private void SalvaAcaoApagar()
         {
             try
@@ -225,6 +209,21 @@ namespace sisconGestão
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        //*** Apenas para fazer a ponte de conexão entre o frm e a DB para usar a txt da coluna nome do documento ***
+        private void aRQUIVOS_EVIDENCIASBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aRQUIVOS_EVIDENCIASBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+        }
+
+        private void frmArquivosEvidencias_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS'. Você pode movê-la ou removê-la conforme necessário.
+            this.aRQUIVOS_EVIDENCIASTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS);
         }
     }
 }
