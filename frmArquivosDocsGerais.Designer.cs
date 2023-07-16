@@ -33,7 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArquivosDocsGerais));
             this.tlpArquivosDocsGerais = new System.Windows.Forms.TableLayoutPanel();
             this.gbArquivosDocsGerais = new System.Windows.Forms.GroupBox();
-            this.btnLimpaPesquisaArquivoDocsGerais = new System.Windows.Forms.Button();
             this.txtPesquisaNomeArquivoDocsGerais = new System.Windows.Forms.TextBox();
             this.tlpAcoesGeraisDocsGerais = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAcoesBotoesDocsGerais = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +47,8 @@
             this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
             this.aRQUIVOS_DOCS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_DOCS_GERAISTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             nomeDocGeralLabel = new System.Windows.Forms.Label();
             this.tlpArquivosDocsGerais.SuspendLayout();
             this.gbArquivosDocsGerais.SuspendLayout();
@@ -56,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISbindingNavigator)).BeginInit();
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpArquivosDocsGerais
@@ -76,10 +79,10 @@
             // 
             // gbArquivosDocsGerais
             // 
+            this.gbArquivosDocsGerais.Controls.Add(this.aRQUIVOS_DOCS_GERAISbindingNavigator);
             this.gbArquivosDocsGerais.Controls.Add(this.lblNomePesquisa);
             this.gbArquivosDocsGerais.Controls.Add(nomeDocGeralLabel);
             this.gbArquivosDocsGerais.Controls.Add(this.nomeDocGeralTextBox);
-            this.gbArquivosDocsGerais.Controls.Add(this.btnLimpaPesquisaArquivoDocsGerais);
             this.gbArquivosDocsGerais.Controls.Add(this.txtPesquisaNomeArquivoDocsGerais);
             this.gbArquivosDocsGerais.Controls.Add(this.tlpAcoesGeraisDocsGerais);
             this.gbArquivosDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,30 +93,13 @@
             this.gbArquivosDocsGerais.TabStop = false;
             this.gbArquivosDocsGerais.Text = "Ações";
             // 
-            // btnLimpaPesquisaArquivoDocsGerais
-            // 
-            this.btnLimpaPesquisaArquivoDocsGerais.BackColor = System.Drawing.Color.White;
-            this.btnLimpaPesquisaArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpaPesquisaArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpaPesquisaArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpaPesquisaArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.LimpaTxt;
-            this.btnLimpaPesquisaArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpaPesquisaArquivoDocsGerais.Location = new System.Drawing.Point(306, 72);
-            this.btnLimpaPesquisaArquivoDocsGerais.Name = "btnLimpaPesquisaArquivoDocsGerais";
-            this.btnLimpaPesquisaArquivoDocsGerais.Size = new System.Drawing.Size(128, 54);
-            this.btnLimpaPesquisaArquivoDocsGerais.TabIndex = 5;
-            this.btnLimpaPesquisaArquivoDocsGerais.Text = "Limpar";
-            this.btnLimpaPesquisaArquivoDocsGerais.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpaPesquisaArquivoDocsGerais.UseVisualStyleBackColor = false;
-            this.btnLimpaPesquisaArquivoDocsGerais.Click += new System.EventHandler(this.btnLimpaPesquisaArquivoDocsGerais_Click);
-            // 
             // txtPesquisaNomeArquivoDocsGerais
             // 
             this.txtPesquisaNomeArquivoDocsGerais.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPesquisaNomeArquivoDocsGerais.Enabled = false;
             this.txtPesquisaNomeArquivoDocsGerais.Location = new System.Drawing.Point(11, 100);
             this.txtPesquisaNomeArquivoDocsGerais.Name = "txtPesquisaNomeArquivoDocsGerais";
-            this.txtPesquisaNomeArquivoDocsGerais.Size = new System.Drawing.Size(289, 26);
+            this.txtPesquisaNomeArquivoDocsGerais.Size = new System.Drawing.Size(423, 26);
             this.txtPesquisaNomeArquivoDocsGerais.TabIndex = 3;
             // 
             // tlpAcoesGeraisDocsGerais
@@ -198,7 +184,7 @@
             this.btnApagaArquivoDocsGerais.Name = "btnApagaArquivoDocsGerais";
             this.btnApagaArquivoDocsGerais.Size = new System.Drawing.Size(208, 54);
             this.btnApagaArquivoDocsGerais.TabIndex = 4;
-            this.btnApagaArquivoDocsGerais.Text = "Apagar";
+            this.btnApagaArquivoDocsGerais.Text = "Limpar";
             this.btnApagaArquivoDocsGerais.UseVisualStyleBackColor = false;
             this.btnApagaArquivoDocsGerais.Click += new System.EventHandler(this.btnApagaArquivoDocsGerais_Click);
             // 
@@ -246,7 +232,7 @@
             this.nomeDocGeralTextBox.Enabled = false;
             this.nomeDocGeralTextBox.Location = new System.Drawing.Point(11, 40);
             this.nomeDocGeralTextBox.Name = "nomeDocGeralTextBox";
-            this.nomeDocGeralTextBox.Size = new System.Drawing.Size(423, 26);
+            this.nomeDocGeralTextBox.Size = new System.Drawing.Size(402, 26);
             this.nomeDocGeralTextBox.TabIndex = 6;
             // 
             // lblNomePesquisa
@@ -284,6 +270,38 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
+            // aRQUIVOS_DOCS_GERAISbindingNavigator
+            // 
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.AddNewItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.BindingSource = this.aRQUIVOS_DOCS_GERAISBindingSource;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.CountItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorDeleteItem});
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Location = new System.Drawing.Point(416, 41);
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.MoveFirstItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.MoveLastItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.MoveNextItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.MovePreviousItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Name = "aRQUIVOS_DOCS_GERAISbindingNavigator";
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.PositionItem = null;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Size = new System.Drawing.Size(57, 25);
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.TabIndex = 8;
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // frmArquivosDocsGerais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -305,6 +323,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISbindingNavigator)).EndInit();
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.ResumeLayout(false);
+            this.aRQUIVOS_DOCS_GERAISbindingNavigator.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,7 +336,6 @@
         private System.Windows.Forms.GroupBox gbArquivosDocsGerais;
         private System.Windows.Forms.DataGridView dgvArquivosDosGerais;
         private System.Windows.Forms.TableLayoutPanel tlpAcoesGeraisDocsGerais;
-        private System.Windows.Forms.Button btnLimpaPesquisaArquivoDocsGerais;
         private System.Windows.Forms.TextBox txtPesquisaNomeArquivoDocsGerais;
         private System.Windows.Forms.TableLayoutPanel tlpAcoesBotoesDocsGerais;
         private System.Windows.Forms.Button btnAbrirArquivoDocsGerais;
@@ -328,5 +348,7 @@
         private SISCONPROJECTSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox nomeDocGeralTextBox;
         private System.Windows.Forms.Label lblNomePesquisa;
+        private System.Windows.Forms.BindingNavigator aRQUIVOS_DOCS_GERAISbindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
     }
 }

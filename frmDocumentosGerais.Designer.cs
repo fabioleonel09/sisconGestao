@@ -38,6 +38,8 @@
             this.tlpDocumentosGerais = new System.Windows.Forms.TableLayoutPanel();
             this.dOCUMENTOS_GERAISBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.dOCUMENTOS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -63,7 +65,11 @@
             this.dataInclusaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tpDetalhes = new System.Windows.Forms.TabPage();
             this.dOCUMENTOS_GERAISDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArquivoSalvo = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbPesquisaDocumento = new System.Windows.Forms.GroupBox();
             this.mkdtxtPesquisaData = new System.Windows.Forms.MaskedTextBox();
@@ -73,12 +79,6 @@
             this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
             this.txtPesquisaDocumento = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.dOCUMENTOS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOCUMENTOS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.DOCUMENTOS_GERAISTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
             documentosGeraisIdLabel = new System.Windows.Forms.Label();
@@ -89,13 +89,13 @@
             this.tlpDocumentosGerais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingNavigator)).BeginInit();
             this.dOCUMENTOS_GERAISBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.tbDocumentosGerais.SuspendLayout();
             this.tpCapa.SuspendLayout();
             this.tpDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISDataGridView)).BeginInit();
             this.gbPesquisaDocumento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // documentosGeraisIdLabel
@@ -214,6 +214,16 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // dOCUMENTOS_GERAISBindingSource
+            // 
+            this.dOCUMENTOS_GERAISBindingSource.DataMember = "DOCUMENTOS_GERAIS";
+            this.dOCUMENTOS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -476,8 +486,24 @@
             this.dOCUMENTOS_GERAISDataGridView.Location = new System.Drawing.Point(3, 3);
             this.dOCUMENTOS_GERAISDataGridView.Name = "dOCUMENTOS_GERAISDataGridView";
             this.dOCUMENTOS_GERAISDataGridView.ReadOnly = true;
-            this.dOCUMENTOS_GERAISDataGridView.Size = new System.Drawing.Size(853, 238);
+            this.dOCUMENTOS_GERAISDataGridView.Size = new System.Drawing.Size(853, 233);
             this.dOCUMENTOS_GERAISDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DocumentosGeraisId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Identificação Documento";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 205;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeDocumento";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome Documento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 160;
             // 
             // TipoDocumento
             // 
@@ -486,6 +512,22 @@
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoDocumento";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição Documento";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 195;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataInclusao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Data Inclusão";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // ArquivoSalvo
             // 
@@ -581,54 +623,14 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
-            // dOCUMENTOS_GERAISBindingSource
-            // 
-            this.dOCUMENTOS_GERAISBindingSource.DataMember = "DOCUMENTOS_GERAIS";
-            this.dOCUMENTOS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
-            // 
-            // sISCONPROJECTSDataSet
-            // 
-            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
-            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DocumentosGeraisId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Identificação Documento";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 205;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeDocumento";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome Documento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescricaoDocumento";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição Documento";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 195;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataInclusao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Data Inclusão";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
             // dOCUMENTOS_GERAISTableAdapter
             // 
             this.dOCUMENTOS_GERAISTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = null;
+            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = this.dOCUMENTOS_GERAISTableAdapter;
             this.tableAdapterManager.EVIDENCIASTableAdapter = null;
@@ -654,6 +656,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingNavigator)).EndInit();
             this.dOCUMENTOS_GERAISBindingNavigator.ResumeLayout(false);
             this.dOCUMENTOS_GERAISBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.tbDocumentosGerais.ResumeLayout(false);
             this.tpCapa.ResumeLayout(false);
             this.tpCapa.PerformLayout();
@@ -661,8 +665,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISDataGridView)).EndInit();
             this.gbPesquisaDocumento.ResumeLayout(false);
             this.gbPesquisaDocumento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dOCUMENTOS_GERAISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

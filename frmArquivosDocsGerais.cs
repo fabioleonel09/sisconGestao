@@ -39,20 +39,6 @@ namespace sisconGestão
             CarregaGrid();
         }
 
-        private void btnLimpaPesquisaArquivoDocsGerais_Click(object sender, EventArgs e)
-        {
-            //instancia a messageBox 
-            dynamic mboxResult = MessageBox.Show("Deseja apagar o campo de nome de pesquisa?", "Confirmação!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (mboxResult == DialogResult.Cancel)  //se escolher cancel no dialógo
-            {
-                txtPesquisaNomeArquivoDocsGerais.Text = nomeDocGeralPesquisa;
-            }
-            else if (mboxResult == DialogResult.OK) //se escolher ok
-            {
-                txtPesquisaNomeArquivoDocsGerais.Clear();
-            }
-        }
-
         private void btnPesquisarArquivosDocsGerais_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPesquisaNomeArquivoDocsGerais.Text))
@@ -65,9 +51,18 @@ namespace sisconGestão
             }
         }
 
-        private void btnApagaArquivoDocsGerais_Click(object sender, EventArgs e)
+        private void btnApagaArquivoDocsGerais_Click(object sender, EventArgs e)//apenas limpa o txt
         {
-
+            //instancia a messageBox 
+            dynamic mboxResult = MessageBox.Show("Deseja apagar o campo de nome de pesquisa?", "Confirmação!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (mboxResult == DialogResult.Cancel)  //se escolher cancel no dialógo
+            {
+                txtPesquisaNomeArquivoDocsGerais.Text = nomeDocGeralPesquisa;
+            }
+            else if (mboxResult == DialogResult.OK) //se escolher ok
+            {
+                txtPesquisaNomeArquivoDocsGerais.Clear();
+            }
         }
 
         private void btnSalvarArquivoDocsGerais_Click(object sender, EventArgs e)
@@ -120,7 +115,7 @@ namespace sisconGestão
         {
             if (codigoFormulario == ".Enviar")
             {
-                btnLimpaPesquisaArquivoDocsGerais.Enabled = false;
+                bindingNavigatorDeleteItem.Enabled = false;
                 btnPesquisarArquivosDocsGerais.Enabled = false;
                 btnApagaArquivoDocsGerais.Enabled = false;
                 btnAbrirArquivoDocsGerais.Enabled = false;
@@ -206,7 +201,29 @@ namespace sisconGestão
         {
             // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS'. Você pode movê-la ou removê-la conforme necessário.
             this.aRQUIVOS_DOCS_GERAISTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_DOCS_GERAIS);
+        }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcaoApagar();
+        }
+
+        private void SalvaAcaoApagar()
+        {
+            try
+            {
+                this.Validate();
+                this.aRQUIVOS_DOCS_GERAISBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+                MessageBox.Show("Ação realizada com sucesso!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem informando que foi realizada a ação
+
+                CarregaGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

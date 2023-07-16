@@ -37,7 +37,6 @@
             this.nomeEvidenciaTextBox = new System.Windows.Forms.TextBox();
             this.aRQUIVOS_EVIDENCIASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
-            this.btnLimpaPesquisaArquivoEvidencias = new System.Windows.Forms.Button();
             this.txtPesquisaNomeArquivoEvidencias = new System.Windows.Forms.TextBox();
             this.tlpAcoesGeraisEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAcoesBotoesEvidencias = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +47,8 @@
             this.dgvArquivosEvidencias = new System.Windows.Forms.DataGridView();
             this.aRQUIVOS_EVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_EVIDENCIASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             this.tlpArquivosEvidencias.SuspendLayout();
             this.gbArquivosEvidencias.SuspendLayout();
@@ -56,6 +57,8 @@
             this.tlpAcoesGeraisEvidencias.SuspendLayout();
             this.tlpAcoesBotoesEvidencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).BeginInit();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeEvidenciaLabel
@@ -87,10 +90,10 @@
             // 
             // gbArquivosEvidencias
             // 
+            this.gbArquivosEvidencias.Controls.Add(this.aRQUIVOS_EVIDENCIASbindingNavigator);
             this.gbArquivosEvidencias.Controls.Add(this.lblNomePesquisa);
             this.gbArquivosEvidencias.Controls.Add(nomeEvidenciaLabel);
             this.gbArquivosEvidencias.Controls.Add(this.nomeEvidenciaTextBox);
-            this.gbArquivosEvidencias.Controls.Add(this.btnLimpaPesquisaArquivoEvidencias);
             this.gbArquivosEvidencias.Controls.Add(this.txtPesquisaNomeArquivoEvidencias);
             this.gbArquivosEvidencias.Controls.Add(this.tlpAcoesGeraisEvidencias);
             this.gbArquivosEvidencias.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,9 +117,10 @@
             // nomeEvidenciaTextBox
             // 
             this.nomeEvidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRQUIVOS_EVIDENCIASBindingSource, "NomeEvidencia", true));
+            this.nomeEvidenciaTextBox.Enabled = false;
             this.nomeEvidenciaTextBox.Location = new System.Drawing.Point(11, 43);
             this.nomeEvidenciaTextBox.Name = "nomeEvidenciaTextBox";
-            this.nomeEvidenciaTextBox.Size = new System.Drawing.Size(423, 26);
+            this.nomeEvidenciaTextBox.Size = new System.Drawing.Size(403, 26);
             this.nomeEvidenciaTextBox.TabIndex = 6;
             // 
             // aRQUIVOS_EVIDENCIASBindingSource
@@ -129,30 +133,13 @@
             this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
             this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnLimpaPesquisaArquivoEvidencias
-            // 
-            this.btnLimpaPesquisaArquivoEvidencias.BackColor = System.Drawing.Color.White;
-            this.btnLimpaPesquisaArquivoEvidencias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpaPesquisaArquivoEvidencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpaPesquisaArquivoEvidencias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpaPesquisaArquivoEvidencias.Image = global::sisconGestão.Properties.Resources.LimpaTxt;
-            this.btnLimpaPesquisaArquivoEvidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpaPesquisaArquivoEvidencias.Location = new System.Drawing.Point(304, 75);
-            this.btnLimpaPesquisaArquivoEvidencias.Name = "btnLimpaPesquisaArquivoEvidencias";
-            this.btnLimpaPesquisaArquivoEvidencias.Size = new System.Drawing.Size(130, 50);
-            this.btnLimpaPesquisaArquivoEvidencias.TabIndex = 5;
-            this.btnLimpaPesquisaArquivoEvidencias.Text = "Limpar";
-            this.btnLimpaPesquisaArquivoEvidencias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpaPesquisaArquivoEvidencias.UseVisualStyleBackColor = false;
-            this.btnLimpaPesquisaArquivoEvidencias.Click += new System.EventHandler(this.btnLimpaPesquisaArquivoEvidencias_Click);
-            // 
             // txtPesquisaNomeArquivoEvidencias
             // 
             this.txtPesquisaNomeArquivoEvidencias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPesquisaNomeArquivoEvidencias.Enabled = false;
             this.txtPesquisaNomeArquivoEvidencias.Location = new System.Drawing.Point(11, 99);
             this.txtPesquisaNomeArquivoEvidencias.Name = "txtPesquisaNomeArquivoEvidencias";
-            this.txtPesquisaNomeArquivoEvidencias.Size = new System.Drawing.Size(287, 26);
+            this.txtPesquisaNomeArquivoEvidencias.Size = new System.Drawing.Size(422, 26);
             this.txtPesquisaNomeArquivoEvidencias.TabIndex = 3;
             // 
             // tlpAcoesGeraisEvidencias
@@ -237,7 +224,7 @@
             this.btnApagaArquivoEvidencias.Name = "btnApagaArquivoEvidencias";
             this.btnApagaArquivoEvidencias.Size = new System.Drawing.Size(208, 54);
             this.btnApagaArquivoEvidencias.TabIndex = 4;
-            this.btnApagaArquivoEvidencias.Text = "Apagar";
+            this.btnApagaArquivoEvidencias.Text = "Limpar";
             this.btnApagaArquivoEvidencias.UseVisualStyleBackColor = false;
             this.btnApagaArquivoEvidencias.Click += new System.EventHandler(this.btnApagaArquivoEvidencias_Click);
             // 
@@ -284,6 +271,40 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
+            // aRQUIVOS_EVIDENCIASbindingNavigator
+            // 
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.AddNewItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.BindingSource = this.aRQUIVOS_EVIDENCIASBindingSource;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.CountItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorDeleteItem});
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Location = new System.Drawing.Point(417, 44);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveFirstItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveLastItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveNextItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MovePreviousItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Name = "aRQUIVOS_EVIDENCIASbindingNavigator";
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.PositionItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Size = new System.Drawing.Size(26, 25);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.TabIndex = 9;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // frmArquivosEvidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -305,6 +326,9 @@
             this.tlpAcoesGeraisEvidencias.ResumeLayout(false);
             this.tlpAcoesBotoesEvidencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).EndInit();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.ResumeLayout(false);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +337,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpArquivosEvidencias;
         private System.Windows.Forms.GroupBox gbArquivosEvidencias;
-        private System.Windows.Forms.Button btnLimpaPesquisaArquivoEvidencias;
         private System.Windows.Forms.TextBox txtPesquisaNomeArquivoEvidencias;
         private System.Windows.Forms.TableLayoutPanel tlpAcoesGeraisEvidencias;
         private System.Windows.Forms.TableLayoutPanel tlpAcoesBotoesEvidencias;
@@ -328,5 +351,7 @@
         private SISCONPROJECTSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox nomeEvidenciaTextBox;
         private System.Windows.Forms.Label lblNomePesquisa;
+        private System.Windows.Forms.BindingNavigator aRQUIVOS_EVIDENCIASbindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
     }
 }

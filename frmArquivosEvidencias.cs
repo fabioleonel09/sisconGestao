@@ -39,20 +39,6 @@ namespace sisconGestão
             CarregaGrid();
         }
 
-        private void btnLimpaPesquisaArquivoEvidencias_Click(object sender, EventArgs e)
-        {
-            //instancia a messageBox 
-            dynamic mboxResult = MessageBox.Show("Deseja apagar o campo de nome de pesquisa?", "Confirmação!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (mboxResult == DialogResult.Cancel)  //se escolher cancel no dialógo
-            {
-                txtPesquisaNomeArquivoEvidencias.Text = nomeEvidenciaPesquisa;
-            }
-            else if (mboxResult == DialogResult.OK) //se escolher ok
-            {
-                txtPesquisaNomeArquivoEvidencias.Clear();
-            }
-        }
-
         private void btnPesquisarArquivosEvidencias_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPesquisaNomeArquivoEvidencias.Text))
@@ -65,9 +51,18 @@ namespace sisconGestão
             }
         }
 
-        private void btnApagaArquivoEvidencias_Click(object sender, EventArgs e)
+        private void btnApagaArquivoEvidencias_Click(object sender, EventArgs e)//apenas limpa o txt
         {
-
+            //instancia a messageBox 
+            dynamic mboxResult = MessageBox.Show("Deseja apagar o campo de nome de pesquisa?", "Confirmação!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (mboxResult == DialogResult.Cancel)  //se escolher cancel no dialógo
+            {
+                txtPesquisaNomeArquivoEvidencias.Text = nomeEvidenciaPesquisa;
+            }
+            else if (mboxResult == DialogResult.OK) //se escolher ok
+            {
+                txtPesquisaNomeArquivoEvidencias.Clear();
+            }
         }
 
         private void btnSalvarArquivoEvidencias_Click(object sender, EventArgs e)
@@ -120,7 +115,7 @@ namespace sisconGestão
         {
             if (codigoFormulario == ".Enviar")
             {
-                btnLimpaPesquisaArquivoEvidencias.Enabled = false;
+                bindingNavigatorDeleteItem.Enabled = false;
                 btnPesquisarArquivosEvidencias.Enabled = false;
                 btnApagaArquivoEvidencias.Enabled = false;
                 btnAbrirArquivoEvidencias.Enabled = false;
@@ -207,7 +202,29 @@ namespace sisconGestão
         {
             // TODO: esta linha de código carrega dados na tabela 'sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS'. Você pode movê-la ou removê-la conforme necessário.
             this.aRQUIVOS_EVIDENCIASTableAdapter.Fill(this.sISCONPROJECTSDataSet.ARQUIVOS_EVIDENCIAS);
+        }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            SalvaAcaoApagar();
+        }
+
+        private void SalvaAcaoApagar()
+        {
+            try
+            {
+                this.Validate();
+                this.aRQUIVOS_EVIDENCIASBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
+
+                MessageBox.Show("Ação realizada com sucesso!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem informando que foi realizada a ação
+
+                CarregaGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
