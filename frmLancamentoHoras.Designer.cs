@@ -38,11 +38,13 @@
             System.Windows.Forms.Label horasLancamentoLabel;
             System.Windows.Forms.Label nomeDesenvolvedorLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLancamentoHoras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpLancamentoHorarios = new System.Windows.Forms.TableLayoutPanel();
             this.lANCAMENTO_HORARIOSBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.lANCAMENTO_HORARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -59,6 +61,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
             this.tsbBaixar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbImprimirApontamentoHoras = new System.Windows.Forms.ToolStripButton();
             this.tbLancamentoHoras = new System.Windows.Forms.TabControl();
             this.tpCapaLancamento = new System.Windows.Forms.TabPage();
             this.nomeDesenvolvedorTextBox = new System.Windows.Forms.TextBox();
@@ -71,27 +75,23 @@
             this.horasLancamentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tpDetalhesHoras = new System.Windows.Forms.TabPage();
             this.lANCAMENTO_HORARIOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDesenvolvedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbRealizaPesquisa = new System.Windows.Forms.GroupBox();
+            this.mkdtxtDataLancamento = new System.Windows.Forms.MaskedTextBox();
             this.btnPesquisarLancamentos = new System.Windows.Forms.Button();
             this.rbPesquisaData = new System.Windows.Forms.RadioButton();
             this.rbPesquisaTipo = new System.Windows.Forms.RadioButton();
             this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
             this.txtPesquisaHorarios = new System.Windows.Forms.TextBox();
-            this.mkdtxtDataLancamento = new System.Windows.Forms.MaskedTextBox();
-            this.lANCAMENTO_HORARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lANCAMENTO_HORARIOSTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.LANCAMENTO_HORARIOSTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbImprimirApontamentoHoras = new System.Windows.Forms.ToolStripButton();
             lancamentoHorarioIdLabel = new System.Windows.Forms.Label();
             dataLancamentoLabel = new System.Windows.Forms.Label();
             tipoLancamentoLabel = new System.Windows.Forms.Label();
@@ -103,13 +103,13 @@
             this.tlpLancamentoHorarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingNavigator)).BeginInit();
             this.lANCAMENTO_HORARIOSBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.tbLancamentoHoras.SuspendLayout();
             this.tpCapaLancamento.SuspendLayout();
             this.tpDetalhesHoras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSDataGridView)).BeginInit();
             this.gbRealizaPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lancamentoHorarioIdLabel
@@ -158,9 +158,9 @@
             clienteLancamentoLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             clienteLancamentoLabel.Location = new System.Drawing.Point(329, 3);
             clienteLancamentoLabel.Name = "clienteLancamentoLabel";
-            clienteLancamentoLabel.Size = new System.Drawing.Size(167, 19);
+            clienteLancamentoLabel.Size = new System.Drawing.Size(68, 19);
             clienteLancamentoLabel.TabIndex = 8;
-            clienteLancamentoLabel.Text = "Cliente Lançamento:";
+            clienteLancamentoLabel.Text = "Cliente:";
             // 
             // observacaoLancamentoLabel
             // 
@@ -261,6 +261,16 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(52, 90);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // lANCAMENTO_HORARIOSBindingSource
+            // 
+            this.lANCAMENTO_HORARIOSBindingSource.DataMember = "LANCAMENTO_HORARIOS";
+            this.lANCAMENTO_HORARIOSBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -402,6 +412,22 @@
             this.tsbBaixar.Name = "tsbBaixar";
             this.tsbBaixar.Size = new System.Drawing.Size(52, 90);
             this.tsbBaixar.Text = "Baixar";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 93);
+            // 
+            // tsbImprimirApontamentoHoras
+            // 
+            this.tsbImprimirApontamentoHoras.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbImprimirApontamentoHoras.Image = ((System.Drawing.Image)(resources.GetObject("tsbImprimirApontamentoHoras.Image")));
+            this.tsbImprimirApontamentoHoras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbImprimirApontamentoHoras.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImprimirApontamentoHoras.Name = "tsbImprimirApontamentoHoras";
+            this.tsbImprimirApontamentoHoras.Size = new System.Drawing.Size(52, 90);
+            this.tsbImprimirApontamentoHoras.Text = "Imprimir Apontamento de Horas";
+            this.tsbImprimirApontamentoHoras.Click += new System.EventHandler(this.tsbImprimirApontamentoHoras_Click);
             // 
             // tbLancamentoHoras
             // 
@@ -557,8 +583,35 @@
             this.lANCAMENTO_HORARIOSDataGridView.Location = new System.Drawing.Point(3, 3);
             this.lANCAMENTO_HORARIOSDataGridView.Name = "lANCAMENTO_HORARIOSDataGridView";
             this.lANCAMENTO_HORARIOSDataGridView.ReadOnly = true;
-            this.lANCAMENTO_HORARIOSDataGridView.Size = new System.Drawing.Size(853, 238);
+            this.lANCAMENTO_HORARIOSDataGridView.Size = new System.Drawing.Size(853, 233);
             this.lANCAMENTO_HORARIOSDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "LancamentoHorarioId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número Lançamento";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DataLancamento";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Data Lançamento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "TipoLancamento";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo Lançamento";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 180;
             // 
             // nomeDesenvolvedor
             // 
@@ -567,6 +620,41 @@
             this.nomeDesenvolvedor.Name = "nomeDesenvolvedor";
             this.nomeDesenvolvedor.ReadOnly = true;
             this.nomeDesenvolvedor.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NumeroEvidencia";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Número Evidência";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ClienteLancamento";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ObservacaoLancamento";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Observação";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "HorasLancamento";
+            dataGridViewCellStyle2.Format = "t";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Horas Lançamento";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 180;
             // 
             // gbRealizaPesquisa
             // 
@@ -583,6 +671,15 @@
             this.gbRealizaPesquisa.TabIndex = 2;
             this.gbRealizaPesquisa.TabStop = false;
             this.gbRealizaPesquisa.Text = "Para realizar a pesquisa";
+            // 
+            // mkdtxtDataLancamento
+            // 
+            this.mkdtxtDataLancamento.Location = new System.Drawing.Point(320, 40);
+            this.mkdtxtDataLancamento.Mask = "00/00/0000";
+            this.mkdtxtDataLancamento.Name = "mkdtxtDataLancamento";
+            this.mkdtxtDataLancamento.Size = new System.Drawing.Size(100, 26);
+            this.mkdtxtDataLancamento.TabIndex = 11;
+            this.mkdtxtDataLancamento.ValidatingType = typeof(System.DateTime);
             // 
             // btnPesquisarLancamentos
             // 
@@ -641,115 +738,20 @@
             this.txtPesquisaHorarios.Size = new System.Drawing.Size(315, 26);
             this.txtPesquisaHorarios.TabIndex = 6;
             // 
-            // mkdtxtDataLancamento
-            // 
-            this.mkdtxtDataLancamento.Location = new System.Drawing.Point(320, 40);
-            this.mkdtxtDataLancamento.Mask = "00/00/0000";
-            this.mkdtxtDataLancamento.Name = "mkdtxtDataLancamento";
-            this.mkdtxtDataLancamento.Size = new System.Drawing.Size(100, 26);
-            this.mkdtxtDataLancamento.TabIndex = 11;
-            this.mkdtxtDataLancamento.ValidatingType = typeof(System.DateTime);
-            // 
-            // lANCAMENTO_HORARIOSBindingSource
-            // 
-            this.lANCAMENTO_HORARIOSBindingSource.DataMember = "LANCAMENTO_HORARIOS";
-            this.lANCAMENTO_HORARIOSBindingSource.DataSource = this.sISCONPROJECTSDataSet;
-            // 
-            // sISCONPROJECTSDataSet
-            // 
-            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
-            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "LancamentoHorarioId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Número Lançamento";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DataLancamento";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Data Lançamento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TipoLancamento";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo Lançamento";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NumeroEvidencia";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Número Evidência";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ClienteLancamento";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ObservacaoLancamento";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Observação";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "HorasLancamento";
-            dataGridViewCellStyle4.Format = "t";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Horas Lançamento";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 180;
-            // 
             // lANCAMENTO_HORARIOSTableAdapter
             // 
             this.lANCAMENTO_HORARIOSTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = null;
+            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
             this.tableAdapterManager.EVIDENCIASTableAdapter = null;
             this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = this.lANCAMENTO_HORARIOSTableAdapter;
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 93);
-            // 
-            // tsbImprimirApontamentoHoras
-            // 
-            this.tsbImprimirApontamentoHoras.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbImprimirApontamentoHoras.Image = ((System.Drawing.Image)(resources.GetObject("tsbImprimirApontamentoHoras.Image")));
-            this.tsbImprimirApontamentoHoras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbImprimirApontamentoHoras.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbImprimirApontamentoHoras.Name = "tsbImprimirApontamentoHoras";
-            this.tsbImprimirApontamentoHoras.Size = new System.Drawing.Size(52, 90);
-            this.tsbImprimirApontamentoHoras.Text = "Imprimir Apontamento de Horas";
-            this.tsbImprimirApontamentoHoras.Click += new System.EventHandler(this.tsbImprimirApontamentoHoras_Click);
             // 
             // frmLancamentoHoras
             // 
@@ -769,6 +771,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingNavigator)).EndInit();
             this.lANCAMENTO_HORARIOSBindingNavigator.ResumeLayout(false);
             this.lANCAMENTO_HORARIOSBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.tbLancamentoHoras.ResumeLayout(false);
             this.tpCapaLancamento.ResumeLayout(false);
             this.tpCapaLancamento.PerformLayout();
@@ -776,8 +780,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSDataGridView)).EndInit();
             this.gbRealizaPesquisa.ResumeLayout(false);
             this.gbRealizaPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lANCAMENTO_HORARIOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

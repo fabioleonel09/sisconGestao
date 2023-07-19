@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace sisconGestão
 {
@@ -89,7 +90,7 @@ namespace sisconGestão
         private void uSUARIOS_SENHASBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             SalvaAcao(); //entra neste método
-        }       
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -204,9 +205,24 @@ namespace sisconGestão
                 //deixa a grid de cadastro inabilitada
                 uSUARIOS_SENHASDataGridView.Enabled = false;
             }
-            catch (Exception ex) //se ocorrer algum erro técnico, dipara a msg
+            catch (SqlException ex) //se ocorrer algum erro técnico, dipara a msg
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Verifique se a exceção é de chave duplicada (ou outra exceção específica relacionada à PK)
+                if (ex.Number == 2627)
+                {
+                    // Trate o caso de chave duplicada
+                    MessageBox.Show("A chave de registro já está em uso. Por favor, feche a janela de Enviar Arquivo e tente novamente.", "Conflito de inserção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Outras ações apropriadas, como limpar campos ou notificar o usuário sobre o conflito
+                }
+                else if (ex.Number == 547)
+                {
+                    MessageBox.Show("Os campos Usuário, Senha e Competência devem ter no máximo 100 caracteres.", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Trate outras exceções que possam ocorrer
+                    MessageBox.Show("Erro durante a inserção: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -215,6 +231,21 @@ namespace sisconGestão
             //deixa dos botões de enviar arquivo e baixar arquivo inabilitados na janela de login
             tsbEnviarArquivo.Enabled = false;
             tsbBaixarArquivo.Enabled = false;
+        }
+
+        private void btnMascaraCadastro_Click(object sender, EventArgs e)
+        {
+            if (btnMascaraCadastro.Text == "| | |")
+            {
+                txtSenhaAdm.PasswordChar = '\0';
+
+                btnMascaraCadastro.Text = "* * *";
+            }
+            else if (btnMascaraCadastro.Text == "* * *")
+            {
+                txtSenhaAdm.PasswordChar = '*';
+                btnMascaraCadastro.Text = "| | |";
+            }
         }
     }
 }

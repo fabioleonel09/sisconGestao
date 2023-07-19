@@ -126,7 +126,7 @@
             descricaoDocumentoLabel.Name = "descricaoDocumentoLabel";
             descricaoDocumentoLabel.Size = new System.Drawing.Size(185, 19);
             descricaoDocumentoLabel.TabIndex = 4;
-            descricaoDocumentoLabel.Text = "Descricao Documento:";
+            descricaoDocumentoLabel.Text = "Descrição Documento:";
             // 
             // dataInclusaoLabel
             // 
@@ -136,7 +136,7 @@
             dataInclusaoLabel.Name = "dataInclusaoLabel";
             dataInclusaoLabel.Size = new System.Drawing.Size(119, 19);
             dataInclusaoLabel.TabIndex = 6;
-            dataInclusaoLabel.Text = "Data Inclusao:";
+            dataInclusaoLabel.Text = "Data Inclusão:";
             // 
             // tipoDocumentoLabel
             // 

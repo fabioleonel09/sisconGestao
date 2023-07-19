@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -98,6 +99,24 @@ namespace sisconGestão
         {
             try
             {
+                if (clienteLancamentoTextBox.TextLength > 100)
+                {
+                    MessageBox.Show("O campo Cliente não pode ter mais do que 100 caracteres!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem
+                    return;
+                }
+                   
+                if (nomeDesenvolvedorTextBox.TextLength > 200)
+                {
+                    MessageBox.Show("O campo Nome do Desenvolvedor não pode ter mais do que 200 caracteres!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem
+                    return;
+                }
+                   
+                if (observacaoLancamentoTextBox.TextLength > 200)
+                {
+                    MessageBox.Show("O campo Observação não pode ter mais do que 200 caracteres!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem
+                    return;
+                }
+                  
                 this.Validate();
                 this.lANCAMENTO_HORARIOSBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
@@ -108,7 +127,18 @@ namespace sisconGestão
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Verifique se a exceção é de chave duplicada (ou outra exceção específica relacionada à PK)
+                if (ex is SqlException sqlException && sqlException.Number == 2627)
+                {
+                    // Trate o caso de chave duplicada
+                    MessageBox.Show("A chave de registro já está em uso. Por favor, apague esta ação (clicando em Excluir) e tente novamente.", "Conflito de inserção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Outras ações apropriadas, como limpar campos ou notificar o usuário sobre o conflito
+                }
+                else
+                {
+                    // Trate outras exceções que possam ocorrer
+                    MessageBox.Show("Erro durante a inserção: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

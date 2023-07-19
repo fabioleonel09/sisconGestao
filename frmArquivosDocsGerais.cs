@@ -173,11 +173,33 @@ namespace sisconGestão
             {
                 using (var conectar = conexao.CreateCommand())
                 {
-                    conectar.CommandText = "INSERT INTO ARQUIVOS_DOCS_GERAIS (NomeDocGeral, ArquivoDocGeral) VALUES (@NomeDocGeral, @ArquivoDocGeral)";
+                    try
+                    {
+                        conectar.CommandText = "INSERT INTO ARQUIVOS_DOCS_GERAIS (NomeDocGeral, ArquivoDocGeral) VALUES (@NomeDocGeral, @ArquivoDocGeral)";
 
-                    ConfigurarParametrosSalvar(conectar, arquivo);
-                    conectar.ExecuteNonQuery();
-                    CarregaGrid();
+                        ConfigurarParametrosSalvar(conectar, arquivo);
+                        conectar.ExecuteNonQuery();
+                        CarregaGrid();
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Verifique se a exceção é de chave duplicada (ou outra exceção específica relacionada à PK)
+                        if (ex.Number == 2627)
+                        {
+                            // Trate o caso de chave duplicada
+                            MessageBox.Show("A chave de registro já está em uso. Por favor, feche a janela de Enviar Arquivo e tente novamente.", "Conflito de inserção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            // Outras ações apropriadas, como limpar campos ou notificar o usuário sobre o conflito
+                        }
+                        else if (ex.Number == 547)
+                        {
+                            MessageBox.Show("O campo Nome Documento Geral deve ter no máximo 255 caracteres.", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            // Trate outras exceções que possam ocorrer
+                            MessageBox.Show("Erro durante a inserção: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    } 
                 }
             }
         }

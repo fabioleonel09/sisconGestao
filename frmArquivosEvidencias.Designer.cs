@@ -33,8 +33,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArquivosEvidencias));
             this.tlpArquivosEvidencias = new System.Windows.Forms.TableLayoutPanel();
             this.gbArquivosEvidencias = new System.Windows.Forms.GroupBox();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.aRQUIVOS_EVIDENCIASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.lblNomePesquisa = new System.Windows.Forms.Label();
             this.nomeEvidenciaTextBox = new System.Windows.Forms.TextBox();
             this.txtPesquisaNomeArquivoEvidencias = new System.Windows.Forms.TextBox();
@@ -47,27 +58,16 @@
             this.dgvArquivosEvidencias = new System.Windows.Forms.DataGridView();
             this.aRQUIVOS_EVIDENCIASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_EVIDENCIASTableAdapter();
             this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.aRQUIVOS_EVIDENCIASbindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             nomeEvidenciaLabel = new System.Windows.Forms.Label();
             this.tlpArquivosEvidencias.SuspendLayout();
             this.gbArquivosEvidencias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).BeginInit();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
             this.tlpAcoesGeraisEvidencias.SuspendLayout();
             this.tlpAcoesBotoesEvidencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).BeginInit();
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeEvidenciaLabel
@@ -113,6 +113,37 @@
             this.gbArquivosEvidencias.TabStop = false;
             this.gbArquivosEvidencias.Text = "Ações";
             // 
+            // aRQUIVOS_EVIDENCIASbindingNavigator
+            // 
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.AddNewItem = null;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.BindingSource = this.aRQUIVOS_EVIDENCIASBindingSource;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorDeleteItem});
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Location = new System.Drawing.Point(204, 43);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Name = "aRQUIVOS_EVIDENCIASbindingNavigator";
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Size = new System.Drawing.Size(237, 26);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.TabIndex = 9;
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.Text = "bindingNavigator1";
+            // 
             // aRQUIVOS_EVIDENCIASBindingSource
             // 
             this.aRQUIVOS_EVIDENCIASBindingSource.DataMember = "ARQUIVOS_EVIDENCIAS";
@@ -122,6 +153,85 @@
             // 
             this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
             this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(49, 23);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 26);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 26);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 26);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 26);
             // 
             // lblNomePesquisa
             // 
@@ -256,13 +366,12 @@
             // 
             // dgvArquivosEvidencias
             // 
-            this.dgvArquivosEvidencias.AllowUserToAddRows = false;
+            this.dgvArquivosEvidencias.AllowUserToOrderColumns = true;
             this.dgvArquivosEvidencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvArquivosEvidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArquivosEvidencias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvArquivosEvidencias.Location = new System.Drawing.Point(4, 4);
             this.dgvArquivosEvidencias.Name = "dgvArquivosEvidencias";
-            this.dgvArquivosEvidencias.ReadOnly = true;
             this.dgvArquivosEvidencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvArquivosEvidencias.Size = new System.Drawing.Size(445, 235);
             this.dgvArquivosEvidencias.TabIndex = 1;
@@ -282,116 +391,6 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
-            // aRQUIVOS_EVIDENCIASbindingNavigator
-            // 
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.AddNewItem = null;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.BindingSource = this.aRQUIVOS_EVIDENCIASBindingSource;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorDeleteItem});
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Location = new System.Drawing.Point(204, 43);
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Name = "aRQUIVOS_EVIDENCIASbindingNavigator";
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Size = new System.Drawing.Size(268, 26);
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.TabIndex = 9;
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 26);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 26);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(49, 23);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 26);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 26);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
             // frmArquivosEvidencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -408,14 +407,14 @@
             this.tlpArquivosEvidencias.ResumeLayout(false);
             this.gbArquivosEvidencias.ResumeLayout(false);
             this.gbArquivosEvidencias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).EndInit();
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.ResumeLayout(false);
+            this.aRQUIVOS_EVIDENCIASbindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
             this.tlpAcoesGeraisEvidencias.ResumeLayout(false);
             this.tlpAcoesBotoesEvidencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosEvidencias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_EVIDENCIASbindingNavigator)).EndInit();
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.ResumeLayout(false);
-            this.aRQUIVOS_EVIDENCIASbindingNavigator.PerformLayout();
             this.ResumeLayout(false);
 
         }

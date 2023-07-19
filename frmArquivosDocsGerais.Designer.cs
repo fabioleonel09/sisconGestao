@@ -32,43 +32,53 @@
             System.Windows.Forms.Label nomeDocGeralLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArquivosDocsGerais));
             this.tlpArquivosDocsGerais = new System.Windows.Forms.TableLayoutPanel();
-            this.aRQUIVOS_DOCS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
-            this.dgvArquivosDosGerais = new System.Windows.Forms.DataGridView();
-            this.aRQUIVOS_DOCS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_DOCS_GERAISTableAdapter();
-            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.tlpAcoesGeraisDocsGerais = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpAcoesBotoesDocsGerais = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPesquisarArquivosDocsGerais = new System.Windows.Forms.Button();
-            this.btnApagaArquivoDocsGerais = new System.Windows.Forms.Button();
-            this.btnSalvarArquivoDocsGerais = new System.Windows.Forms.Button();
-            this.btnAbrirArquivoDocsGerais = new System.Windows.Forms.Button();
-            this.txtPesquisaNomeArquivoDocsGerais = new System.Windows.Forms.TextBox();
-            this.nomeDocGeralTextBox = new System.Windows.Forms.TextBox();
-            this.lblNomePesquisa = new System.Windows.Forms.Label();
             this.gbArquivosDocsGerais = new System.Windows.Forms.GroupBox();
             this.aRQUIVOS_DOCS_GERAISbindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.aRQUIVOS_DOCS_GERAISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sISCONPROJECTSDataSet = new sisconGestão.SISCONPROJECTSDataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.lblNomePesquisa = new System.Windows.Forms.Label();
+            this.nomeDocGeralTextBox = new System.Windows.Forms.TextBox();
+            this.txtPesquisaNomeArquivoDocsGerais = new System.Windows.Forms.TextBox();
+            this.tlpAcoesGeraisDocsGerais = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAcoesBotoesDocsGerais = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAbrirArquivoDocsGerais = new System.Windows.Forms.Button();
+            this.btnSalvarArquivoDocsGerais = new System.Windows.Forms.Button();
+            this.btnApagaArquivoDocsGerais = new System.Windows.Forms.Button();
+            this.btnPesquisarArquivosDocsGerais = new System.Windows.Forms.Button();
+            this.dgvArquivosDosGerais = new System.Windows.Forms.DataGridView();
+            this.aRQUIVOS_DOCS_GERAISTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.ARQUIVOS_DOCS_GERAISTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
             nomeDocGeralLabel = new System.Windows.Forms.Label();
             this.tlpArquivosDocsGerais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).BeginInit();
-            this.tlpAcoesGeraisDocsGerais.SuspendLayout();
-            this.tlpAcoesBotoesDocsGerais.SuspendLayout();
             this.gbArquivosDocsGerais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISbindingNavigator)).BeginInit();
             this.aRQUIVOS_DOCS_GERAISbindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
+            this.tlpAcoesGeraisDocsGerais.SuspendLayout();
+            this.tlpAcoesBotoesDocsGerais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nomeDocGeralLabel
+            // 
+            nomeDocGeralLabel.AutoSize = true;
+            nomeDocGeralLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeDocGeralLabel.Location = new System.Drawing.Point(8, 19);
+            nomeDocGeralLabel.Name = "nomeDocGeralLabel";
+            nomeDocGeralLabel.Size = new System.Drawing.Size(197, 19);
+            nomeDocGeralLabel.TabIndex = 5;
+            nomeDocGeralLabel.Text = "Nome Documento Geral:";
             // 
             // tlpArquivosDocsGerais
             // 
@@ -85,185 +95,6 @@
             this.tlpArquivosDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.20388F));
             this.tlpArquivosDocsGerais.Size = new System.Drawing.Size(453, 516);
             this.tlpArquivosDocsGerais.TabIndex = 0;
-            // 
-            // aRQUIVOS_DOCS_GERAISBindingSource
-            // 
-            this.aRQUIVOS_DOCS_GERAISBindingSource.DataMember = "ARQUIVOS_DOCS_GERAIS";
-            this.aRQUIVOS_DOCS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
-            // 
-            // sISCONPROJECTSDataSet
-            // 
-            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
-            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dgvArquivosDosGerais
-            // 
-            this.dgvArquivosDosGerais.AllowUserToAddRows = false;
-            this.dgvArquivosDosGerais.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvArquivosDosGerais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArquivosDosGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvArquivosDosGerais.Location = new System.Drawing.Point(4, 4);
-            this.dgvArquivosDosGerais.Name = "dgvArquivosDosGerais";
-            this.dgvArquivosDosGerais.ReadOnly = true;
-            this.dgvArquivosDosGerais.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvArquivosDosGerais.Size = new System.Drawing.Size(445, 234);
-            this.dgvArquivosDosGerais.TabIndex = 1;
-            // 
-            // aRQUIVOS_DOCS_GERAISTableAdapter
-            // 
-            this.aRQUIVOS_DOCS_GERAISTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = this.aRQUIVOS_DOCS_GERAISTableAdapter;
-            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
-            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
-            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
-            // 
-            // tlpAcoesGeraisDocsGerais
-            // 
-            this.tlpAcoesGeraisDocsGerais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAcoesGeraisDocsGerais.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tlpAcoesGeraisDocsGerais.ColumnCount = 1;
-            this.tlpAcoesGeraisDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAcoesGeraisDocsGerais.Controls.Add(this.tlpAcoesBotoesDocsGerais, 0, 0);
-            this.tlpAcoesGeraisDocsGerais.Location = new System.Drawing.Point(3, 132);
-            this.tlpAcoesGeraisDocsGerais.Name = "tlpAcoesGeraisDocsGerais";
-            this.tlpAcoesGeraisDocsGerais.RowCount = 1;
-            this.tlpAcoesGeraisDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpAcoesGeraisDocsGerais.Size = new System.Drawing.Size(439, 132);
-            this.tlpAcoesGeraisDocsGerais.TabIndex = 0;
-            // 
-            // tlpAcoesBotoesDocsGerais
-            // 
-            this.tlpAcoesBotoesDocsGerais.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tlpAcoesBotoesDocsGerais.ColumnCount = 2;
-            this.tlpAcoesBotoesDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAcoesBotoesDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnAbrirArquivoDocsGerais, 1, 1);
-            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnSalvarArquivoDocsGerais, 0, 1);
-            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnApagaArquivoDocsGerais, 1, 0);
-            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnPesquisarArquivosDocsGerais, 0, 0);
-            this.tlpAcoesBotoesDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAcoesBotoesDocsGerais.Location = new System.Drawing.Point(4, 4);
-            this.tlpAcoesBotoesDocsGerais.Name = "tlpAcoesBotoesDocsGerais";
-            this.tlpAcoesBotoesDocsGerais.RowCount = 2;
-            this.tlpAcoesBotoesDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAcoesBotoesDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAcoesBotoesDocsGerais.Size = new System.Drawing.Size(431, 124);
-            this.tlpAcoesBotoesDocsGerais.TabIndex = 3;
-            // 
-            // btnPesquisarArquivosDocsGerais
-            // 
-            this.btnPesquisarArquivosDocsGerais.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPesquisarArquivosDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarArquivosDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPesquisarArquivosDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarArquivosDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarArquivosDocsGerais.Image = global::sisconGestão.Properties.Resources.buscarusuario;
-            this.btnPesquisarArquivosDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisarArquivosDocsGerais.Location = new System.Drawing.Point(4, 4);
-            this.btnPesquisarArquivosDocsGerais.Name = "btnPesquisarArquivosDocsGerais";
-            this.btnPesquisarArquivosDocsGerais.Size = new System.Drawing.Size(208, 54);
-            this.btnPesquisarArquivosDocsGerais.TabIndex = 0;
-            this.btnPesquisarArquivosDocsGerais.Text = "Pesquisar";
-            this.btnPesquisarArquivosDocsGerais.UseVisualStyleBackColor = false;
-            this.btnPesquisarArquivosDocsGerais.Click += new System.EventHandler(this.btnPesquisarArquivosDocsGerais_Click);
-            // 
-            // btnApagaArquivoDocsGerais
-            // 
-            this.btnApagaArquivoDocsGerais.BackColor = System.Drawing.Color.MistyRose;
-            this.btnApagaArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagaArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnApagaArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagaArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagaArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.ApagaDocumentoEvidencia;
-            this.btnApagaArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApagaArquivoDocsGerais.Location = new System.Drawing.Point(219, 4);
-            this.btnApagaArquivoDocsGerais.Name = "btnApagaArquivoDocsGerais";
-            this.btnApagaArquivoDocsGerais.Size = new System.Drawing.Size(208, 54);
-            this.btnApagaArquivoDocsGerais.TabIndex = 4;
-            this.btnApagaArquivoDocsGerais.Text = "Limpar";
-            this.btnApagaArquivoDocsGerais.UseVisualStyleBackColor = false;
-            this.btnApagaArquivoDocsGerais.Click += new System.EventHandler(this.btnApagaArquivoDocsGerais_Click);
-            // 
-            // btnSalvarArquivoDocsGerais
-            // 
-            this.btnSalvarArquivoDocsGerais.BackColor = System.Drawing.Color.Honeydew;
-            this.btnSalvarArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalvarArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.SalvaDocumentosEvidencias;
-            this.btnSalvarArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarArquivoDocsGerais.Location = new System.Drawing.Point(4, 65);
-            this.btnSalvarArquivoDocsGerais.Name = "btnSalvarArquivoDocsGerais";
-            this.btnSalvarArquivoDocsGerais.Size = new System.Drawing.Size(208, 55);
-            this.btnSalvarArquivoDocsGerais.TabIndex = 5;
-            this.btnSalvarArquivoDocsGerais.Text = "Salvar";
-            this.btnSalvarArquivoDocsGerais.UseVisualStyleBackColor = false;
-            this.btnSalvarArquivoDocsGerais.Click += new System.EventHandler(this.btnSalvarArquivoDocsGerais_Click);
-            // 
-            // btnAbrirArquivoDocsGerais
-            // 
-            this.btnAbrirArquivoDocsGerais.BackColor = System.Drawing.SystemColors.Info;
-            this.btnAbrirArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbrirArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAbrirArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.DocumentosEvidencias;
-            this.btnAbrirArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbrirArquivoDocsGerais.Location = new System.Drawing.Point(219, 65);
-            this.btnAbrirArquivoDocsGerais.Name = "btnAbrirArquivoDocsGerais";
-            this.btnAbrirArquivoDocsGerais.Size = new System.Drawing.Size(208, 55);
-            this.btnAbrirArquivoDocsGerais.TabIndex = 6;
-            this.btnAbrirArquivoDocsGerais.Text = "Abrir";
-            this.btnAbrirArquivoDocsGerais.UseVisualStyleBackColor = false;
-            this.btnAbrirArquivoDocsGerais.Click += new System.EventHandler(this.btnAbrirArquivoDocsGerais_Click);
-            // 
-            // txtPesquisaNomeArquivoDocsGerais
-            // 
-            this.txtPesquisaNomeArquivoDocsGerais.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPesquisaNomeArquivoDocsGerais.Enabled = false;
-            this.txtPesquisaNomeArquivoDocsGerais.Location = new System.Drawing.Point(11, 100);
-            this.txtPesquisaNomeArquivoDocsGerais.Name = "txtPesquisaNomeArquivoDocsGerais";
-            this.txtPesquisaNomeArquivoDocsGerais.Size = new System.Drawing.Size(423, 26);
-            this.txtPesquisaNomeArquivoDocsGerais.TabIndex = 3;
-            // 
-            // nomeDocGeralTextBox
-            // 
-            this.nomeDocGeralTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRQUIVOS_DOCS_GERAISBindingSource, "NomeDocGeral", true));
-            this.nomeDocGeralTextBox.Enabled = false;
-            this.nomeDocGeralTextBox.Location = new System.Drawing.Point(11, 40);
-            this.nomeDocGeralTextBox.Name = "nomeDocGeralTextBox";
-            this.nomeDocGeralTextBox.Size = new System.Drawing.Size(185, 26);
-            this.nomeDocGeralTextBox.TabIndex = 6;
-            // 
-            // nomeDocGeralLabel
-            // 
-            nomeDocGeralLabel.AutoSize = true;
-            nomeDocGeralLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeDocGeralLabel.Location = new System.Drawing.Point(8, 19);
-            nomeDocGeralLabel.Name = "nomeDocGeralLabel";
-            nomeDocGeralLabel.Size = new System.Drawing.Size(197, 19);
-            nomeDocGeralLabel.TabIndex = 5;
-            nomeDocGeralLabel.Text = "Nome Documento Geral:";
-            // 
-            // lblNomePesquisa
-            // 
-            this.lblNomePesquisa.AutoSize = true;
-            this.lblNomePesquisa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePesquisa.Location = new System.Drawing.Point(9, 79);
-            this.lblNomePesquisa.Name = "lblNomePesquisa";
-            this.lblNomePesquisa.Size = new System.Drawing.Size(173, 19);
-            this.lblNomePesquisa.TabIndex = 7;
-            this.lblNomePesquisa.Text = "Nome para Pesquisa:";
             // 
             // gbArquivosDocsGerais
             // 
@@ -312,6 +143,34 @@
             this.aRQUIVOS_DOCS_GERAISbindingNavigator.TabIndex = 8;
             this.aRQUIVOS_DOCS_GERAISbindingNavigator.Text = "bindingNavigator";
             // 
+            // aRQUIVOS_DOCS_GERAISBindingSource
+            // 
+            this.aRQUIVOS_DOCS_GERAISBindingSource.DataMember = "ARQUIVOS_DOCS_GERAIS";
+            this.aRQUIVOS_DOCS_GERAISBindingSource.DataSource = this.sISCONPROJECTSDataSet;
+            // 
+            // sISCONPROJECTSDataSet
+            // 
+            this.sISCONPROJECTSDataSet.DataSetName = "SISCONPROJECTSDataSet";
+            this.sISCONPROJECTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(49, 23);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 23);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -345,17 +204,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(49, 23);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 26);
             // 
             // bindingNavigatorMoveNextItem
@@ -378,18 +229,166 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 26);
             // 
-            // bindingNavigatorDeleteItem
+            // lblNomePesquisa
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 23);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.lblNomePesquisa.AutoSize = true;
+            this.lblNomePesquisa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePesquisa.Location = new System.Drawing.Point(9, 79);
+            this.lblNomePesquisa.Name = "lblNomePesquisa";
+            this.lblNomePesquisa.Size = new System.Drawing.Size(173, 19);
+            this.lblNomePesquisa.TabIndex = 7;
+            this.lblNomePesquisa.Text = "Nome para Pesquisa:";
+            // 
+            // nomeDocGeralTextBox
+            // 
+            this.nomeDocGeralTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRQUIVOS_DOCS_GERAISBindingSource, "NomeDocGeral", true));
+            this.nomeDocGeralTextBox.Enabled = false;
+            this.nomeDocGeralTextBox.Location = new System.Drawing.Point(11, 40);
+            this.nomeDocGeralTextBox.Name = "nomeDocGeralTextBox";
+            this.nomeDocGeralTextBox.Size = new System.Drawing.Size(185, 26);
+            this.nomeDocGeralTextBox.TabIndex = 6;
+            // 
+            // txtPesquisaNomeArquivoDocsGerais
+            // 
+            this.txtPesquisaNomeArquivoDocsGerais.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPesquisaNomeArquivoDocsGerais.Enabled = false;
+            this.txtPesquisaNomeArquivoDocsGerais.Location = new System.Drawing.Point(11, 100);
+            this.txtPesquisaNomeArquivoDocsGerais.Name = "txtPesquisaNomeArquivoDocsGerais";
+            this.txtPesquisaNomeArquivoDocsGerais.Size = new System.Drawing.Size(423, 26);
+            this.txtPesquisaNomeArquivoDocsGerais.TabIndex = 3;
+            // 
+            // tlpAcoesGeraisDocsGerais
+            // 
+            this.tlpAcoesGeraisDocsGerais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpAcoesGeraisDocsGerais.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpAcoesGeraisDocsGerais.ColumnCount = 1;
+            this.tlpAcoesGeraisDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAcoesGeraisDocsGerais.Controls.Add(this.tlpAcoesBotoesDocsGerais, 0, 0);
+            this.tlpAcoesGeraisDocsGerais.Location = new System.Drawing.Point(3, 132);
+            this.tlpAcoesGeraisDocsGerais.Name = "tlpAcoesGeraisDocsGerais";
+            this.tlpAcoesGeraisDocsGerais.RowCount = 1;
+            this.tlpAcoesGeraisDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpAcoesGeraisDocsGerais.Size = new System.Drawing.Size(439, 132);
+            this.tlpAcoesGeraisDocsGerais.TabIndex = 0;
+            // 
+            // tlpAcoesBotoesDocsGerais
+            // 
+            this.tlpAcoesBotoesDocsGerais.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlpAcoesBotoesDocsGerais.ColumnCount = 2;
+            this.tlpAcoesBotoesDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAcoesBotoesDocsGerais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnAbrirArquivoDocsGerais, 1, 1);
+            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnSalvarArquivoDocsGerais, 0, 1);
+            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnApagaArquivoDocsGerais, 1, 0);
+            this.tlpAcoesBotoesDocsGerais.Controls.Add(this.btnPesquisarArquivosDocsGerais, 0, 0);
+            this.tlpAcoesBotoesDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAcoesBotoesDocsGerais.Location = new System.Drawing.Point(4, 4);
+            this.tlpAcoesBotoesDocsGerais.Name = "tlpAcoesBotoesDocsGerais";
+            this.tlpAcoesBotoesDocsGerais.RowCount = 2;
+            this.tlpAcoesBotoesDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAcoesBotoesDocsGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAcoesBotoesDocsGerais.Size = new System.Drawing.Size(431, 124);
+            this.tlpAcoesBotoesDocsGerais.TabIndex = 3;
+            // 
+            // btnAbrirArquivoDocsGerais
+            // 
+            this.btnAbrirArquivoDocsGerais.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAbrirArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbrirArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAbrirArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.DocumentosEvidencias;
+            this.btnAbrirArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbrirArquivoDocsGerais.Location = new System.Drawing.Point(219, 65);
+            this.btnAbrirArquivoDocsGerais.Name = "btnAbrirArquivoDocsGerais";
+            this.btnAbrirArquivoDocsGerais.Size = new System.Drawing.Size(208, 55);
+            this.btnAbrirArquivoDocsGerais.TabIndex = 6;
+            this.btnAbrirArquivoDocsGerais.Text = "Abrir";
+            this.btnAbrirArquivoDocsGerais.UseVisualStyleBackColor = false;
+            this.btnAbrirArquivoDocsGerais.Click += new System.EventHandler(this.btnAbrirArquivoDocsGerais_Click);
+            // 
+            // btnSalvarArquivoDocsGerais
+            // 
+            this.btnSalvarArquivoDocsGerais.BackColor = System.Drawing.Color.Honeydew;
+            this.btnSalvarArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalvarArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.SalvaDocumentosEvidencias;
+            this.btnSalvarArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarArquivoDocsGerais.Location = new System.Drawing.Point(4, 65);
+            this.btnSalvarArquivoDocsGerais.Name = "btnSalvarArquivoDocsGerais";
+            this.btnSalvarArquivoDocsGerais.Size = new System.Drawing.Size(208, 55);
+            this.btnSalvarArquivoDocsGerais.TabIndex = 5;
+            this.btnSalvarArquivoDocsGerais.Text = "Salvar";
+            this.btnSalvarArquivoDocsGerais.UseVisualStyleBackColor = false;
+            this.btnSalvarArquivoDocsGerais.Click += new System.EventHandler(this.btnSalvarArquivoDocsGerais_Click);
+            // 
+            // btnApagaArquivoDocsGerais
+            // 
+            this.btnApagaArquivoDocsGerais.BackColor = System.Drawing.Color.MistyRose;
+            this.btnApagaArquivoDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagaArquivoDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnApagaArquivoDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagaArquivoDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagaArquivoDocsGerais.Image = global::sisconGestão.Properties.Resources.ApagaDocumentoEvidencia;
+            this.btnApagaArquivoDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApagaArquivoDocsGerais.Location = new System.Drawing.Point(219, 4);
+            this.btnApagaArquivoDocsGerais.Name = "btnApagaArquivoDocsGerais";
+            this.btnApagaArquivoDocsGerais.Size = new System.Drawing.Size(208, 54);
+            this.btnApagaArquivoDocsGerais.TabIndex = 4;
+            this.btnApagaArquivoDocsGerais.Text = "Limpar";
+            this.btnApagaArquivoDocsGerais.UseVisualStyleBackColor = false;
+            this.btnApagaArquivoDocsGerais.Click += new System.EventHandler(this.btnApagaArquivoDocsGerais_Click);
+            // 
+            // btnPesquisarArquivosDocsGerais
+            // 
+            this.btnPesquisarArquivosDocsGerais.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPesquisarArquivosDocsGerais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarArquivosDocsGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPesquisarArquivosDocsGerais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarArquivosDocsGerais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarArquivosDocsGerais.Image = global::sisconGestão.Properties.Resources.buscarusuario;
+            this.btnPesquisarArquivosDocsGerais.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisarArquivosDocsGerais.Location = new System.Drawing.Point(4, 4);
+            this.btnPesquisarArquivosDocsGerais.Name = "btnPesquisarArquivosDocsGerais";
+            this.btnPesquisarArquivosDocsGerais.Size = new System.Drawing.Size(208, 54);
+            this.btnPesquisarArquivosDocsGerais.TabIndex = 0;
+            this.btnPesquisarArquivosDocsGerais.Text = "Pesquisar";
+            this.btnPesquisarArquivosDocsGerais.UseVisualStyleBackColor = false;
+            this.btnPesquisarArquivosDocsGerais.Click += new System.EventHandler(this.btnPesquisarArquivosDocsGerais_Click);
+            // 
+            // dgvArquivosDosGerais
+            // 
+            this.dgvArquivosDosGerais.AllowUserToOrderColumns = true;
+            this.dgvArquivosDosGerais.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvArquivosDosGerais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArquivosDosGerais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvArquivosDosGerais.Location = new System.Drawing.Point(4, 4);
+            this.dgvArquivosDosGerais.Name = "dgvArquivosDosGerais";
+            this.dgvArquivosDosGerais.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvArquivosDosGerais.Size = new System.Drawing.Size(445, 234);
+            this.dgvArquivosDosGerais.TabIndex = 1;
+            // 
+            // aRQUIVOS_DOCS_GERAISTableAdapter
+            // 
+            this.aRQUIVOS_DOCS_GERAISTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ARQUIVOS_DOCS_GERAISTableAdapter = this.aRQUIVOS_DOCS_GERAISTableAdapter;
+            this.tableAdapterManager.ARQUIVOS_EVIDENCIASTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DOCUMENTOS_GERAISTableAdapter = null;
+            this.tableAdapterManager.EVIDENCIASTableAdapter = null;
+            this.tableAdapterManager.LANCAMENTO_HORARIOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOS_SENHASTableAdapter = null;
             // 
             // frmArquivosDocsGerais
             // 
@@ -405,16 +404,16 @@
             this.Text = "Documentos Gerais - Janela de Arquivos";
             this.Load += new System.EventHandler(this.frmArquivosDocsGerais_Load);
             this.tlpArquivosDocsGerais.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).EndInit();
-            this.tlpAcoesGeraisDocsGerais.ResumeLayout(false);
-            this.tlpAcoesBotoesDocsGerais.ResumeLayout(false);
             this.gbArquivosDocsGerais.ResumeLayout(false);
             this.gbArquivosDocsGerais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISbindingNavigator)).EndInit();
             this.aRQUIVOS_DOCS_GERAISbindingNavigator.ResumeLayout(false);
             this.aRQUIVOS_DOCS_GERAISbindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aRQUIVOS_DOCS_GERAISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
+            this.tlpAcoesGeraisDocsGerais.ResumeLayout(false);
+            this.tlpAcoesBotoesDocsGerais.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArquivosDosGerais)).EndInit();
             this.ResumeLayout(false);
 
         }

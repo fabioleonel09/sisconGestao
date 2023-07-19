@@ -106,6 +106,18 @@ namespace sisconGestão
         {
             try
             {
+                if(nomeDocumentoTextBox.TextLength > 200)
+                {
+                    MessageBox.Show("O campo Nome Documento não pode ter mais do que 200 caracteres!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                 
+                if(descricaoDocumentoTextBox.TextLength > 1000)
+                {
+                    MessageBox.Show("O campo Descrição Documento não pode ter mais do que 1000 caracteres!.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information); //dispara a mensagem
+                    return;
+                }
+                 
                 this.Validate();
                 this.dOCUMENTOS_GERAISBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.sISCONPROJECTSDataSet);
@@ -116,7 +128,18 @@ namespace sisconGestão
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Verifique se a exceção é de chave duplicada (ou outra exceção específica relacionada à PK)
+                if (ex is SqlException sqlException && sqlException.Number == 2627)
+                {
+                    // Trate o caso de chave duplicada
+                    MessageBox.Show("A chave de registro já está em uso. Por favor, apague esta ação (clicando em Excluir) e tente novamente.", "Conflito de inserção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Outras ações apropriadas, como limpar campos ou notificar o usuário sobre o conflito
+                }
+                else
+                {
+                    // Trate outras exceções que possam ocorrer
+                    MessageBox.Show("Erro durante a inserção: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
