@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label usuarioLabel;
+            System.Windows.Forms.Label senhaLabel;
+            System.Windows.Forms.Label competenciaLabel;
             this.tbcTelaLogin = new System.Windows.Forms.TabControl();
             this.tbpLoginUsuario = new System.Windows.Forms.TabPage();
             this.tblTelaLogin = new System.Windows.Forms.TableLayoutPanel();
@@ -51,6 +54,7 @@
             this.tbpCadastroUsuario = new System.Windows.Forms.TabPage();
             this.tblCadastro = new System.Windows.Forms.TableLayoutPanel();
             this.gbSenhaAdm = new System.Windows.Forms.GroupBox();
+            this.btnMascaraCadastro = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.pbLogoCadastrar = new System.Windows.Forms.PictureBox();
             this.btnAdm = new System.Windows.Forms.Button();
@@ -77,13 +81,19 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbEnviarArquivo = new System.Windows.Forms.ToolStripButton();
             this.tsbBaixarArquivo = new System.Windows.Forms.ToolStripButton();
+            this.uSUARIOS_SENHASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.USUARIOS_SENHASTableAdapter();
+            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
+            this.gbPreenchaCampos = new System.Windows.Forms.GroupBox();
             this.uSUARIOS_SENHASDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uSUARIOS_SENHASTableAdapter = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.USUARIOS_SENHASTableAdapter();
-            this.tableAdapterManager = new sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager();
-            this.btnMascaraCadastro = new System.Windows.Forms.Button();
+            this.usuarioTextBox = new System.Windows.Forms.TextBox();
+            this.senhaTextBox = new System.Windows.Forms.TextBox();
+            this.competenciaTextBox = new System.Windows.Forms.TextBox();
+            usuarioLabel = new System.Windows.Forms.Label();
+            senhaLabel = new System.Windows.Forms.Label();
+            competenciaLabel = new System.Windows.Forms.Label();
             this.tbcTelaLogin.SuspendLayout();
             this.tbpLoginUsuario.SuspendLayout();
             this.tblTelaLogin.SuspendLayout();
@@ -100,6 +110,7 @@
             this.uSUARIOS_SENHASBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOS_SENHASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).BeginInit();
+            this.gbPreenchaCampos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOS_SENHASDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,6 +342,18 @@
             this.gbSenhaAdm.TabStop = false;
             this.gbSenhaAdm.Text = "Senha de adminstrador";
             // 
+            // btnMascaraCadastro
+            // 
+            this.btnMascaraCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMascaraCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMascaraCadastro.Location = new System.Drawing.Point(528, 43);
+            this.btnMascaraCadastro.Name = "btnMascaraCadastro";
+            this.btnMascaraCadastro.Size = new System.Drawing.Size(68, 26);
+            this.btnMascaraCadastro.TabIndex = 9;
+            this.btnMascaraCadastro.Text = "| | |";
+            this.btnMascaraCadastro.UseVisualStyleBackColor = true;
+            this.btnMascaraCadastro.Click += new System.EventHandler(this.btnMascaraCadastro_Click);
+            // 
             // btnFinalizar
             // 
             this.btnFinalizar.BackColor = System.Drawing.Color.Silver;
@@ -397,7 +420,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.uSUARIOS_SENHASBindingNavigator, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.uSUARIOS_SENHASDataGridView, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gbPreenchaCampos, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -608,49 +631,6 @@
             this.tsbBaixarArquivo.Size = new System.Drawing.Size(52, 80);
             this.tsbBaixarArquivo.Text = "Baixar Arquivo";
             // 
-            // uSUARIOS_SENHASDataGridView
-            // 
-            this.uSUARIOS_SENHASDataGridView.AutoGenerateColumns = false;
-            this.uSUARIOS_SENHASDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.uSUARIOS_SENHASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uSUARIOS_SENHASDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.uSUARIOS_SENHASDataGridView.DataSource = this.uSUARIOS_SENHASBindingSource;
-            this.uSUARIOS_SENHASDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uSUARIOS_SENHASDataGridView.Location = new System.Drawing.Point(4, 4);
-            this.uSUARIOS_SENHASDataGridView.Name = "uSUARIOS_SENHASDataGridView";
-            this.uSUARIOS_SENHASDataGridView.Size = new System.Drawing.Size(789, 200);
-            this.uSUARIOS_SENHASDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Usuario";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Usuário";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Senha";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Senha";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Competencia";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Competência";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 345;
-            // 
             // uSUARIOS_SENHASTableAdapter
             // 
             this.uSUARIOS_SENHASTableAdapter.ClearBeforeFill = true;
@@ -666,17 +646,122 @@
             this.tableAdapterManager.UpdateOrder = sisconGestão.SISCONPROJECTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOS_SENHASTableAdapter = this.uSUARIOS_SENHASTableAdapter;
             // 
-            // btnMascaraCadastro
+            // gbPreenchaCampos
             // 
-            this.btnMascaraCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMascaraCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMascaraCadastro.Location = new System.Drawing.Point(528, 43);
-            this.btnMascaraCadastro.Name = "btnMascaraCadastro";
-            this.btnMascaraCadastro.Size = new System.Drawing.Size(68, 26);
-            this.btnMascaraCadastro.TabIndex = 9;
-            this.btnMascaraCadastro.Text = "| | |";
-            this.btnMascaraCadastro.UseVisualStyleBackColor = true;
-            this.btnMascaraCadastro.Click += new System.EventHandler(this.btnMascaraCadastro_Click);
+            this.gbPreenchaCampos.Controls.Add(competenciaLabel);
+            this.gbPreenchaCampos.Controls.Add(this.competenciaTextBox);
+            this.gbPreenchaCampos.Controls.Add(senhaLabel);
+            this.gbPreenchaCampos.Controls.Add(this.senhaTextBox);
+            this.gbPreenchaCampos.Controls.Add(usuarioLabel);
+            this.gbPreenchaCampos.Controls.Add(this.usuarioTextBox);
+            this.gbPreenchaCampos.Controls.Add(this.uSUARIOS_SENHASDataGridView);
+            this.gbPreenchaCampos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbPreenchaCampos.ForeColor = System.Drawing.Color.Silver;
+            this.gbPreenchaCampos.Location = new System.Drawing.Point(4, 4);
+            this.gbPreenchaCampos.Name = "gbPreenchaCampos";
+            this.gbPreenchaCampos.Size = new System.Drawing.Size(789, 200);
+            this.gbPreenchaCampos.TabIndex = 2;
+            this.gbPreenchaCampos.TabStop = false;
+            this.gbPreenchaCampos.Text = "Preencha os campos abaixo";
+            // 
+            // uSUARIOS_SENHASDataGridView
+            // 
+            this.uSUARIOS_SENHASDataGridView.AllowUserToAddRows = false;
+            this.uSUARIOS_SENHASDataGridView.AllowUserToDeleteRows = false;
+            this.uSUARIOS_SENHASDataGridView.AutoGenerateColumns = false;
+            this.uSUARIOS_SENHASDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.uSUARIOS_SENHASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uSUARIOS_SENHASDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.uSUARIOS_SENHASDataGridView.DataSource = this.uSUARIOS_SENHASBindingSource;
+            this.uSUARIOS_SENHASDataGridView.Location = new System.Drawing.Point(6, 78);
+            this.uSUARIOS_SENHASDataGridView.Name = "uSUARIOS_SENHASDataGridView";
+            this.uSUARIOS_SENHASDataGridView.ReadOnly = true;
+            this.uSUARIOS_SENHASDataGridView.Size = new System.Drawing.Size(777, 116);
+            this.uSUARIOS_SENHASDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Usuario";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Usuário";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Senha";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Senha";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Competencia";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Competência";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 345;
+            // 
+            // usuarioLabel
+            // 
+            usuarioLabel.AutoSize = true;
+            usuarioLabel.Location = new System.Drawing.Point(6, 22);
+            usuarioLabel.Name = "usuarioLabel";
+            usuarioLabel.Size = new System.Drawing.Size(66, 18);
+            usuarioLabel.TabIndex = 1;
+            usuarioLabel.Text = "Usuário:";
+            // 
+            // usuarioTextBox
+            // 
+            this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uSUARIOS_SENHASBindingSource, "Usuario", true));
+            this.usuarioTextBox.Location = new System.Drawing.Point(6, 46);
+            this.usuarioTextBox.Name = "usuarioTextBox";
+            this.usuarioTextBox.Size = new System.Drawing.Size(289, 26);
+            this.usuarioTextBox.TabIndex = 2;
+            // 
+            // senhaLabel
+            // 
+            senhaLabel.AutoSize = true;
+            senhaLabel.Location = new System.Drawing.Point(298, 22);
+            senhaLabel.Name = "senhaLabel";
+            senhaLabel.Size = new System.Drawing.Size(57, 18);
+            senhaLabel.TabIndex = 3;
+            senhaLabel.Text = "Senha:";
+            // 
+            // senhaTextBox
+            // 
+            this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uSUARIOS_SENHASBindingSource, "Senha", true));
+            this.senhaTextBox.Location = new System.Drawing.Point(301, 46);
+            this.senhaTextBox.Name = "senhaTextBox";
+            this.senhaTextBox.Size = new System.Drawing.Size(239, 26);
+            this.senhaTextBox.TabIndex = 4;
+            // 
+            // competenciaLabel
+            // 
+            competenciaLabel.AutoSize = true;
+            competenciaLabel.Location = new System.Drawing.Point(543, 22);
+            competenciaLabel.Name = "competenciaLabel";
+            competenciaLabel.Size = new System.Drawing.Size(106, 18);
+            competenciaLabel.TabIndex = 5;
+            competenciaLabel.Text = "Competência:";
+            // 
+            // competenciaTextBox
+            // 
+            this.competenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uSUARIOS_SENHASBindingSource, "Competencia", true));
+            this.competenciaTextBox.Location = new System.Drawing.Point(546, 46);
+            this.competenciaTextBox.Name = "competenciaTextBox";
+            this.competenciaTextBox.Size = new System.Drawing.Size(237, 26);
+            this.competenciaTextBox.TabIndex = 6;
             // 
             // Form1
             // 
@@ -712,6 +797,8 @@
             this.uSUARIOS_SENHASBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOS_SENHASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISCONPROJECTSDataSet)).EndInit();
+            this.gbPreenchaCampos.ResumeLayout(false);
+            this.gbPreenchaCampos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOS_SENHASDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -757,19 +844,23 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton uSUARIOS_SENHASBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView uSUARIOS_SENHASDataGridView;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbBloquear;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbEnviarArquivo;
         private System.Windows.Forms.ToolStripButton tsbBaixarArquivo;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnMascara;
         private System.Windows.Forms.Button btnConexaoServidor;
         private System.Windows.Forms.Button btnMascaraCadastro;
+        private System.Windows.Forms.GroupBox gbPreenchaCampos;
+        private System.Windows.Forms.DataGridView uSUARIOS_SENHASDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TextBox competenciaTextBox;
+        private System.Windows.Forms.TextBox senhaTextBox;
+        private System.Windows.Forms.TextBox usuarioTextBox;
     }
 }
 
